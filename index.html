@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>저기요?</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
+    input, button { padding: 10px; margin: 5px; font-size: 16px; }
+    .task { background: white; padding: 10px; border: 1px solid #ccc; margin-top: 10px; }
+    .done { text-decoration: line-through; background: #e0ffe0; }
+  </style>
+</head>
+<body>
+  <h1>🗣️ 저기요?</h1>
+  <input type="text" id="taskInput" placeholder="할 일을 입력하세요" />
+  <button onclick="addTask()">추가</button>
+  <button onclick="voiceInput()">🎤 음성으로 입력</button>
+  <div id="tasks"></div>
+
+  <script>
+    const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+
+    function renderTasks() {
+      const container = document.getElementById("tasks");
+      container.innerHTML = "";
+      tasks.forEach((t, i) => {
+        const div = document.createElement("div");
+        div.className = "task" + (t.done ? " done" : "");
+        div.innerHTML = `
+          <span>${t.text}</span>
+          <button onclick="toggleTask(${i})">${t.done ? "되돌리기" : "완료"}</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const text = input.value.trim();
+      if (!text) return;
+      tasks.push({ text, done: false });
+      input.value = "";
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTasks();
+    }
+
+    function toggleTask(i) {
+      tasks[i].done = !tasks[i].done;
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTasks();
+    }
+
+    function voiceInput() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
+      recognition.lang = "ko-KR";
+      recognition.interimResults = false;
+      recognition.onresult = function(e) {
+        document.getElementById("taskInput").value = e.results[0][0].transcript;
+      };
+      recognition.start();
+    }
+
+    function speakAndListen() {
+      const pending = tasks.find(t => !t.done);
+      if (!pending) return;
+
+      const msg = new SpeechSynthesisUtterance(`저기요, ${pending.text} 하셨어요?`);
+      msg.lang = "ko-KR";
+      window.speechSynthesis.speak(msg);
+
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = "ko-KR";
+      recognition.onresult = function(e) {
+        const answer = e.results[0][0].transcript;
+        if (answer.includes("했어")) {
+          const idx = tasks.findIndex(t => t.text === pending.text);
+          if (idx !== -1) toggleTask(idx);
+        }
+      };
+      recognition.start();
+    }
+
+    renderTasks();
+    setInterval(speakAndListen, 1000 * 60 * 60); // 1시간마다 물어봄
+  </script>
+</body>
+</html>
