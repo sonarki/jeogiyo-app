@@ -78,6 +78,30 @@ function AdPoster({ tag, line1, line2, accent, delay }: PosterProps) {
   );
 }
 
+function DemoVideo({ tag, src }: { tag: string; src: string }) {
+  return (
+    <div className="w-[196px] shrink-0 md:w-[220px]">
+      <div
+        className="overflow-hidden rounded-2xl border border-[#1E222A] bg-[#171A20] shadow-[0_24px_60px_-30px_rgba(0,0,0,0.9)]"
+        style={{ aspectRatio: "9/16" }}
+      >
+        <video
+          src={src}
+          controls
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="h-full w-full object-cover"
+        />
+      </div>
+      <p className="font-monox mt-2 text-center text-[10px] tracking-[0.18em] text-[#9BA0AA]">
+        {tag} / AI-MADE IN UNDER 1H
+      </p>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-dvh bg-[#111318] text-[#F4F2EE]">
@@ -246,11 +270,10 @@ function Index() {
             </p>
           </div>
           <div className="scrollbar-none -mx-5 mt-10 flex gap-5 overflow-x-auto px-5 pb-4">
-            <AdPoster tag="HOOK 01" line1="My skin looked so tired lately." line2="Problem hook, testimonial arc, CTA on beat three." delay="0ms" />
-            <AdPoster tag="HOOK 03" line1="I did NOT want to like this serum." line2="Skeptic reversal, two week check-in." accent delay="0ms" />
-            <AdPoster tag="HOOK 04" line1="Glow in a bottle." line2="ASMR macro, droplet audio, caption only." delay="0ms" />
-            <AdPoster tag="HOOK 07" line1="What is your skincare secret?" line2="Street interview, bag reveal, product close." delay="0ms" />
-            <AdPoster tag="HOOK 09" line1="Me pretending I was born with this glow:" line2="Meme format, product slide-in, wink out." accent delay="0ms" />
+            <DemoVideo tag="TESTIMONIAL" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153449_daec50df-fcdb-4063-8afa-6f187a2ec099.mp4" />
+            <DemoVideo tag="ASMR UNBOX" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153455_052e762a-6959-4931-b582-48ffd19f1a81.mp4" />
+            <DemoVideo tag="TRANSFORMATION" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153502_13bd8f40-34a8-4482-b5fa-0ef0f75e3c14.mp4" />
+            <DemoVideo tag="SKEPTIC" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153513_32a610c0-9463-47cf-9793-d1f5c81842b5.mp4" />
             <div
               className="flex w-[168px] shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-[#FF5C1F]/50 bg-[#171A20]/50 p-4 text-center md:w-[196px]"
               style={{ aspectRatio: "9/16" }}
