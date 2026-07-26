@@ -4,8 +4,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const GUMROAD_URL = "https://72plus.gumroad.com";
-const CONTACT_EMAIL = "hello@hookforge.example"; // SWAP: brand email
+const GUMROAD_URL = "https://hookforgestudio.gumroad.com/l/bxnwkl";
+const X_DM_URL = "https://x.com/SG17687469";
 const PRIMARY_CTA = "Get my 20 ads";
 
 function Mark({ size = 34 }: { size?: number }) {
@@ -311,8 +311,8 @@ function Index() {
                 <p className="mt-3 text-sm text-[#9BA0AA]">
                   10 video ads, copy bank, 48 hour delivery. The starter dose.
                 </p>
-                <a href={GUMROAD_URL} className="font-monox mt-4 inline-block text-sm text-[#FF8A3D] hover:text-[#FF5C1F]">
-                  Order the pack →
+                <a href={X_DM_URL} className="font-monox mt-4 inline-block text-sm text-[#FF8A3D] hover:text-[#FF5C1F]">
+                  DM to order →
                 </a>
               </div>
               <div className="rounded-2xl border border-[#1E222A] bg-[#171A20] p-6">
@@ -324,13 +324,13 @@ function Index() {
                   40 video ads, 20 statics, landing refresh, 30 day content calendar, two revision
                   rounds, 72 hours.
                 </p>
-                <a href={GUMROAD_URL} className="font-monox mt-4 inline-block text-sm text-[#FF8A3D] hover:text-[#FF5C1F]">
-                  Order the funnel →
+                <a href={X_DM_URL} className="font-monox mt-4 inline-block text-sm text-[#FF8A3D] hover:text-[#FF5C1F]">
+                  DM to order →
                 </a>
               </div>
               <p className="px-1 text-sm text-[#9BA0AA]">
                 Agencies: white label packs from $4,900.{" "}
-                <a href={`mailto:${CONTACT_EMAIL}`} className="font-monox text-[#FF8A3D] hover:text-[#FF5C1F]">
+                <a href={X_DM_URL} className="font-monox text-[#FF8A3D] hover:text-[#FF5C1F]">
                   Talk to us<span className="caret">_</span>
                 </a>
               </p>
@@ -430,8 +430,8 @@ function Index() {
             Fully AI produced, human directed. Every deliverable is labeled as AI generated. Miss
             the delivery window and you get a full refund.
           </p>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="font-monox text-[#FF8A3D] hover:text-[#FF5C1F]">
-            {CONTACT_EMAIL}
+          <a href={X_DM_URL} className="font-monox text-[#FF8A3D] hover:text-[#FF5C1F]">
+            Message us on X
           </a>
         </div>
       </footer>
