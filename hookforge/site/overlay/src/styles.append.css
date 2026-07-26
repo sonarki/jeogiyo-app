@@ -1,0 +1,76 @@
+/* ===== HookForge brand layer (appended) ===== */
+
+.font-display {
+  font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-monox {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  background-color: #111318;
+}
+
+::selection {
+  background: #ff5c1f;
+  color: #111318;
+}
+
+/* hero rack: on-mount rise, transform-only (screenshot safe) */
+@keyframes rack-rise {
+  from {
+    transform: translateY(26px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.rack-rise {
+  animation: rack-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* agency link terminal caret */
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.caret {
+  display: inline-block;
+  margin-left: 1px;
+  animation: caret-blink 1.1s steps(1) infinite;
+}
+
+/* demo rail: hide scrollbar, keep scroll */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* faq details marker cleanup */
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rack-rise {
+    animation: none;
+  }
+  .caret {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
