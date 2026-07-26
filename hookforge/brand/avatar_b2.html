@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>*{margin:0;padding:0}body{width:1024px;height:1024px;overflow:hidden}</style></head>
+<body>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hookGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FF8A3D"/>
+      <stop offset="1" stop-color="#FF5C1F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.55" r="0.62">
+      <stop offset="0" stop-color="#FF5C1F" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#FF5C1F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coinGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD97A"/>
+      <stop offset="1" stop-color="#FFB53E"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" fill="#111318"/>
+  <rect width="1024" height="1024" fill="url(#glow)"/>
+
+  <!-- sweep trails BEHIND coins, following their arc into the hook mouth -->
+  <g fill="none" stroke="#FF8A3D" stroke-linecap="round" opacity="0.45">
+    <path d="M155 170 Q 165 360 395 480" stroke-width="13"/>
+    <path d="M255 130 Q 255 280 440 400" stroke-width="9" opacity="0.6"/>
+  </g>
+
+
+  <!-- hook: scoop opening faces upper-left, eye clear at top -->
+  <g transform="rotate(-30 512 570)">
+    <g fill="none" stroke="url(#hookGrad)" stroke-width="60" stroke-linecap="round">
+      <circle cx="655" cy="250" r="30" stroke-width="36"/>
+      <path d="M655 300 L655 590 A178 178 0 1 1 318 528"/>
+      <path d="M318 528 L372 578" stroke-width="48"/>
+    </g>
+  </g>
+
+  <!-- coins arcing into the scoop mouth, clear of eye and tip -->
+  <g transform="rotate(14 185 245)">
+    <circle cx="185" cy="245" r="50" fill="url(#coinGrad)" stroke="#B87514" stroke-width="6"/>
+    <text x="185" y="268" text-anchor="middle" font-family="DejaVu Sans" font-weight="bold" font-size="62" fill="#8A5A0E">$</text>
+  </g>
+  <g transform="rotate(-9 300 330)">
+    <circle cx="300" cy="330" r="64" fill="url(#coinGrad)" stroke="#B87514" stroke-width="7"/>
+    <text x="300" y="358" text-anchor="middle" font-family="DejaVu Sans" font-weight="bold" font-size="80" fill="#8A5A0E">$</text>
+  </g>
+  <g transform="rotate(8 415 475)">
+    <circle cx="415" cy="475" r="80" fill="url(#coinGrad)" stroke="#B87514" stroke-width="8"/>
+    <text x="415" y="510" text-anchor="middle" font-family="DejaVu Sans" font-weight="bold" font-size="100" fill="#8A5A0E">$</text>
+  </g>
+</svg>
+</body></html>
