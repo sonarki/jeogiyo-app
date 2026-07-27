@@ -125,3 +125,8 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 ### 순찰 (UTC ~13:20, 7/27)
 - 반송 1건: **sales@adquadrant.com** (구글그룹 외부발신 차단) → 영구 제외. adQuadrant 대체 공개주소 없음 → 타겟 아웃. 에이전시 유효 도달 7/8, 누계 유효 28
 - 그 외 신규 수신 0. 답장·판매 0 (에이전시 발송 12분 경과 — 정상)
+
+### 사이트/틱톡 체크 (UTC ~13:40, 7/27)
+- 틱톡 #2 **라이브 확정**: post_id 7667192139062709512 (@hookforge.studio, 뷰티 L2, AI표기+프로모션 라벨)
+- 사이트: 강제 리빌드 커밋(431dc3c)+deploy 3회에도 구빌드 서빙 지속 → 플랫폼 빌드 큐 지연/미트리거로 판단. 코드는 repo main에 안전(7a32f1f). 구버전도 완전 정상 판매페이지라 영향 없음. 14:15Z 재확인 예약
+- 크레딧 잔고 3,455 (변동 없음)
