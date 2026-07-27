@@ -212,3 +212,8 @@ Vertical 9:16 selfie video, front phone camera held at arm's length, subtle orga
 - **금지**: 튜브 짜기→손가락에 덜기→펴바르기 같은 다단계 정밀 손동작 (손 뒤틀림 아티팩트 최고 위험)
 - **표준**: 제품은 세워서 감싸쥐기(label facing lens) / 도포는 뺨에 2~3회 가볍게 탭 / 손 상태를 긍정문으로 고정: "hands stay relaxed and natural, fingers in ordinary resting positions"
 - **QC 한계 명시**: 자동 QC(전사·조명·제품색)는 해부학 오류를 못 잡음 → 배포·발송 전 사람 눈 확인 1회 필수 (캡틴 or 향후 프레임 리뷰 수단 확보 시 나)
+
+## 4.10 페이싱 규칙 (2026-07-27 캡틴 피드백: "제품 들고 있는 시간 너무 김 = 밸런스 파괴")
+- **제품 정지 홀드는 훅에서 1비트만** ("a quick flash ... for one brief beat") 후 내려놓기
+- **매 샷에 동작 동사 필수** — 정적 홀드로 샷을 채우지 않는다 (양치, 도포, 미스트, 사용 장면)
+- 전체 페이싱 앵커: "brisk snappy pacing" (오프닝 문장에 삽입)
