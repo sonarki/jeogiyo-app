@@ -134,3 +134,8 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 ### 사이트 재확인 2차 (UTC 14:00, 7/27)
 - 여전히 구빌드. deploy 1회 재호출(총 4회). 플랫폼 빌드 이슈 지속 — 구버전 서빙 중(판매 영향 없음)
 - 다음 순찰(16:55Z) TODO: 재확인 → 그때도 구버전이면 샌드박스에서 사이트 repo npm install+tsc를 background로 돌려 빌드 실패 여부 판별 (내 커밋의 타입에러 가능성 배제/확인). 통과면 플랫폼 인시던트로 캡틴 보고, 실패면 즉시 수정 커밋
+
+### 특단의 조치 가동 (UTC ~15:30, 7/27)
+- 캡틴 지시 "특단의 조치" → 3트랙: A 샘플 웻지 블리츠(실제 제품 광고 선제작) / B Fiverr 갱(sales/fiverr_kit.md 완성, 캡틴 10분 대기) / C 인스타 팩(sales/instagram_pack.md 완성, 선택)
+- 샘플 1호 발사: 조선미녀 Relief Sun `88020d30-2310-456c-9dc5-6c2e44bb2a20` (캐스팅 C, 실제 제품 레퍼런스 423414f4, 텍스처 클레임만). 스킨1004 센텔라 이미지도 임포트 완료(4e4127b9)
+- 계획: 1호 QC → 스킨1004·아누아·라운드랩(내일 02Z 첫 메일에 샘플 동봉) + Hismile·Tower28(FU2에 동봉). 예산 6편 648cr → 잔고 ~2,700 (바닥 OK)
