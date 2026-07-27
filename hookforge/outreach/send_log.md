@@ -139,3 +139,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 - 캡틴 지시 "특단의 조치" → 3트랙: A 샘플 웻지 블리츠(실제 제품 광고 선제작) / B Fiverr 갱(sales/fiverr_kit.md 완성, 캡틴 10분 대기) / C 인스타 팩(sales/instagram_pack.md 완성, 선택)
 - 샘플 1호 발사: 조선미녀 Relief Sun `88020d30-2310-456c-9dc5-6c2e44bb2a20` (캐스팅 C, 실제 제품 레퍼런스 423414f4, 텍스처 클레임만). 스킨1004 센텔라 이미지도 임포트 완료(4e4127b9)
 - 계획: 1호 QC → 스킨1004·아누아·라운드랩(내일 02Z 첫 메일에 샘플 동봉) + Hismile·Tower28(FU2에 동봉). 예산 6편 648cr → 잔고 ~2,700 (바닥 OK)
+
+### Fiverr 진행 (UTC ~15:15, 7/27)
+- 계정 생성 완료: 유저네임 **gethookforge** (사이트 서브도메인과 일치). 셀러 온보딩 진행 중 — 캡틴 실시간 작업, 내가 화면별 가이드
