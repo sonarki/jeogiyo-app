@@ -186,3 +186,9 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 - 캡틴 발견 "Unlimited Seedance 2.0" ($73/1일): **구매 반려** — 약관에 "Excludes MCP, Supercomputer, CLI" 명시 = 자동 파이프라인 제외, 웹 수동생성 전용(1병렬) + 기본 720p. 우회 자동화는 ToS 위반이라 안 함
 - 대안 실측: **seedance_2_0_mini** = 12s·720p·오디오·레퍼런스 30cr (std 108cr 대비 1/3.6). 2-티어 도입 예정: mini=파일럿·틱톡 / std 1080p=샘플·데모·납품. 다음 순찰에서 품질 캘리브레이션 1편(30cr) 후 바이블 §4.1 갱신
 - 전 샘플 4종 캡틴 최종 합격 확정 (BOJ d2852c8c / S1004 3c956a62 / T28 v4 e7ebb4cd / Hismile 1a7e44a6) → 내일 발송 라인업 픽스
+
+### 순찰 (UTC 16:55~17:05, 7/27)
+- 인박스 신규 0, 답장·판매 0 (에이전시 발송 4시간 경과 — 내일 오전 ET가 답장 피크 예상)
+- **사이트 진단 확정**: 사이트 repo는 오버레이 전용(package.json 없음) → 로컬 빌드 재현 불가, 코드 결함 배제, 플랫폼 CI 미갱신 인시던트. 구버전 정상 서빙, 영업 영향 없음. 조치: 모니터 지속(각 순찰마다 1회 체크), 데드라인 없이 대기
+- K-뷰티 확장 7곳 리서치 완료 (batch_kbeauty_0728.md §D) → 내일 아침 17통 체제
+- mini 캘리브레이션 발사: `354482bd-0a12-4625-bed9-9b190ab56c9d` (뷰티 L2 동일 프롬프트, 720p, 30cr) — std 파일럿과 A/B용

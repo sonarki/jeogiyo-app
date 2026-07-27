@@ -49,3 +49,16 @@ Sean 드림 | HookForge
 - partnerships@hismileteeth.com → 샘플 856ed320 (V34 Colour Corrector) 동봉 FU2
 - partnerships@tower28beauty.com → 샘플 655435ce (SOS Spray) 동봉 FU2
 - 나머지 US FU2는 기존 클로징 템플릿 (Closing the loop)
+
+## D. 신규 확장 7곳 (7/27 저녁 리서치, 실존 검증 — 템플릿 D 표준형)
+| 수신 | 브랜드 | 개인화 첫줄 |
+|---|---|---|
+| global@somebymi.com | 썸바이미 | 미국 아마존 상위권인데 영어 UGC 물량은 아직 기회 구간입니다 |
+| hello@rovectin.com | 로벡틴 | 민감성 포지셔닝은 미국 UGC 후기형 광고와 정합이 높습니다 |
+| sales_kr@theskinf.com | 나시픽 | 프레시 허브 라인의 미국 반응 대비 소재 회전이 아쉽습니다 |
+| pyunkangyul_sales@grunamu.com | 편강율 | 한방 스킨케어 스토리는 미국에서 차별화 훅이 됩니다 |
+| d2c@aromatica.co.kr | 아로마티카 | 클린뷰티 D2C 확장에 영어 네이티브 소재가 병목일 시점입니다 |
+| klavuu@bekeikorea.com | 클라뷰 | 진주 보습 라인은 비주얼 훅이 강해 UGC 소재화가 쉽습니다 |
+| pfdbrand@pfd.co.kr | 미존 | 스네일 라인의 해외 인지도 대비 영어 소재가 부족합니다 |
+- 내일 아침 합계: 신규 13 (기존6+확장7) + FU1 4 = 17통 (한도 50 내)
+- 제외 기록: benton/axis-y/maryandmay/esfolio(서드파티 주소만) · purito/heimish/tocobo/papa-recipe/jumiso/thankyoufarmer/farmstay(무응답)
