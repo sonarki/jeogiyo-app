@@ -225,3 +225,9 @@ Vertical 9:16 selfie video, front phone camera held at arm's length, subtle orga
 - **클린 라벨 노출은 엔드카드로**: 실제 팩샷 이미지를 ffmpeg로 마지막 1.5s에 합성 (오타 원천 불가, 0cr)
 - QC 추가: 완성본 프레임에서 제품 노출 면적 측정 — 라벨 가독 거리면 불합격
 - §4.11 보강 (T28 사례): 병 측면에 대형 세로 로고가 있는 제품은 사선 각도로도 글자가 읽힘 → **edge-on 프로파일 또는 프레임아웃 전용**, 정면 노출 전면 금지
+
+## 4.12 원테이크 원칙 (2026-07-27 캡틴 지적: 컷이 액션을 잘라 편집티 발생)
+- **액션(분사·도포·마시기·사용)은 절대 컷으로 자르지 않는다** — 동작의 시작→완결이 한 샷 안에서 끝나야 함 ("each spray fully releasing as a fine mist cloud that drifts")
+- **UGC 셀피 기본 = 원테이크**: "one continuous unbroken take filmed in a single flowing motion" — 컷 수 0이면 이음새 아티팩트 원천 차단
+- 멀티샷은 환경이 완전히 바뀌는 경우(before/after의 day1→day14)에만. 같은 자리 같은 사람이면 원테이크
+- 실패 사례: T28 v2/v3 3샷 구조 — 미스트 분사가 컷에 잘려 "안 뿌려지고 화면 겹침" (v2 9551070b 판정)
