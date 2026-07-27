@@ -170,3 +170,9 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 ### 캡틴 육안 QC (UTC ~16:0x, 7/27)
 - **조선미녀 v3 `d2852c8c` 합격 확정** ("굿 합격") → 내일 02:05Z 첫 메일 동봉 확정 (엔드카드 합성본 사용)
 - 잔여 육안 대기: S1004 v2 `3c956a62` / T28 v2 `9551070b` / Hismile v3 `1a7e44a6`
+
+### 캡틴 육안 QC 2차 (UTC ~16:1x, 7/27)
+- **Hismile v3 `1a7e44a6` 합격** ("블루치약광고 굿") → US FU2 동봉 확정
+- Tower28 v2 `9551070b` 불합격 (제품명 글자 깨짐, 병 거리 부족) → **v3 `3c184d30-941a-4bdb-a9c9-aa0cd725d3cd`** 재발사 (병 edge-on 프로파일 전용 + 미스트 장면만 등장). 108cr, 잔고 ~2,267
+- S1004 v2 `3c956a62` 캡틴 육안 대기
+- §4.11 보강 필요: 세로 대형 로고 제품은 사선으로도 부족 → edge-on/프레임아웃 전용

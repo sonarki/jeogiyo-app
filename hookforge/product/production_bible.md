@@ -224,3 +224,4 @@ Vertical 9:16 selfie video, front phone camera held at arm's length, subtle orga
 - **표준**: 제품은 ①팔길이 거리 ②라벨 사선/팜쪽 ③1비트 후 프레임아웃 ④fine print softly out of focus
 - **클린 라벨 노출은 엔드카드로**: 실제 팩샷 이미지를 ffmpeg로 마지막 1.5s에 합성 (오타 원천 불가, 0cr)
 - QC 추가: 완성본 프레임에서 제품 노출 면적 측정 — 라벨 가독 거리면 불합격
+- §4.11 보강 (T28 사례): 병 측면에 대형 세로 로고가 있는 제품은 사선 각도로도 글자가 읽힘 → **edge-on 프로파일 또는 프레임아웃 전용**, 정면 노출 전면 금지
