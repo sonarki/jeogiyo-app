@@ -207,3 +207,8 @@ Vertical 9:16 selfie video, front phone camera held at arm's length, subtle orga
 - TikTok: Creative Codes 프레임워크 (훅 3초·네이티브 스타일·사운드온) — Leapwave/MBADV/Stackmatix 정리본 교차 확인
 - 캡틴 Seedance 프레임워크: 샷리스트 문법·긍정문 원칙·모션/조명 어휘 (사내 자산)
 - HookForge 실측: 2026-07-27 캘리브레이션 6편 (qc_measure.py 데이터, send_log.md 제작 로그)
+
+## 4.9 손 안무 규칙 (2026-07-27 캡틴 불합격 사례 반영)
+- **금지**: 튜브 짜기→손가락에 덜기→펴바르기 같은 다단계 정밀 손동작 (손 뒤틀림 아티팩트 최고 위험)
+- **표준**: 제품은 세워서 감싸쥐기(label facing lens) / 도포는 뺨에 2~3회 가볍게 탭 / 손 상태를 긍정문으로 고정: "hands stay relaxed and natural, fingers in ordinary resting positions"
+- **QC 한계 명시**: 자동 QC(전사·조명·제품색)는 해부학 오류를 못 잡음 → 배포·발송 전 사람 눈 확인 1회 필수 (캡틴 or 향후 프레임 리뷰 수단 확보 시 나)
