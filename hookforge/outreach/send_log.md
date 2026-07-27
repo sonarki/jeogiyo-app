@@ -130,3 +130,7 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 - 틱톡 #2 **라이브 확정**: post_id 7667192139062709512 (@hookforge.studio, 뷰티 L2, AI표기+프로모션 라벨)
 - 사이트: 강제 리빌드 커밋(431dc3c)+deploy 3회에도 구빌드 서빙 지속 → 플랫폼 빌드 큐 지연/미트리거로 판단. 코드는 repo main에 안전(7a32f1f). 구버전도 완전 정상 판매페이지라 영향 없음. 14:15Z 재확인 예약
 - 크레딧 잔고 3,455 (변동 없음)
+
+### 사이트 재확인 2차 (UTC 14:00, 7/27)
+- 여전히 구빌드. deploy 1회 재호출(총 4회). 플랫폼 빌드 이슈 지속 — 구버전 서빙 중(판매 영향 없음)
+- 다음 순찰(16:55Z) TODO: 재확인 → 그때도 구버전이면 샌드박스에서 사이트 repo npm install+tsc를 background로 돌려 빌드 실패 여부 판별 (내 커밋의 타입에러 가능성 배제/확인). 통과면 플랫폼 인시던트로 캡틴 보고, 실패면 즉시 수정 커밋
