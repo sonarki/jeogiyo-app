@@ -121,3 +121,7 @@ K-뷰티 세그먼트 1차 5통 발송 (한국어 템플릿 D, 무료 샘플 오
 hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / sales@adquadrant.com / friends@klientboost.com / kevin@voymedia.com / info@goinflow.com / info@kynship.co
 - 오늘 발송 23/35 (신규3+FU12+에이전시8). 누계 유효 발송 29 (기존21+8)
 - 화이트라벨 오퍼 ($4,900~), opt-out 라인 포함, 브랜드당 1주소
+
+### 순찰 (UTC ~13:20, 7/27)
+- 반송 1건: **sales@adquadrant.com** (구글그룹 외부발신 차단) → 영구 제외. adQuadrant 대체 공개주소 없음 → 타겟 아웃. 에이전시 유효 도달 7/8, 누계 유효 28
+- 그 외 신규 수신 0. 답장·판매 0 (에이전시 발송 12분 경과 — 정상)
