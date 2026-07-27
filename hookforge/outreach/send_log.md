@@ -148,3 +148,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 - 아누아: Cafe24 이미지 제품 식별 불가 → 샘플 스킵, 표준 템플릿 유지
 - 내일 발송 초안 완성: outreach/batch_kbeauty_0728.md (신규6 중 샘플동봉 2 + FU1 4 + US FU2 샘플동봉 2)
 - 예상 잔고 ~2,915 (바닥 2,000 + 재제작 슬롯 1 여유)
+
+### 방침 확정 (UTC ~15:36, 7/27)
+- Fiverr 트랙 폐기 (캡틴 개인정보 노출 부담 — 마켓플레이스류 공통 게이트라 대체 없음, 계정은 휴면). 샘플 웻지 = 주력. 16:55Z 순찰 TODO 추가: K-뷰티 중견 30곳 신규 리서치 (내일 50통 한도 활용)
