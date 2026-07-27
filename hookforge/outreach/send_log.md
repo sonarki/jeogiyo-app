@@ -100,3 +100,24 @@ K-뷰티 세그먼트 1차 5통 발송 (한국어 템플릿 D, 무료 샘플 오
 - AERIS 파일럿 `18b189aa` **QC PASS**: 전사 100%, 제품 등장 확인, 단일컷 조명 변동 자연범위. 108cr
 - 나머지 4종 병렬 발사 (432cr): VITALEAF `50e29ba9` / BREWLAB `02e48df3` / NESTA `f1db7734` / PAWSE `3cb99f10`
 - 3단계 예약: 4종 QC → 랜딩 6카테고리 개편·배포 → 틱톡 게시 → 에이전시 8통(13Z+) → 종합보고
+
+## Day 2 오후 — 체인 3단계 완료 (UTC 12:55~13:15, 7/27)
+
+### 제작 QC (전 편 통과 — 데모 라인업 완성)
+| 카테고리 | 잡 | QC |
+|---|---|---|
+| 뷰티 L2 | bd9e9715 | PASS (개선 ~20%, 조명 안정, 전사 100%) |
+| 테크 AERIS | 18b189aa | PASS (전사 100%, 제품 확인) |
+| 웰니스 VITALEAF | 50e29ba9 | PASS (전사 일치) |
+| F&B BREWLAB | 02e48df3 | PASS (전사 일치) |
+| 홈 NESTA | f1db7734 | PASS (전사 일치) |
+| 펫 PAWSE | 3cb99f10 | PASS (전사 일치) |
+
+### 배포/게시
+- 랜딩 개편 커밋: 6카테고리 레일 + "One pipeline. Any product." + 가상 브랜드 고지문. 사이트 repo main 7a32f1f 푸시 완료, deploy 2회 트리거 — **오리진 전파 지연 중** (13:30Z 재검증 예약, 구버전도 정상 서빙 중이라 판매 영향 없음)
+- 틱톡 게시 #2: 뷰티 L2 파일럿, publish_id v_pub_url~v2.7667188810857383956, PROCESSING (is_aigc + your_brand 라벨)
+
+### 발송 — US 에이전시 8통 (UTC 13:08, ET 오전 9:08)
+hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / sales@adquadrant.com / friends@klientboost.com / kevin@voymedia.com / info@goinflow.com / info@kynship.co
+- 오늘 발송 23/35 (신규3+FU12+에이전시8). 누계 유효 발송 29 (기존21+8)
+- 화이트라벨 오퍼 ($4,900~), opt-out 라인 포함, 브랜드당 1주소
