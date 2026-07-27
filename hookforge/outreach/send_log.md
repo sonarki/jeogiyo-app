@@ -38,3 +38,17 @@
 - Gumroad TEST MATRIX $990 라이브
 - SMTP 발송기 가동 (앱 비밀번호는 로그에 미기록)
 - 인박스·세일즈 자동 순찰 트리거 등록 (2시간 주기)
+
+## Day 2 — 2026-07-27 (한국 월요일 오전, UTC ~02:05)
+
+K-뷰티 세그먼트 1차 5통 발송 (한국어 템플릿 D, 무료 샘플 오퍼 포함):
+
+| 수신 | 브랜드 | 비고 |
+|---|---|---|
+| global_marketing@isntree.com | 이즈앤트리 | 마케팅팀 직통 ⭐ |
+| mkt@torriden.com | 토리든 | 마케팅팀 직통 ⭐ |
+| iunik@iunikcos.com | 아이유닉 | |
+| support@haruharuwonder.com | 하루하루원더 | |
+| b2binquiry@pkcosm.com | 믹순 | B2B 문의 채널 ⭐ |
+
+누계 발송: 20통 (US 15 + KR 5). 예정: 오늘 밤(미국 월요일 오전) US 팔로업 15 + 에이전시 신규.
