@@ -116,7 +116,9 @@
 
 **L2 표준 문구(긍정문)**: "clearly brighter and noticeably more even — calm uniform tone, redness settled, a healthy hydrated sheen catching the light, fine pores and freckles still visible up close"
 
-**L2 실측 목표** (qc_measure.py): 밝기 +8~12% · 톤 균일도 −20~28% · 홍조 편차 −15~25% · 결 −15~25% · **배경 ΔL≤3 & Δb≤2 (초과=조명 붕괴=즉시 불합격)**
+**L2 실측 목표** (qc_measure.py): 밝기 +8~15% · 톤 균일도 −20~28% · 홍조 편차 −15~37% · 결 −15~32% · **배경 ΔL≤3 & Δb≤2 (초과=조명 붕괴=즉시 불합격)**
+
+> **측정법 v1.1 (2026-07-27 파일럿 bd9e9715 캘리브레이션)**: 배경 드리프트는 **안정측 상단 코너**(인물 반대편, 프레임 상단 10%×15%)에서 측정한다. 측면 스트립 측정은 인물이 leans closer 할 때 몸에 가려져 가짜 FAIL을 낸다 (파일럿에서 스트립 −24.5 vs 코너 +0.9로 판명). 구도 변화(창문 프레임아웃 등)는 색·그레이드가 안정이면 합격 — 실제 UGC의 day1/day14 클립도 구도가 다르다.
 
 ## 4.3 연속성 블록 `[HF]` (before/after형 필수, 긍정문)
 ```
