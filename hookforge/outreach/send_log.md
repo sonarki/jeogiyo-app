@@ -142,3 +142,9 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### Fiverr 진행 (UTC ~15:15, 7/27)
 - 계정 생성 완료: 유저네임 **gethookforge** (사이트 서브도메인과 일치). 셀러 온보딩 진행 중 — 캡틴 실시간 작업, 내가 화면별 가이드
+
+### 샘플 웻지 배치 (UTC ~15:25, 7/27)
+- 발사 3종 (324cr): 스킨1004 센텔라 `dd96b866-4235-4b96-a335-389a9478b574` (캐스팅A) / Hismile V34 `856ed320-bf4f-4392-a772-7838457d0e97` (캐스팅D) / Tower28 SOS `655435ce-4861-46f3-9bce-48f2d638d3ce` (캐스팅E) — 전부 §4.9 손 규칙 적용
+- 아누아: Cafe24 이미지 제품 식별 불가 → 샘플 스킵, 표준 템플릿 유지
+- 내일 발송 초안 완성: outreach/batch_kbeauty_0728.md (신규6 중 샘플동봉 2 + FU1 4 + US FU2 샘플동봉 2)
+- 예상 잔고 ~2,915 (바닥 2,000 + 재제작 슬롯 1 여유)
