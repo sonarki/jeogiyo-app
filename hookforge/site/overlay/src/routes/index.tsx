@@ -1,12 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
 const GUMROAD_URL = "https://hookforgestudio.gumroad.com/l/bxnwkl";
-const CONTACT_URL = "mailto:hookforge.aistudio@gmail.com";
+const CONTACT_EMAIL = "hookforge.aistudio@gmail.com";
+const CONTACT_URL = "mailto:hookforge.aistudio@gmail.com?subject=HookForge%20order%20inquiry";
 const PRIMARY_CTA = "Get my 20 ads";
+
+function EmailButton({ label, block }: { label?: string; block?: boolean }) {
+  const [copied, setCopied] = useState(false);
+  const copy = () => {
+    try {
+      navigator.clipboard.writeText(CONTACT_EMAIL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      window.location.href = CONTACT_URL;
+    }
+  };
+  return (
+    <button
+      onClick={copy}
+      className={`font-monox inline-flex items-center gap-2 rounded-lg border border-[#FF5C1F]/40 bg-[#FF5C1F]/10 px-3.5 py-2 text-sm text-[#FF8A3D] transition-colors hover:bg-[#FF5C1F]/20 ${block ? "w-full justify-center" : ""}`}
+      title="Click to copy our email"
+    >
+      {copied ? "✓ Copied — paste in your email app" : label ?? CONTACT_EMAIL}
+    </button>
+  );
+}
 
 function Mark({ size = 34 }: { size?: number }) {
   return (
@@ -339,9 +363,7 @@ function Index() {
                 <p className="mt-3 text-sm text-[#9BA0AA]">
                   10 video ads, copy bank, 48 hour delivery. The starter dose.
                 </p>
-                <a href={CONTACT_URL} className="font-monox mt-4 inline-block text-sm text-[#FF8A3D] hover:text-[#FF5C1F]">
-                  Email to order →
-                </a>
+                <div className="mt-4"><EmailButton label="Order by email →" /></div>
               </div>
               <div className="rounded-2xl border border-[#1E222A] bg-[#171A20] p-6">
                 <div className="flex items-baseline justify-between">
@@ -352,16 +374,12 @@ function Index() {
                   40 video ads, 20 statics, landing refresh, 30 day content calendar, two revision
                   rounds, 72 hours.
                 </p>
-                <a href={CONTACT_URL} className="font-monox mt-4 inline-block text-sm text-[#FF8A3D] hover:text-[#FF5C1F]">
-                  Email to order →
-                </a>
+                <div className="mt-4"><EmailButton label="Order by email →" /></div>
               </div>
-              <p className="px-1 text-sm text-[#9BA0AA]">
-                Agencies: white label packs from $4,900.{" "}
-                <a href={CONTACT_URL} className="font-monox text-[#FF8A3D] hover:text-[#FF5C1F]">
-                  Talk to us<span className="caret">_</span>
-                </a>
-              </p>
+              <div className="px-1 text-sm text-[#9BA0AA]">
+                <p>Agencies: white label packs from $4,900. Questions on any tier? Email us:</p>
+                <div className="mt-2"><EmailButton /></div>
+              </div>
             </div>
           </div>
         </div>
@@ -458,9 +476,7 @@ function Index() {
             Fully AI produced, human directed. Every deliverable is labeled as AI generated. Miss
             the delivery window and you get a full refund.
           </p>
-          <a href={CONTACT_URL} className="font-monox text-[#FF8A3D] hover:text-[#FF5C1F]">
-            hookforge.aistudio@gmail.com
-          </a>
+          <EmailButton />
         </div>
       </footer>
     </div>
