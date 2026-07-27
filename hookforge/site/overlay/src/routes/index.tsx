@@ -102,11 +102,11 @@ function AdPoster({ tag, line1, line2, accent, delay }: PosterProps) {
   );
 }
 
-function DemoVideo({ tag, src }: { tag: string; src: string }) {
+function DemoVideo({ tag, src, cat }: { tag: string; src: string; cat: string }) {
   return (
     <div className="w-[196px] shrink-0 md:w-[220px]">
       <div
-        className="overflow-hidden rounded-2xl border border-[#1E222A] bg-[#171A20] shadow-[0_24px_60px_-30px_rgba(0,0,0,0.9)]"
+        className="relative overflow-hidden rounded-2xl border border-[#1E222A] bg-[#171A20] shadow-[0_24px_60px_-30px_rgba(0,0,0,0.9)]"
         style={{ aspectRatio: "9/16" }}
       >
         <video
@@ -118,6 +118,9 @@ function DemoVideo({ tag, src }: { tag: string; src: string }) {
           preload="metadata"
           className="h-full w-full object-cover"
         />
+        <span className="pointer-events-none absolute left-2 top-2 rounded-md bg-[#111318]/85 px-2 py-1 font-monox text-[9px] font-bold tracking-[0.14em] text-[#FF8A3D]">
+          {cat}
+        </span>
       </div>
       <p className="font-monox mt-2 text-center text-[10px] tracking-[0.18em] text-[#9BA0AA]">
         {tag} / AI-MADE IN UNDER 1H
@@ -287,17 +290,24 @@ function Index() {
         <div className="mx-auto max-w-6xl px-5 py-20">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
-              Fresh from the forge.
+              One pipeline. Any product.
             </h2>
             <p className="font-monox text-xs tracking-[0.16em] text-[#9BA0AA]">
-              DEMO CAMPAIGN / GLOWRA (FICTIONAL BRAND)
+              6 CATEGORIES / ALL FICTIONAL DEMO BRANDS
             </p>
           </div>
+          <p className="mt-3 max-w-2xl text-sm text-[#9BA0AA]">
+            Skincare, supplements, tech, coffee, home gear, pet treats — same pipeline, same 48-hour
+            clock. If your product photographs, we can build its test matrix.
+          </p>
           <div className="scrollbar-none -mx-5 mt-10 flex gap-5 overflow-x-auto px-5 pb-4">
-            <DemoVideo tag="TESTIMONIAL 1080P" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260727_013928_0d5ce4bd-f2f1-4df6-8f6b-9362b0255ce1.mp4" />
-            <DemoVideo tag="ASMR UNBOX" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153455_052e762a-6959-4931-b582-48ffd19f1a81.mp4" />
-            <DemoVideo tag="TRANSFORMATION" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153502_13bd8f40-34a8-4482-b5fa-0ef0f75e3c14.mp4" />
-            <DemoVideo tag="SKEPTIC" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153513_32a610c0-9463-47cf-9793-d1f5c81842b5.mp4" />
+            <DemoVideo cat="BEAUTY" tag="DAY 1 → DAY 14" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260727_114716_bd9e9715-9721-440d-b249-06ac1642ef69.mp4" />
+            <DemoVideo cat="TECH" tag="HONEST REVIEW" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260727_121801_18b189aa-37d5-467d-aa66-b04c1134d64e.mp4" />
+            <DemoVideo cat="WELLNESS" tag="3PM POV" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260727_123703_50e29ba9-78e5-4b25-b646-2b0f02042049.mp4" />
+            <DemoVideo cat="COFFEE" tag="FIRST SIP" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260727_123708_02e48df3-dcf8-4d50-b2ed-7eac5f2d270d.mp4" />
+            <DemoVideo cat="HOME" tag="SATISFYING CLEAN" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260727_123714_f1db7734-b9dc-40e6-83eb-6a3eb9610031.mp4" />
+            <DemoVideo cat="PET" tag="HE KNOWS" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260727_123717_3cb99f10-bc1d-462d-8de1-ca9bb359914b.mp4" />
+            <DemoVideo cat="BEAUTY" tag="TESTIMONIAL 1080P" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260727_013928_0d5ce4bd-f2f1-4df6-8f6b-9362b0255ce1.mp4" />
             <div
               className="flex w-[168px] shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-[#FF5C1F]/50 bg-[#171A20]/50 p-4 text-center md:w-[196px]"
               style={{ aspectRatio: "9/16" }}
@@ -310,8 +320,9 @@ function Index() {
             </div>
           </div>
           <p className="mt-4 text-xs text-[#9BA0AA]">
-            Sample stills from our demo pipeline. Every HookForge deliverable is AI produced and
-            labeled as such.
+            GLOWRA, AERIS, VITALEAF, BREWLAB, NESTA and PAWSE are fictional brands we created for
+            these demos — we never advertise a real product without its owner's brief. Every
+            HookForge deliverable is AI-produced and labeled as such.
           </p>
           <img
             src="/assets/brand/matrix.png"
