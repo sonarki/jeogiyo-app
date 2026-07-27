@@ -270,7 +270,7 @@ function Index() {
             </p>
           </div>
           <div className="scrollbar-none -mx-5 mt-10 flex gap-5 overflow-x-auto px-5 pb-4">
-            <DemoVideo tag="TESTIMONIAL" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153449_daec50df-fcdb-4063-8afa-6f187a2ec099.mp4" />
+            <DemoVideo tag="TESTIMONIAL 1080P" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260727_013928_0d5ce4bd-f2f1-4df6-8f6b-9362b0255ce1.mp4" />
             <DemoVideo tag="ASMR UNBOX" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153455_052e762a-6959-4931-b582-48ffd19f1a81.mp4" />
             <DemoVideo tag="TRANSFORMATION" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153502_13bd8f40-34a8-4482-b5fa-0ef0f75e3c14.mp4" />
             <DemoVideo tag="SKEPTIC" src="https://d8j0ntlcm91z4.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/hf_20260726_153513_32a610c0-9463-47cf-9793-d1f5c81842b5.mp4" />
@@ -289,6 +289,11 @@ function Index() {
             Sample stills from our demo pipeline. Every HookForge deliverable is AI produced and
             labeled as such.
           </p>
+          <img
+            src="/assets/brand/matrix.png"
+            alt="HookForge test matrix: one brief becomes 20 ads in 48 hours"
+            className="mt-10 w-full rounded-2xl border border-[#1E222A]"
+          />
         </div>
       </section>
 
