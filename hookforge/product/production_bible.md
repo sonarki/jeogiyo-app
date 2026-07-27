@@ -1,126 +1,207 @@
-# HookForge Production Bible v1.0
-> 목적: 영상 품질에서 운빨 제거. 모든 데모·납품 영상은 이 문서의 고정 세팅 + 조립식 템플릿 + 다이얼로만 제작한다.
-> 출처: 캡틴 Seedance 2.0 프레임워크(샷리스트 문법) + UGC 광고 크래프트 + 실측 QC 데이터(2026-07-27 캘리브레이션).
-> 개정: 캡틴 승인으로만. 프리스타일 프롬프트 금지.
+# HookForge Production Bible v2.0 — 공식 소스 기반
+> **구성 원칙 (캡틴 지시 2026-07-27)**: 자체 발명 규칙이 아니라 ①툴 제조사 공식 가이드 ②플랫폼 공식 크리에이티브 규칙 ③검증된 전문가 기법을 체계화하고, ④우리 실측 캘리브레이션을 그 위에 얹는다.
+> **출처 태그**: `[GG]`=Google 공식 나노바나나 가이드 · `[BD]`=ByteDance Seedance 2.0 생태계 가이드(WeShop/AtlasCloud 검증 룰) · `[TT]`=TikTok Creative Codes · `[CP]`=캡틴 Seedance 프레임워크 · `[HF]`=HookForge 실측 (우리만의 자산)
+> 개정은 캡틴 승인으로만. 전체 출처 링크는 부록.
 
 ---
 
-## 0. 철칙 (위반 시 발사 금지)
+# PART 1 — Seedance 2.0 영상 생성 규칙
 
-1. **템플릿에서만 시작** — §7 조립식 블록 외의 즉흥 프롬프트 금지
-2. **배치 발사 금지** — 신규 패턴은 파일럿 1편 → 실측 QC(§8) 통과 → 그 다음 변형 확장
-3. **부정문 금지** — "no filter, no glow" 류를 쓰는 순간 모델이 그걸 그린다. 원하는 상태만 긍정문으로 기술 (대사 안의 "zero filter"는 예외 — 말하는 내용이므로 허용)
-4. **샷리스트 문법** — 카메라가 찍을 수 있는 것만 쓴다. 감정 설명·내러티브·메타 지시("CRITICAL RULE" 등) 금지
-5. **가상 브랜드로만 데모 제작** — 실제 브랜드 제품은 고객 의뢰·허락 시에만 (무단 사용 = 남에게 피해)
-6. **클레임 규정** — 의학적 효능 단정 금지. §6 카테고리별 허용 표현만
-7. **실측 없이 "완성" 보고 금지** — QC 수치 없는 완성 선언은 거짓말로 간주
+## 1.1 프롬프트 공식 `[BD]`
+```
+[Subject/Character] + [Specific Action] + [Environment] + [Visual Style] + [Camera Movement] + [Lighting/Mood]
+```
+- 구체성이 품질의 제1 결정요인: "a person" ❌ → "a woman in a red silk dress" ✅
+- 액션은 반드시 명시 — 움직임 미정의 = 정적이거나 예측불가 결과
 
-## 1. 고정 세팅값 (전 영상 공통, 변경은 캡틴 승인)
+## 1.2 샷리스트 문법 `[CP]`
+- 모든 문장은 **카메라가 찍을 수 있는 것**만. 감정 설명·스토리·서브텍스트 금지
+- ❌ "She felt confident" → ✅ "steady eye contact with the lens, small honest smile"
+- 메타 지시("CRITICAL RULE:" 등) 금지 — 프롬프트는 장면 기술이지 모델에게 보내는 편지가 아님
 
+## 1.3 멀티샷 표기 `[BD]` ★v1 교정
+- 공식 문법: **`Shot 1: ... Shot 2: ... Shot 3: ...`** 번호 표기
+- **타임스탬프 강제 금지** — "Segment 1 (0-5s)" 같은 정밀 타이밍 강제는 생성을 깨뜨릴 수 있음 (공식 경고). 순서만 지정하고 타이밍은 모델에 위임
+- 12s에 샷 2~3개가 안정권
+
+## 1.4 물리·텍스처 기술 `[BD]`
+- 물리는 메커니즘으로: "car turns" ❌ → "the tires smoke as the car drifts 90 degrees" ✅
+- 모델이 사랑하는 리얼리즘 트리거: **skin pores, fabric weave, liquid, condensation droplets** — 매 영상 1개 이상 포함
+- 스타일 앵커는 실존 레퍼런스로: "TikTok native style", "shot on a front phone camera" 등
+
+## 1.5 네이티브 오디오 스크립팅 `[BD]`
+- 대사는 따옴표 안에: `says: "Day one with this serum."`
+- 오디오 형용사가 오디오 엔진을 조종: soft / muffled / echoing / crisp / quiet room tone
+- 구체 SFX 지정 가능: "the soft click of the dropper cap"
+- 표준 마감 문구: `Natural conversational American English at normal speaking volume, quiet room tone.`
+
+## 1.6 레퍼런스 시스템 `[BD]` `[HF]`
+- Seedance 2.0은 이미지 최대 9 + 비디오 3 + 오디오 3 레퍼런스 지원, @태그로 호출
+- **Higgsfield 경유(우리 환경)**: `medias:[{value:<job_id>, role:"image_references"}]` — 프롬프트에선 "the amber glass serum bottle from the reference image"로 지칭 (검증 완료)
+
+## 1.7 긍정문 원칙 `[GG]` `[CP]` ★두 공식 소스 일치
+- **빼고 싶은 것은 프롬프트에 아예 쓰지 않는다.** 쓰는 순간 모델이 그린다
+- Google 공식 안티패턴: "no cars" ❌ → "empty street" ✅
+- 실전 사고사례 `[HF]`: "no golden-hour switch, no filter" 명기 → A편(27d27fd1) 배경 조명 붕괴(ΔL +14). v2.0부터 금칙어 자체를 미기재
+- 예외: **대사 안의** "zero filter"는 말하는 내용이므로 허용
+
+## 1.8 카메라·조명·모션 어휘집 `[CP]` `[BD]`
+- 카메라: static locked-off / subtle organic handheld micro-motion / slow push-in / lateral tracking / POV / over-the-shoulder
+- 조명: soft diffused window light / three-point softbox / Rembrandt / rim light / overcast soft light
+- 모션 강도: "slow and deliberate" / "natural pacing" / "rapid action"
+- UGC 표준 `[HF]`: **subtle organic handheld micro-motion** + 단일 soft neutral daylight
+
+# PART 2 — Nano Banana Pro 이미지 생성 규칙 (제품 레퍼런스·브랜드 자산용)
+
+## 2.1 텍스트→이미지 공식 `[GG]`
+```
+[Subject] + [Action] + [Location/context] + [Composition] + [Style]
+```
+- 강한 동사로 시작, 구체 디테일 (subject/lighting/composition)
+
+## 2.2 레퍼런스 합성 공식 `[GG]`
+```
+[Reference images] + [Relationship instruction] + [New scenario]
+```
+- 최대 14장 레퍼런스 믹스 가능 — 캐릭터/브랜드 일관성 유지 용도
+
+## 2.3 편집(시맨틱 마스킹) `[GG]`
+- 텍스트로 마스크 정의, **유지할 부분을 명시적으로 기술** ("keep everything else exactly the same")
+
+## 2.4 텍스트 렌더링 `[GG]`
+- 원하는 문구는 따옴표로: `render the text 'GLOWRA' in a thin, minimalist sans-serif font`
+- 폰트 스타일/색/굵기 지정: "bold, white, sans-serif font"
+
+## 2.5 제품 촬영 표준 `[GG]`
+- 조명 명시: `"three-point softbox setup"` (제품 균일광 공식 권장)
+- 재질 구체화: "jacket" ❌ → "navy blue tweed" ✅ / 우리 제품은 §4.4 카테고리표의 재질 문구 사용
+- 커머셜 룩: "high-end glossy commercial beauty shot"
+
+## 2.6 안티패턴 `[GG]`
+- 부정문 금지 / 모호어("nice") 금지 / 스타일 미지정 금지
+
+# PART 3 — 플랫폼 크리에이티브 규칙 (광고가 살아남는 조건)
+
+## 3.1 TikTok Creative Codes `[TT]`
+- **훅은 첫 3초** — 리텐션 결정의 71%가 첫 3초에서 발생. 첫 대사=훅
+- **네이티브 제작 스타일** — 스마트폰 UGC가 폴리시드 브랜드 영상 대비 +22% 성과
+- **사운드온 설계** + 사운드오프 대비 자막(캡션 번인)
+- 길이 스윗스팟 9~15초 (우리 표준 12s 적합)
+- 명확한 CTA 1개
+
+## 3.2 훅 4유형 `[TT]` — 카테고리별 배정은 §4.4
+1. **Bold claim**: "This replaced my entire routine."
+2. **Question**: "Ever wonder why your skincare isn't working?"
+3. **Demonstration**: 즉각적 before/after 제시 (우리 L2 다이얼 전용)
+4. **Relatability POV**: "POV: 3pm and you're already exhausted."
+
+# PART 4 — HookForge 하우스 표준 (실측 캘리브레이션 — 우리만의 자산)
+
+## 4.1 고정 세팅값 `[HF]` (Higgsfield 실검증)
 | 항목 | 값 |
 |---|---|
-| model | seedance_2_0 |
-| resolution / mode | 1080p / std (프리뷰 실험만 480p) |
-| duration / ratio | 12s / 9:16 |
-| audio | ON (대사 네이티브 생성) |
-| 카메라 | front phone camera, arm's length, subtle organic handheld micro-motion |
-| 조명 | one soft neutral daylight source, 전 구간 단일 유지 |
-| 비용 | 108cr/편 (1080p·12s·std 기준) |
+| model / mode | seedance_2_0 / std |
+| resolution / duration / ratio | 1080p / 12s / 9:16 |
+| audio | ON (네이티브 대사) |
+| 비용 | 108cr/편 · 발사 전 get_cost 프리플라이트 필수 |
 | declined_preset_id | 24bae836-2c4a-48e0-89b6-49fcc0b21612 |
+| 제품 이미지 | nano_banana_pro ~2cr → job_id를 image_references로 재사용 |
 
-## 2. Before/After 다이얼 (캡틴 캘리브레이션 2026-07-27)
+## 4.2 Before/After 다이얼 `[HF]` (캡틴 캘리브레이션 2026-07-27)
+| 레벨 | 체감 | 판정 |
+|---|---|---|
+| L1 (5~10%) | 안 보임 | ❌ 불합격 |
+| **L2 (≈20%)** | 한눈에 "좋아졌네" + 여전히 진짜같음 | ✅ **표준** |
+| L3 (35%+) | 위조 느낌 | ❌ 금지. 조명·색온도가 바뀌면 자동 L3 |
 
-| 레벨 | 체감 개선 | 판정 | 프롬프트 문구 (긍정문만) |
-|---|---|---|---|
-| L1 subtle | 5~10% | ❌ 불합격 (안 보임) | ~~a touch more even~~ 사용 금지 |
-| **L2 clear** | **≈20%** | ✅ **표준** | "clearly brighter and noticeably more even — calm uniform tone, redness settled, a healthy hydrated sheen catching the light, fine pores and freckles still visible up close" |
-| L3 dramatic | 35%+ | ❌ 금지 (위조 느낌) | 조명·색온도가 바뀌는 순간 자동 L3 |
+**L2 표준 문구(긍정문)**: "clearly brighter and noticeably more even — calm uniform tone, redness settled, a healthy hydrated sheen catching the light, fine pores and freckles still visible up close"
 
-**L2 실측 목표치** (§8 스크립트 기준):
-- 얼굴 밝기 L: **+8~12%**
-- 톤 균일도 Lstd: **−20~28%**
-- 홍조 편차 a_std: **−15~25%**
-- 결 texture: **−15~25%**
-- **배경 ΔL ≤ 3, 배경 색온도 Δb ≤ 2** (이 둘 깨지면 피부가 아니라 조명이 바뀐 것 → 즉시 불합격)
+**L2 실측 목표** (qc_measure.py): 밝기 +8~12% · 톤 균일도 −20~28% · 홍조 편차 −15~25% · 결 −15~25% · **배경 ΔL≤3 & Δb≤2 (초과=조명 붕괴=즉시 불합격)**
 
-## 3. 연속성 블록 (before/after형 필수 삽입, 긍정문)
-
+## 4.3 연속성 블록 `[HF]` (before/after형 필수, 긍정문)
 ```
-Both segments share one identical setup: the same soft neutral window light from camera left,
+Both shots share one identical setup: the same soft neutral window light from camera left,
 the same white balance, the same camera distance and angle, the same background,
 the same neutral color grade.
 ```
-- 금칙어(아예 언급 금지): filter, golden hour, glow effect, transformation, dramatic
-- 세그먼트 2 첫 문장은 반드시 "the identical room, window light, framing and color grade"로 재고정
+Shot 2 첫 문장에서 재고정: "the identical room, window light, framing and color grade."
 
-## 4. 캐스팅 라이브러리 (외형 문구 고정 — 복붙用)
-
-| ID | 용도 | 고정 외형 블록 |
-|---|---|---|
-| A 주근깨 옆집 | 뷰티/웰니스 | a relatable American woman in her mid-20s, light freckles, loose messy bun, plain oatmeal sweatshirt |
-| B 버즈컷 개성 | 뷰티/테크 | a stylish woman in her late 20s, short bleached buzzcut, small silver ear piercings, black tank top |
-| C 한국계 미국인 | 뷰티/K-수출용 | a Korean-American woman in her mid-20s, black shoulder-length hair tucked behind one ear, small gold huggie earrings, cream ribbed lounge top |
-| D 테크가이 | 테크/가젯 | an American man in his early 30s, short dark hair, light stubble, navy crewneck tee, casual home-office backdrop |
-| E 웰니스맘 | 영양제/홈 | an American woman in her early 40s, shoulder-length brown hair, soft cardigan over a white tee, warm kitchen backdrop |
-| F 피트니스 | F&B/피트니스 | an athletic American man in his mid-20s, short curly hair, grey hoodie, bright kitchen counter backdrop |
-| G 펫맘 | 펫 | an American woman in her early 30s, dark ponytail, sage green sweatshirt, living-room sofa with a calm golden retriever beside her |
-
-## 5. 모션 5레이어 (인물샷마다 최소 3개 레이어 지시)
-
-1. **face** — small honest smile / raised eyebrow / relaxed jaw
-2. **head** — slight lean toward lens / small head tilt
-3. **eye-gaze** — steady eye contact with the lens / quick glance at product then back
-4. **hands** — holds bottle beside cheek / taps cheekbone once / presses drop onto fingertips
-5. **breath/body** — natural shoulder rise, breath-driven sway
-
-## 6. 카테고리 시스템 (사이트 다양성 확보)
-
-| 카테고리 | 가상 브랜드 | 제품 | 허용 클레임 | 훅 앵글 |
+## 4.4 카테고리 시스템 `[HF]` (사이트 다양성)
+| 카테고리 | 가상 브랜드 | 제품 (재질 문구) | 허용 클레임 | 기본 훅유형 |
 |---|---|---|---|---|
-| 뷰티 | **GLOWRA** | 앰버 세럼 (기존 레퍼런스 6616faa7) | 보습·톤·결 (치료 표현 금지) | before/after L2, 루틴, 텍스처 ASMR |
-| 웰니스 | **VITALEAF** | 구미 비타민 보틀 | 루틴·습관·맛 (효능 단정 금지) | "3pm 슬럼프" 공감, 습관 스택 |
-| 테크 | **AERIS** | 무선 이어버드 (matte white) | 사용감·페어링·케이스 | 언박싱, 통근 POV, 사이즈 비교 |
-| F&B | **BREWLAB** | 캔 콜드브루 | 맛·리추얼 (건강 클레임 금지) | 첫 모금 리액션, 데스크 셋업 |
-| 홈 | **NESTA** | 무선 핸디 청소기 | 사용 장면 그 자체 | 새티스파잉 클린, 소파 틈새 |
-| 펫 | **PAWSE** | 덴탈 츄 | 기호성 (건강 효능 금지) | 강아지 리액션, "우리 애가 골랐다" |
+| 뷰티 | GLOWRA | frosted amber glass dropper bottle (레퍼런스 6616faa7) | 보습·톤·결 | Demonstration |
+| 웰니스 | VITALEAF | amber glass jar of orange gummy vitamins | 루틴·맛·습관 | Relatability POV |
+| 테크 | AERIS | matte white wireless earbuds in a pebble-shaped case | 사용감·페어링 | Bold claim |
+| F&B | BREWLAB | slim matte black cold brew can, condensation droplets | 맛·리추얼 | Demonstration(첫모금) |
+| 홈 | NESTA | compact cordless handheld vacuum, soft grey body | 사용 장면 자체 | Demonstration(새티스파잉) |
+| 펫 | PAWSE | kraft pouch of dental chews for dogs | 기호성 | Relatability |
+- 의학·치료 효능 단정 전 카테고리 금지. 가상 브랜드로만 데모 제작 (실제품은 고객 의뢰 시에만)
 
-각 카테고리 제품 이미지는 nano_banana_pro로 1회 생성(~2cr) 후 reference로 재사용.
+## 4.5 캐스팅 라이브러리 `[HF]` (외형 블록 고정)
+| ID | 외형 블록 |
+|---|---|
+| A 주근깨 옆집 | a relatable American woman in her mid-20s, light freckles, loose messy bun, plain oatmeal sweatshirt |
+| B 버즈컷 개성 | a stylish woman in her late 20s, short bleached buzzcut, small silver ear piercings, black tank top |
+| C 한국계 미국인 | a Korean-American woman in her mid-20s, black shoulder-length hair tucked behind one ear, small gold huggie earrings, cream ribbed lounge top |
+| D 테크가이 | an American man in his early 30s, short dark hair, light stubble, navy crewneck tee |
+| E 웰니스맘 | an American woman in her early 40s, shoulder-length brown hair, soft cardigan over a white tee |
+| F 피트니스 | an athletic American man in his mid-20s, short curly hair, grey hoodie |
+| G 펫맘 | an American woman in her early 30s, dark ponytail, sage green sweatshirt, calm golden retriever beside her |
 
-## 7. 표준 프롬프트 템플릿 (조립식 — 7요소 순서 고정)
+## 4.6 모션 5레이어 `[CP]` (인물샷마다 3개 이상)
+face(small honest smile) / head(slight lean toward lens) / eye-gaze(steady eye contact) / hands(taps cheekbone once) / breath(natural shoulder rise)
 
+## 4.7 대사 원칙 `[HF]` `[TT]`
+- 8~14단어/줄, 첫 줄이 훅(3초 규칙), 진정성 라인 1개 필수
+- 과장어 금지: insane, miracle, unbelievable, life-changing
+
+## 4.8 QC 게이트 `[HF]` — 철칙
+1. **템플릿에서만 시작** (PART 5) — 프리스타일 금지
+2. **파일럿 1편 → 실측 → 통과 후 확장** — 배치 발사 금지
+3. 발사 전 체크: 부정문 0 / 타임스탬프 0 / 금칙어 0 / 클레임 규정 / get_cost
+4. 발사 후: `qc_measure.py` 실측 → §4.2 목표 대조 → 미달 시 **다이얼 문구만 조정** (전면 재작성 금지)
+5. 실측 수치 없이 "완성" 보고 금지. 캡틴 컨펌 후에만 배포
+
+# PART 5 — 표준 템플릿 (조립식)
+
+## 5.1 UGC Before/After (다이얼형)
 ```
-[1 샷+카메라] Vertical 9:16 selfie video, front phone camera held at arm's length, subtle organic handheld micro-motion.
-[2 캐스팅] {§4 외형 블록}, {환경 한 줄}.
-[3 연속성/조명] {§3 블록 또는 단일컷이면: one soft neutral daylight source, consistent white balance throughout}.
-[4 비트1] Segment 1 (0-5s): {관찰 가능한 상태·행동만}. She/He {§5 모션 2개} and says: "{대사}". White caption reads {LABEL}.
-[5 컷] Hard cut.
-[6 비트2] Segment 2 (5-12s): the identical {환경 재고정}. {다이얼 문구 §2}. {§5 모션 2개}, and says: "{진정성 대사}". Caption reads {LABEL2}.
-[7 오디오/페이싱] Natural conversational American English, quiet room tone. 12 seconds.
+Vertical 9:16 selfie video, front phone camera held at arm's length, subtle organic handheld micro-motion, TikTok native style.
+{캐스팅 블록 §4.5}, {환경 한 줄}.
+{연속성 블록 §4.3}
+Shot 1: {before 상태 — 관찰가능 묘사 + 텍스처 트리거}. She/He {모션 2개} and says: "{훅 대사}". White caption reads {LABEL1}.
+Shot 2: the identical {환경 재고정}. {L2 다이얼 문구 §4.2}. {모션 2개}, and says: "{진정성 대사}". Caption reads {LABEL2}.
+Natural conversational American English at normal speaking volume, quiet room tone. 12 seconds.
 ```
 
-**대사 원칙**: 8~14단어/줄, 진정성 라인 1개 필수 ("Same light, zero filter — look at the difference." / "Two weeks, that's it."), 과장어(insane, miracle, unbelievable) 금지.
-
-### 완성 예시 — 뷰티 L2 표준안 (파일럿 대기)
+## 5.2 UGC 단일컷 (리뷰/언박싱/POV형)
 ```
-Vertical 9:16 selfie video, front phone camera held at arm's length, subtle organic handheld micro-motion. A relatable American woman in her mid-20s, light freckles, loose messy bun, plain oatmeal sweatshirt, sitting by a bright window in a lived-in bedroom. Both segments share one identical setup: the same soft neutral window light from camera left, the same white balance, the same camera distance and angle, the same background, the same neutral color grade. Segment 1 (0-5s): her skin shows dull, uneven tone on the cheeks with mild redness and rough texture, fine pores visible. She holds the amber glass serum bottle from the reference image beside her cheek, steady eye contact with the lens, and says: "Day one with this serum. Same window, same light, every time." White caption reads DAY 1. Hard cut. Segment 2 (5-12s): the identical room, window light, framing and color grade. Her skin is clearly brighter and noticeably more even — calm uniform tone, redness settled, a healthy hydrated sheen catching the window light, fine pores and freckles still visible up close. She leans slightly closer, taps her cheekbone once, small honest smile, and says: "Two weeks. Same light, zero filter — look at the difference." Caption reads DAY 14 · same light. Natural conversational American English, quiet room tone. 12 seconds.
+Vertical 9:16 selfie video, front phone camera held at arm's length, subtle organic handheld micro-motion, TikTok native style.
+{캐스팅 블록}, {환경 한 줄}, one soft neutral daylight source, consistent white balance throughout.
+Shot 1: {훅 액션 + 제품 등장(레퍼런스 지칭) + 텍스처 트리거}. Says: "{훅 대사}".
+Shot 2: {사용/데모 장면 — 물리 메커니즘 묘사}. Says: "{경험 대사}".
+Shot 3: {반응/마무리 + CTA 한 줄}. Caption reads {LABEL}.
+Natural conversational American English, {카테고리 SFX}. 12 seconds.
 ```
-파라미터: seedance_2_0 · 1080p std · 12s · 9:16 · audio ON · GLOWRA 레퍼런스 포함
 
-## 8. QC 게이트 (발사 전후)
+## 5.3 완성 예시 — 뷰티 L2 표준안 v2 (파일럿 대기)
+```
+Vertical 9:16 selfie video, front phone camera held at arm's length, subtle organic handheld micro-motion, TikTok native style. A relatable American woman in her mid-20s, light freckles, loose messy bun, plain oatmeal sweatshirt, sitting by a bright window in a lived-in bedroom. Both shots share one identical setup: the same soft neutral window light from camera left, the same white balance, the same camera distance and angle, the same background, the same neutral color grade. Shot 1: her skin shows dull, uneven tone on the cheeks with mild redness and rough texture, fine pores visible. She holds the amber glass serum bottle from the reference image beside her cheek, steady eye contact with the lens, and says: "Day one with this serum. Same window, same light, every time." White caption reads DAY 1. Shot 2: the identical room, window light, framing and color grade. Her skin is clearly brighter and noticeably more even — calm uniform tone, redness settled, a healthy hydrated sheen catching the window light, fine pores and freckles still visible up close. She leans slightly closer, taps her cheekbone once, small honest smile, and says: "Two weeks. Same light, zero filter — look at the difference." Caption reads DAY 14. Natural conversational American English at normal speaking volume, quiet room tone. 12 seconds.
+```
+파라미터: §4.1 고정값 + GLOWRA 레퍼런스(6616faa7) image_references
 
-**발사 전 체크**: 템플릿 준수 / 부정문 0개 / 금칙어 0개 / 대사 글자수 / 클레임 규정 / get_cost 프리플라이트
-**발사 후 실측**: `hookforge/product/qc_measure.py`를 샌드박스에서 실행 (전/후 프레임 자동 추출 → 피부픽셀 L·Lstd·a_std·tex + 배경 드리프트) → §2 목표치 대조
-**판정**: 배경 드리프트 초과 = 불합격(조명 붕괴) / 피부 델타 미달 = 다이얼 문구만 강화 후 재발사 (전면 재작성 금지) / 통과 = 캡틴 최종 컨펌 → 배포
+## 5.4 발사 전 최종 체크리스트
+- [ ] §1.1 공식 6요소 순서 준수
+- [ ] 샷리스트 문법 (감정·메타 지시 없음)
+- [ ] Shot 번호 표기, 타임스탬프 없음
+- [ ] 부정문 0개 (대사 제외) / 금칙어 미기재
+- [ ] 텍스처 트리거 ≥1 / 모션 레이어 ≥3 / 오디오 형용사 포함
+- [ ] 훅이 첫 대사 / 자막 캡션 지정 / 클레임 규정 통과
+- [ ] get_cost 프리플라이트 → 발사 → qc_measure 실측 → 보고
 
-## 9. 사이트 반영 기준 (기획 업그레이드)
-
-- 데모 레일 → **카테고리 라벨 부착** (Beauty / Wellness / Tech / F&B / Home / Pet)
-- 섹션 헤드라인: "One pipeline. Any product." — 다양성이 셀링 포인트
-- 목표 라인업: 카테고리 6종 × 1편 + 뷰티 before/after 1편 = 7편
-- QC 통과작만 게시. 구작 중 미달작은 레일에서 교체
-
-## 10. 예산 계획 (2026-07-27 기준)
-
-- 잔고 4,103cr / 바닥 2,000 불가침 → 가용 ~2,100
-- 풀 라인업 신규 6편 = 648cr + 제품 이미지 5장 ≈ 10cr → 실행 후 잔고 ~3,445 (여유 충분)
-- 순서: ① 뷰티 L2 파일럿(캡틴 게이트) → ② 웰니스 → ③ 테크 → ④ F&B → ⑤ 홈 → ⑥ 펫 (각 단계 QC 통과 후 다음)
+# 부록 — 출처
+- Google 공식: Ultimate prompting guide for Nano Banana (cloud.google.com/blog) · Nano Banana Pro prompt tips (blog.google)
+- Seedance 2.0 생태계: WeShop AI "Master the Prompt Script" · Atlas Cloud "Best Seedance 2.0 Prompts" (공식 문법·@태그·멀티샷·오디오 규칙 상호 검증)
+- TikTok: Creative Codes 프레임워크 (훅 3초·네이티브 스타일·사운드온) — Leapwave/MBADV/Stackmatix 정리본 교차 확인
+- 캡틴 Seedance 프레임워크: 샷리스트 문법·긍정문 원칙·모션/조명 어휘 (사내 자산)
+- HookForge 실측: 2026-07-27 캘리브레이션 6편 (qc_measure.py 데이터, send_log.md 제작 로그)
