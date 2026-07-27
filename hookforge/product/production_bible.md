@@ -231,3 +231,7 @@ Vertical 9:16 selfie video, front phone camera held at arm's length, subtle orga
 - **UGC 셀피 기본 = 원테이크**: "one continuous unbroken take filmed in a single flowing motion" — 컷 수 0이면 이음새 아티팩트 원천 차단
 - 멀티샷은 환경이 완전히 바뀌는 경우(before/after의 day1→day14)에만. 같은 자리 같은 사람이면 원테이크
 - 실패 사례: T28 v2/v3 3샷 구조 — 미스트 분사가 컷에 잘려 "안 뿌려지고 화면 겹침" (v2 9551070b 판정)
+
+## 4.13 모델 티어 (2026-07-27 mini 캘리브레이션 결과)
+- **seedance_2_0 std 1080p (108cr)** = 모든 공개물 (샘플·데모·틱톡·납품) — 유일한 배포 등급
+- **seedance_2_0_mini 720p (30cr)** = 캡틴 판정 "모션 버벅거림" → **공개 불가**. 용도: 내부 프로토타입만 (구도·대사·동선 확인 후 std로 정식 제작). 얼굴/모션 품질이 중요한 컷엔 내부용으로도 비권장
