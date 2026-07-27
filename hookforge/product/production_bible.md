@@ -217,3 +217,10 @@ Vertical 9:16 selfie video, front phone camera held at arm's length, subtle orga
 - **제품 정지 홀드는 훅에서 1비트만** ("a quick flash ... for one brief beat") 후 내려놓기
 - **매 샷에 동작 동사 필수** — 정적 홀드로 샷을 채우지 않는다 (양치, 도포, 미스트, 사용 장면)
 - 전체 페이싱 앵커: "brisk snappy pacing" (오프닝 문장에 삽입)
+
+## 4.11 실제품 라벨 규칙 (2026-07-27 캡틴 검수: 3편 전멸 사유 — 라벨 오타)
+- **원인**: 영상 모델은 레퍼런스 이미지의 라벨 텍스트를 "다시 그림" → 작은 글자 필연적 오타 (PURE→PUBE, RESCUE→RECUE 사례)
+- **금지**: 라벨이 읽히는 거리·각도의 제품 노출 (클로즈업 절대 금지)
+- **표준**: 제품은 ①팔길이 거리 ②라벨 사선/팜쪽 ③1비트 후 프레임아웃 ④fine print softly out of focus
+- **클린 라벨 노출은 엔드카드로**: 실제 팩샷 이미지를 ffmpeg로 마지막 1.5s에 합성 (오타 원천 불가, 0cr)
+- QC 추가: 완성본 프레임에서 제품 노출 면적 측정 — 라벨 가독 거리면 불합격
