@@ -213,3 +213,20 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### 순찰 (UTC ~00:55, 7/28)
 - 신규 수신 0. 답장·판매 0. 70분 후 K-뷰티 17통 배치 발사 예정
+
+## Day 3 — 2026-07-28 (KST 오전 11시, UTC 02:05~02:10)
+
+### K-뷰티 대량 배치 17통 발송 완료
+**샘플 동봉 2** (실제 제품 광고 링크 포함):
+| 수신 | 브랜드 | 샘플 |
+|---|---|---|
+| cs@beautyofjoseon.com | 조선미녀 | Relief Sun 샘플 (b4131167) |
+| prskin1004@skin1004korea.com | 스킨1004 | 센텔라 앰플 샘플 (3c956a62) |
+
+**표준 신규 11**: 넘버즈인 sales@benow / 라운드랩 sales@ / 아누아 business@ / 성분에디터 biz@ / 썸바이미 global@ / 로벡틴 hello@ / 나시픽 sales_kr@theskinf / 편강율 pyunkangyul_sales@grunamu / 아로마티카 d2c@ / 클라뷰 klavuu@bekeikorea / 미존 pfdbrand@pfd
+
+**FU1 4**: 이즈앤트리·토리든(mkt)·아이유닉·믹순 (Re: 스레드, 무료샘플 앵글)
+
+- 발송 전 인박스 확인: 옵트아웃·답장 0 → 전원 발송 가능 상태였음
+- 오늘(7/28) 발송 17/50. 누계 유효 발송 45 (28+17)
+- K-뷰티 누계 접점: 19브랜드 (1차 4 + 신규 6 + 확장 7 + FU 재접촉, 하루하루원더 제외)
