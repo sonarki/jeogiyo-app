@@ -321,3 +321,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 - 우리 통제 범위에서 제거 완료: ① 사이트 Shop 섹션·히어로 보조CTA·nav 링크 전부 제거(배포+번들 검증: THE HOOK BANK/kylmz/Shop 전부 0, One pipeline·TEST MATRIX 유지) ② 아웃리치 서명 P.S. 링크 제거
 - **Gumroad Unpublish는 캡틴만 가능**(제 접근 없음) — 안내 완료
 - ⚠️ 표준 규칙 확정: **힉스필드 첫 상품($990 TEST MATRIX)은 절대 건들지 않는다.** 이번 작업도 2번째 상품만 제거, 첫 상품·object-talk 등 무관 자산 미접촉
+
+### 순찰 (UTC ~10:56, 7/28) — 조용
+- 인박스 신규 = 틱톡 코드뿐. 아웃리치 답장·반송·판매 0. 팔로업 대상 없음(US 에이전시 24h ~2h 전, K-뷰티 미도달). 저녁 US FU2(16:49Z) 전용 트리거 대기
