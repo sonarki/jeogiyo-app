@@ -324,3 +324,7 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### 순찰 (UTC ~10:56, 7/28) — 조용
 - 인박스 신규 = 틱톡 코드뿐. 아웃리치 답장·반송·판매 0. 팔로업 대상 없음(US 에이전시 24h ~2h 전, K-뷰티 미도달). 저녁 US FU2(16:49Z) 전용 트리거 대기
+
+### 순찰 (UTC ~12:57, 7/28)
+- 신규 2건 = Skinnydip "How did we do?" (Zendesk CSAT 만족도 설문 자동메일). 본문 확인 = 사람 답장 아님, 콜드메일이 헬프데스크 티켓으로 종료됨 → **Skinnydip 사망 리드 처리**(세일즈 접점 미도달), 설문 회신 안 함
+- 그 외 답장·반송·판매 0. 팔로업: US 에이전시 24h 12분 전(다음 순찰서 도달) → 이번 미발송
