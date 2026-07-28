@@ -328,3 +328,8 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 ### 순찰 (UTC ~12:57, 7/28)
 - 신규 2건 = Skinnydip "How did we do?" (Zendesk CSAT 만족도 설문 자동메일). 본문 확인 = 사람 답장 아님, 콜드메일이 헬프데스크 티켓으로 종료됨 → **Skinnydip 사망 리드 처리**(세일즈 접점 미도달), 설문 회신 안 함
 - 그 외 답장·반송·판매 0. 팔로업: US 에이전시 24h 12분 전(다음 순찰서 도달) → 이번 미발송
+
+### 순찰 (UTC ~14:57, 7/28) — 에이전시 FU1 발송
+- 인박스 신규 0(기존 틱톡코드+Skinnydip CSAT만). 에이전시 답장·반송·판매 0
+- US 에이전시 7곳 25h+ 무응답 → **팔로업 1차 발송** (Re: 원제목 스레드, 화이트라벨 $4,900~, opt-out "no" 포함, 사이트 링크): commonthreadco / pilothouse / rightsideup / klientboost / voymedia(kevin) / goinflow / kynship
+- adQuadrant 제외(기 반송). 오늘 발송 24/50 (K-뷰티17+에이전시FU7). 저녁 US FU2(16:49Z, 샘플 동봉) 전용 트리거 대기 — 발송 후 누계 확인 필요
