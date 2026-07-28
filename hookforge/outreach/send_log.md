@@ -252,3 +252,10 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### 순찰 (UTC ~04:22, 7/28)
 - IMAP 재확인: 17통 배치 이후 신규 수신 0, 반송 0 (04:55 기록과 동일 상태 유지). 저녁 US FU2 발송(16:49Z, 카드2·기승인)까지 대기
+
+### 카드1 완료 — Hook Bank 커버 이미지 (1cr, UTC ~04:36, 7/28)
+- 캡틴 승인("ㄱ") 확인 후 진행. nano_banana_2 배경(1:1, 텍스트 미요청) + ImageMagick 결정적 텍스트 합성(제목/서브타이틀) — AI 텍스트 재렌더링 오타 리스크 회피 (§4.11 적용)
+- 최종본: https://d2ol7oe51mr4n9.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/b32223be-d899-4afd-b739-95fe54723ec3.png
+- 로컬 미리보기 파이프라인(샌드박스→base64→로컬디코드) 시도했으나 전송 중 데이터 손상으로 실패 — 캡틴 육안 확인 요청으로 대체
+- Gumroad 리스팅 카피 완비: `hookforge/sales/hook_bank_gumroad_kit.md`. 게시는 캡틴 확인 후 진행
+- 카드1 전체 완료: PDF(0cr) + 커버(1cr) = 총 1크레딧 소모, 승인 범위 내
