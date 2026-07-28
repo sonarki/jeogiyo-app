@@ -274,3 +274,10 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 4. 24h+ 무응답 팔로업 대상 점검: 미국 에이전시 8곳(7/27 13:01 UTC 발송)은 아직 15h54m 경과로 24h 미달 → 이번 순찰에서 팔로업 미발송. 이즈앤트리/토리든 보조 연락처(7/27 03:27 UTC, 25h+)는 동일 브랜드 주 연락처가 오늘 아침 FU1을 이미 받아 중복 접촉 방지 위해 스킵
 - 오늘(7/28) 발송 총량 17/35 (전날 대비 여유 있음, 특이사항 없어 이번 순찰은 발송 없이 종료)
 - 저녁 US FU2(16:49Z, 카드2·기승인, Hismile+Tower28 샘플 포함 15곳 전원) 대기 지속
+
+### 🟢 Hook Bank Gumroad 라이브 게시 (UTC ~05:10, 7/28)
+- 캡틴이 직접 Gumroad 게시 완료. **상품 URL: https://hookforgestudio.gumroad.com/l/kylmz**
+- 최초 저티켓 트랙 실제 결과물 — 72h 챌린지 시작 후 첫 판매 가능 상품 라이브
+- 설정: $19, 7일 환불보증, e-pub VAT 표시, 판매수 공개, 구매자정보 워터마크(재배포 방지)
+- 상세: `hookforge/sales/hook_bank_delivery.md`
+- 다음 액션: 아웃리치 이메일 서명 P.S.에 링크 추가, 틱톡 바이오 반영 — 다음 발송 배치부터 적용

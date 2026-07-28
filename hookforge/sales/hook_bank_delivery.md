@@ -12,10 +12,12 @@
 - 최종본: https://d2ol7oe51mr4n9.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/b32223be-d899-4afd-b739-95fe54723ec3.png
 - 1024×1024 PNG — **캡틴 육안 확인 요청** (샌드박스 다운로드 경로 검증 불가로 로컬 미리보기 실패, 링크로 직접 확인 부탁드립니다)
 
-## Gumroad 리스팅
-- 가격: $19
-- 제목: "The Hook Bank — 120 UGC Ad Hooks Organized by Psychology"
+## Gumroad 리스팅 — 🟢 라이브 (2026-07-28)
+- **상품 URL: https://hookforgestudio.gumroad.com/l/kylmz**
+- 가격: $19, 7일 환불 보증, e-publication VAT 표시 ON, 판매수 공개 ON, 구매자정보 워터마크 ON
 - 카테고리: Business & Money → Marketing
 - 태그: ugc, tiktok ads, hooks, copywriting, ad creative
 - 전체 카피/FAQ: `hookforge/sales/hook_bank_gumroad_kit.md`
-- 상태: 캡틴 커버 이미지 확인 후 Gumroad 상품 게시 가능
+- 파일명: The-Hook-Bank-120-UGC-Ad-Hooks.pdf
+- 커버 이미지: JPG로 최종 (PNG 업로드 시 파일타입 에러 발생, JFIF 표준 JPG로 해결)
+- **다음 액션**: 아웃리치 서명·틱톡 바이오에 링크 반영 예정
