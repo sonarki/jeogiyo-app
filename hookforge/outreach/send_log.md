@@ -237,3 +237,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 ### 전략 보강 — 저티켓 트랙 가동 (UTC ~05:10, 7/28)
 - 캡틴 챌린지("17시간 2700만 사례") 분석: 해당 사례들의 엔진 = 기존 오디언스/바이럴 모멘트/광고비 (자동화 아님). 우리 결핍 = 트래픽·신뢰. 인정한 실책: 고티켓 B2B는 72h 창구와 미스매치
 - 보완 실행: 저티켓 디지털 상품 2종 병행 (0크레딧) — ① Hook Bank 120 ($19) ② AI UGC Production Bible 영문판 ($29-39). Gumroad Discover 검색 트래픽 + 틱톡 노출 활용. 고티켓 퍼널은 유지
+
+### 프로토콜 추가 (UTC ~05:20, 7/28)
+- 작업 승인 카드 제도 도입 (바이블 §4.14): 모델·용량 사전 제시 후 진행. 카드1(Hook Bank PDF+커버 ~2cr) 캡틴 승인 대기 중
