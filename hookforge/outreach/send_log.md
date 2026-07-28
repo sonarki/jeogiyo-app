@@ -339,3 +339,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 - **10통 발송**: Hismile partnerships@ (승인 샘플 1a7e44a6 동봉, URL 200 검증) + 표준 클로징 9곳(D.S.&Durga elizabeth@·Doe·TrueBotanicals·Mented·Versed·Necessaire·Bread·Radiant·DedCool)
 - **Tower28 보류**: 샘플 e7ebb4cd가 캡틴 명시 승인 기록 없음 → §4.15(육안 승인 없는 영상 공개발송 금지) 적용, 이번 배치 미발송. 캡틴 승인 시 동봉 재발송 예정
 - 오늘 발송 34/50 (K-뷰티17 + 에이전시FU7 + US FU2 10). 잔고 2,129cr (변동 없음, 이번 배치 0크레딧)
+
+### 순찰 (UTC ~16:56, 7/28) — 조용
+- FU2 배치(10통) 발송 3분 경과: **반송 0** (전원 유효). 답장·옵트아웃·판매 0. 신규 수신 없음(기존 3건 유지). 팔로업 대상 없음
