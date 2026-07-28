@@ -131,7 +131,7 @@ Totally fair. Context: one human UGC video runs $100-200. This is 20 videos + 10
 
 - [x] 브랜드 지메일 개설 완료: **`hookforge.aistudio@gmail.com`** — 콜드메일 발신 + 구매자 응대 공식 주소
 - [ ] 서명 세팅: `{이름} · HookForge · AI UGC Ad Studio · {LANDING_URL}`
-- [x] Hook Bank Gumroad 라이브(2026-07-28): https://hookforgestudio.gumroad.com/l/kylmz — 신규 발송분부터 P.S.에 자동 포함 (구매유도용 wanted=true 파라미터는 DM/버튼형 CTA에만 사용, 이메일 본문은 일반 링크)
+- [취소됨] Hook Bank Gumroad P.S. 링크 — 캡틴 판단으로 상품 내림(2026-07-28). 아웃리치 서명에서 제거 완료
 - [ ] 첫날 20통 → 2일차 35통 → 3일차 50통 (급증 금지, 스팸함 방지)
 - [ ] 개인화 칸({Brand}, {FirstName}, 첫 줄)은 내가 타겟 리스트에 채워서 줌 — 캡틴은 복붙+발송만
 
@@ -165,8 +165,6 @@ HookForge는 AI 광고 스튜디오입니다.
 
 Sean 드림
 HookForge | AI UGC Ad Studio
-
-P.S. 저희가 광고 제작할 때 쓰는 훅 문장 120개를 정리한 자료가 있는데, 참고하시라고 공유드립니다: https://hookforgestudio.gumroad.com/l/kylmz
 ```
 
 ### 타겟 소싱 기준
