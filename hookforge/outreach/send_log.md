@@ -240,3 +240,15 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### 프로토콜 추가 (UTC ~05:20, 7/28)
 - 작업 승인 카드 제도 도입 (바이블 §4.14): 모델·용량 사전 제시 후 진행. 카드1(Hook Bank PDF+커버 ~2cr) 캡틴 승인 대기 중
+
+### 세션 모델 전환 (캡틴, UTC ~06:19, 7/28)
+- 캡틴이 `/model claude-sonnet-5`로 전환 완료 확인. 이후 정규 순찰·운영 작업은 Sonnet 5로 진행, 협상/전략 국면은 필요 시 카드로 별도 제시
+
+### Hook Bank PDF 완성 — 카드1 절반 완료 (0cr, UTC ~04:22, 7/28)
+- 샌드박스에서 로컬 HTML→Playwright PDF 렌더링 (생성 모델 미사용, 0크레딧)
+- 16페이지 완성본 업로드·confirm 완료: https://d2ol7oe51mr4n9.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/dc226cac-a7e3-4295-a426-53a97bc685eb.pdf
+- 상세: `hookforge/sales/hook_bank_delivery.md`
+- 잔여: 커버 이미지 생성 (~2cr) — **캡틴 승인 대기 중, "ㄱ" 필요**
+
+### 순찰 (UTC ~04:22, 7/28)
+- IMAP 재확인: 17통 배치 이후 신규 수신 0, 반송 0 (04:55 기록과 동일 상태 유지). 저녁 US FU2 발송(16:49Z, 카드2·기승인)까지 대기
