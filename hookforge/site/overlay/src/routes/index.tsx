@@ -14,30 +14,6 @@ const CONTACT_EMAIL = "hookforge.aistudio@gmail.com";
 const CONTACT_URL = "mailto:hookforge.aistudio@gmail.com?subject=HookForge%20order%20inquiry";
 const PRIMARY_CTA = "Get my 20 ads";
 
-type ShopItem = {
-  name: string;
-  blurb: string;
-  price: string;
-  meta: string;
-  href: string;
-  bullets: string[];
-};
-
-const SHOP_ITEMS: ShopItem[] = [
-  {
-    name: "THE HOOK BANK",
-    blurb: "120 scroll-stopping UGC ad hooks, organized by the psychology that makes people stop.",
-    price: "$19",
-    meta: "16-PAGE PDF / INSTANT",
-    href: "https://hookforgestudio.gumroad.com/l/kylmz",
-    bullets: [
-      "120 hooks across 12 psychological triggers",
-      "Product-type pairing guide for 6 niches",
-      "The 3-beat script frame we run in production",
-    ],
-  },
-];
-
 function EmailButton({ label, block }: { label?: string; block?: boolean }) {
   const [copied, setCopied] = useState(false);
   const copy = () => {
@@ -157,36 +133,6 @@ function DemoVideo({ tag, src, cat }: { tag: string; src: string; cat: string })
   );
 }
 
-function ShopCard({ item }: { item: ShopItem }) {
-  return (
-    <a
-      href={item.href}
-      target="_blank"
-      rel="noopener"
-      className="group flex flex-col rounded-2xl border border-[#1E222A] bg-[#171A20] p-6 transition-colors hover:border-[#FF5C1F]/60"
-    >
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="font-display text-lg font-bold">{item.name}</h3>
-        <span className="font-display shrink-0 text-2xl font-bold text-[#FF8A3D]">{item.price}</span>
-      </div>
-      <p className="font-monox mt-1 text-[10px] tracking-[0.16em] text-[#9BA0AA]">{item.meta}</p>
-      <p className="mt-4 text-sm leading-relaxed text-[#9BA0AA]">{item.blurb}</p>
-      <ul className="mt-4 flex-1 space-y-2 text-sm text-[#9BA0AA]">
-        {item.bullets.map((b) => (
-          <li key={b} className="flex gap-2.5">
-            <span className="text-[#FF8A3D]">▸</span>
-            {b}
-          </li>
-        ))}
-      </ul>
-      <span className="mt-6 inline-flex items-center gap-1.5 rounded-lg bg-[#FF5C1F] px-4 py-2.5 text-sm font-bold text-[#111318] transition-colors group-hover:bg-[#FF8A3D]">
-        Get it now
-        <span className="transition-transform group-hover:translate-x-0.5">→</span>
-      </span>
-    </a>
-  );
-}
-
 function Index() {
   return (
     <div className="min-h-dvh bg-[#111318] text-[#F4F2EE]">
@@ -197,9 +143,6 @@ function Index() {
           <span className="font-display text-lg font-bold tracking-[0.08em]">HOOKFORGE</span>
         </a>
         <nav className="flex items-center gap-6">
-          <a href="#shop" className="hidden text-sm text-[#9BA0AA] transition-colors hover:text-[#F4F2EE] sm:block">
-            Shop
-          </a>
           <a href="#pricing" className="hidden text-sm text-[#9BA0AA] transition-colors hover:text-[#F4F2EE] sm:block">
             Pricing
           </a>
@@ -237,12 +180,6 @@ function Index() {
               <span className="block h-px max-w-0 bg-[#FF8A3D] transition-all duration-300 group-hover:max-w-full" />
             </a>
           </div>
-          <p className="mt-6 text-sm text-[#9BA0AA]">
-            Rather run it yourself?{" "}
-            <a href="#shop" className="font-medium text-[#FF8A3D] underline-offset-4 hover:underline">
-              Get our 120-hook swipe file for $19 →
-            </a>
-          </p>
         </div>
         <div className="flex justify-center gap-4 md:justify-end">
           <div className="translate-y-6 rotate-[-5deg]">
@@ -429,7 +366,7 @@ function Index() {
       </section>
 
       {/* S5 PRICING */}
-      <section id="pricing" className="border-t border-[#1E222A]">
+      <section id="pricing" className="border-t border-[#1E222A] bg-[#14171D]">
         <div className="mx-auto max-w-6xl px-5 py-20">
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
             Launch pricing. First ten clients.
