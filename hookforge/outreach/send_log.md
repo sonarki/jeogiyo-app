@@ -333,3 +333,9 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 - 인박스 신규 0(기존 틱톡코드+Skinnydip CSAT만). 에이전시 답장·반송·판매 0
 - US 에이전시 7곳 25h+ 무응답 → **팔로업 1차 발송** (Re: 원제목 스레드, 화이트라벨 $4,900~, opt-out "no" 포함, 사이트 링크): commonthreadco / pilothouse / rightsideup / klientboost / voymedia(kevin) / goinflow / kynship
 - adQuadrant 제외(기 반송). 오늘 발송 24/50 (K-뷰티17+에이전시FU7). 저녁 US FU2(16:49Z, 샘플 동봉) 전용 트리거 대기 — 발송 후 누계 확인 필요
+
+### US FU2 최종 배치 (UTC ~16:52, 7/28)
+- 발송 전 인박스 확인: 답장·옵트아웃 0 (틱톡코드+Skinnydip CSAT만). 제외 반영: haruharuwonder/global@torriden/adQuadrant(기 반송), 헬프데스크 자동응답 4곳(Briogeo·Skinnydip·BeautyCrop·Lashify) 스킵
+- **10통 발송**: Hismile partnerships@ (승인 샘플 1a7e44a6 동봉, URL 200 검증) + 표준 클로징 9곳(D.S.&Durga elizabeth@·Doe·TrueBotanicals·Mented·Versed·Necessaire·Bread·Radiant·DedCool)
+- **Tower28 보류**: 샘플 e7ebb4cd가 캡틴 명시 승인 기록 없음 → §4.15(육안 승인 없는 영상 공개발송 금지) 적용, 이번 배치 미발송. 캡틴 승인 시 동봉 재발송 예정
+- 오늘 발송 34/50 (K-뷰티17 + 에이전시FU7 + US FU2 10). 잔고 2,129cr (변동 없음, 이번 배치 0크레딧)
