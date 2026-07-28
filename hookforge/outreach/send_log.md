@@ -259,3 +259,18 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 - 로컬 미리보기 파이프라인(샌드박스→base64→로컬디코드) 시도했으나 전송 중 데이터 손상으로 실패 — 캡틴 육안 확인 요청으로 대체
 - Gumroad 리스팅 카피 완비: `hookforge/sales/hook_bank_gumroad_kit.md`. 게시는 캡틴 확인 후 진행
 - 카드1 전체 완료: PDF(0cr) + 커버(1cr) = 총 1크레딧 소모, 승인 범위 내
+
+### 커버 이미지 PNG→JPG 재발행 (UTC ~04:49, 7/28)
+- 캡틴 확인: 이미지 자체는 깨끗함(폰 목업 왜곡 없음, 텍스트 선명) — Gumroad 업로드 시 "파일타입에러" 발생
+- 원인 추정: ImageMagick PNG 산출물의 색상 프로파일/메타데이터가 업로더와 충돌
+- 조치: -strip -colorspace sRGB로 표준 JFIF JPG 재생성·재업로드
+- 최종 JPG: https://d2ol7oe51mr4n9.cloudfront.net/user_2wX3UthAZov98dVbNmHugZwVghT/596a5c63-22ed-4a60-8d5a-8a642c77d8ea.jpg
+- 캡틴이 Gumroad 리스팅 게시 직접 진행 중 (Product/Content/Pricing/Settings 단계별 실시간 안내)
+
+### 자동 순찰 (UTC ~04:56, 7/28, 지시 기반 실행)
+1. Gmail 커넥터 + IMAP 교차확인: 최근 3시간 신규 수신 0건 (둘 다 일치)
+2. 아웃리치 답장: 없음 → 처리 대상 없음
+3. Gumroad 판매 알림: 없음 (계정 아직 리스팅 게시 전 단계)
+4. 24h+ 무응답 팔로업 대상 점검: 미국 에이전시 8곳(7/27 13:01 UTC 발송)은 아직 15h54m 경과로 24h 미달 → 이번 순찰에서 팔로업 미발송. 이즈앤트리/토리든 보조 연락처(7/27 03:27 UTC, 25h+)는 동일 브랜드 주 연락처가 오늘 아침 FU1을 이미 받아 중복 접촉 방지 위해 스킵
+- 오늘(7/28) 발송 총량 17/35 (전날 대비 여유 있음, 특이사항 없어 이번 순찰은 발송 없이 종료)
+- 저녁 US FU2(16:49Z, 카드2·기승인, Hismile+Tower28 샘플 포함 15곳 전원) 대기 지속
