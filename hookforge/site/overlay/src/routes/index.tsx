@@ -1,3 +1,7 @@
+// ⚠️ BUILD ROOT NOTE (2026-07-28): The live site builds from app/src/routes/index.tsx
+// in the Higgsfield website repo (CI working-directory: app). This overlay/ copy is a
+// mirror for backup/reference only — editing it alone does NOT ship. To deploy: clone the
+// website repo via website_repo_access, edit app/src/routes/index.tsx, push, deploy_website.
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
@@ -9,6 +13,30 @@ const GUMROAD_URL = "https://hookforgestudio.gumroad.com/l/bxnwkl";
 const CONTACT_EMAIL = "hookforge.aistudio@gmail.com";
 const CONTACT_URL = "mailto:hookforge.aistudio@gmail.com?subject=HookForge%20order%20inquiry";
 const PRIMARY_CTA = "Get my 20 ads";
+
+type ShopItem = {
+  name: string;
+  blurb: string;
+  price: string;
+  meta: string;
+  href: string;
+  bullets: string[];
+};
+
+const SHOP_ITEMS: ShopItem[] = [
+  {
+    name: "THE HOOK BANK",
+    blurb: "120 scroll-stopping UGC ad hooks, organized by the psychology that makes people stop.",
+    price: "$19",
+    meta: "16-PAGE PDF / INSTANT",
+    href: "https://hookforgestudio.gumroad.com/l/kylmz",
+    bullets: [
+      "120 hooks across 12 psychological triggers",
+      "Product-type pairing guide for 6 niches",
+      "The 3-beat script frame we run in production",
+    ],
+  },
+];
 
 function EmailButton({ label, block }: { label?: string; block?: boolean }) {
   const [copied, setCopied] = useState(false);
@@ -129,6 +157,36 @@ function DemoVideo({ tag, src, cat }: { tag: string; src: string; cat: string })
   );
 }
 
+function ShopCard({ item }: { item: ShopItem }) {
+  return (
+    <a
+      href={item.href}
+      target="_blank"
+      rel="noopener"
+      className="group flex flex-col rounded-2xl border border-[#1E222A] bg-[#171A20] p-6 transition-colors hover:border-[#FF5C1F]/60"
+    >
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="font-display text-lg font-bold">{item.name}</h3>
+        <span className="font-display shrink-0 text-2xl font-bold text-[#FF8A3D]">{item.price}</span>
+      </div>
+      <p className="font-monox mt-1 text-[10px] tracking-[0.16em] text-[#9BA0AA]">{item.meta}</p>
+      <p className="mt-4 text-sm leading-relaxed text-[#9BA0AA]">{item.blurb}</p>
+      <ul className="mt-4 flex-1 space-y-2 text-sm text-[#9BA0AA]">
+        {item.bullets.map((b) => (
+          <li key={b} className="flex gap-2.5">
+            <span className="text-[#FF8A3D]">▸</span>
+            {b}
+          </li>
+        ))}
+      </ul>
+      <span className="mt-6 inline-flex items-center gap-1.5 rounded-lg bg-[#FF5C1F] px-4 py-2.5 text-sm font-bold text-[#111318] transition-colors group-hover:bg-[#FF8A3D]">
+        Get it now
+        <span className="transition-transform group-hover:translate-x-0.5">→</span>
+      </span>
+    </a>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-dvh bg-[#111318] text-[#F4F2EE]">
@@ -139,6 +197,9 @@ function Index() {
           <span className="font-display text-lg font-bold tracking-[0.08em]">HOOKFORGE</span>
         </a>
         <nav className="flex items-center gap-6">
+          <a href="#shop" className="hidden text-sm text-[#9BA0AA] transition-colors hover:text-[#F4F2EE] sm:block">
+            Shop
+          </a>
           <a href="#pricing" className="hidden text-sm text-[#9BA0AA] transition-colors hover:text-[#F4F2EE] sm:block">
             Pricing
           </a>
@@ -176,6 +237,12 @@ function Index() {
               <span className="block h-px max-w-0 bg-[#FF8A3D] transition-all duration-300 group-hover:max-w-full" />
             </a>
           </div>
+          <p className="mt-6 text-sm text-[#9BA0AA]">
+            Rather run it yourself?{" "}
+            <a href="#shop" className="font-medium text-[#FF8A3D] underline-offset-4 hover:underline">
+              Get our 120-hook swipe file for $19 →
+            </a>
+          </p>
         </div>
         <div className="flex justify-center gap-4 md:justify-end">
           <div className="translate-y-6 rotate-[-5deg]">
@@ -332,8 +399,37 @@ function Index() {
         </div>
       </section>
 
+      {/* S4.5 SHOP — instant downloads */}
+      <section id="shop" className="border-t border-[#1E222A] bg-[#14171D]">
+        <div className="mx-auto max-w-6xl px-5 py-20">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
+              Not ready for done-for-you?
+            </h2>
+            <p className="font-monox text-xs tracking-[0.16em] text-[#9BA0AA]">
+              INSTANT DOWNLOADS
+            </p>
+          </div>
+          <p className="mt-3 max-w-2xl text-sm text-[#9BA0AA]">
+            The same thinking that goes into every ad we ship, packaged so you can run it yourself.
+            Buy once, download immediately.
+          </p>
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {SHOP_ITEMS.map((item) => (
+              <ShopCard key={item.name} item={item} />
+            ))}
+            <div className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[#1E222A] bg-[#171A20]/40 p-6 text-center">
+              <p className="font-display text-base font-semibold text-[#F4F2EE]">More coming</p>
+              <p className="text-xs text-[#9BA0AA]">
+                Templates, teardowns and swipe files ship as we build them.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* S5 PRICING */}
-      <section id="pricing" className="border-t border-[#1E222A] bg-[#14171D]">
+      <section id="pricing" className="border-t border-[#1E222A]">
         <div className="mx-auto max-w-6xl px-5 py-20">
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
             Launch pricing. First ten clients.

@@ -281,3 +281,11 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 - 설정: $19, 7일 환불보증, e-pub VAT 표시, 판매수 공개, 구매자정보 워터마크(재배포 방지)
 - 상세: `hookforge/sales/hook_bank_delivery.md`
 - 다음 액션: 아웃리치 이메일 서명 P.S.에 링크 추가, 틱톡 바이오 반영 — 다음 발송 배치부터 적용
+
+### 🔴→🟢 사이트 빌드 루트 실수 정정 + Shop 섹션 추가 (UTC ~05:40, 7/28)
+- **중대 발견**: 그동안 "플랫폼 배포 장애"로 판단했던 것은 오진이었음. 실제 원인 = 내가 잘못된 디렉터리(`src/`)를 수정. 웹사이트 레포 CI는 `app/` 를 빌드 루트로 사용 (.github/workflows/ci.yml에 `working-directory: app` 명시). 루트 `src/`는 빌드가 안 읽는 유령 디렉터리였음
+- 조치: 6카테고리 데모 레일 변경 + 신규 Shop 섹션을 `app/src/routes/index.tsx`에 정확히 반영
+- Shop 섹션: 데모레일과 프라이싱 사이 배치 (틱톡 유입자가 $990 전에 $19 상품 먼저 보게). 히어로에도 "Rather run it yourself? $19 swipe file" 보조 CTA. nav에 Shop 링크 추가. 상품 카드는 그리드 구조 — 향후 상품 추가 시 SHOP_ITEMS 배열에 항목만 추가
+- 검증 완료: 라이브 JS 번들(index-BO0uOYK3.js)에 "Not ready for done-for-you"/"THE HOOK BANK"/"One pipeline" 확인, 구버전 헤드라인 소멸 확인 (지난번 미검증 실수 재발 방지)
+- 바이오 방향 전환(캡틴 지시): 검로드 직링크 대신 사이트로 유도 → 사이트 Shop에서 전체 상품 열람. 바이오 80자 한도 문안 제공
+- overlay/ 미러 파일 상단에 빌드루트 경고 주석 추가 (재실수 방지)
