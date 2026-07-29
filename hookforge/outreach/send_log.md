@@ -363,3 +363,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### 순찰 (UTC ~04:57, 7/29) — 조용
 - 신규 수신 0 (Gumroad 정산 메일 기보고). K-뷰티 FU1(13통) 반송·답장 0. 팔로업 대상 없음
+
+### 순찰 (UTC ~06:57, 7/29) — 조용
+- 신규 수신·답장·반송·판매 0. K-뷰티 FU1 반송 0. 팔로업 대상 없음
