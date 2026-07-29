@@ -351,3 +351,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### 순찰 (UTC ~22:56, 7/28) — 조용
 - 신규 수신·답장·반송·판매 0. 팔로업 대상 없음(K-뷰티 FU1 ~02:05Z, 에이전시 FU2 ~14:57Z 7/29 도달)
+
+### 순찰 (UTC ~00:57, 7/29) — 조용, 날짜 롤오버
+- 신규 수신·답장·반송·판매 0. 7/29 발송 0/50. K-뷰티 신규 first-contact FU1은 ~02:05Z(1차 발송 +24h) 도달 예정
