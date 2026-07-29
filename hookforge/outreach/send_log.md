@@ -378,3 +378,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### 순찰 (UTC ~14:57, 7/29) — 조용
 - 신규 수신·답장·반송·판매 0. step4 "팔로업 1차" 대상 없음(전 세그먼트 이미 1차 팔로업 완료). 추가 발송 없음
+
+### 순찰 (UTC ~16:58, 7/29) — 조용
+- 신규 수신·답장·반송·판매 0. 인박스 최신=Gumroad 정산 리마인드(02:47Z, 기보고). Skinnydip "How did we do?" 2건(7/28)=자동 CS설문(사람 답장 아님). 팔로업 대상 없음. 캡틴 방향 결정 대기 중
