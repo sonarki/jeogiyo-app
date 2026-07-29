@@ -354,3 +354,9 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### 순찰 (UTC ~00:57, 7/29) — 조용, 날짜 롤오버
 - 신규 수신·답장·반송·판매 0. 7/29 발송 0/50. K-뷰티 신규 first-contact FU1은 ~02:05Z(1차 발송 +24h) 도달 예정
+
+### 순찰 (UTC ~02:57, 7/29) — K-뷰티 FU1 13통 + Gumroad 정산정보 요청
+- **Gumroad 메일(02:47Z) "We need more information"** = 판매 알림 아님. **페이아웃(정산) 정보 미완성 리마인드** (settings/payments). 판매가 나도 이거 완료해야 지급됨 → **캡틴 수동 조치 필요**(은행/Payoneer + 세금정보). 캡틴 보고함
+- K-뷰티 신규 first-contact 13곳 24h+ 무응답 → **FU1 발송 완료** (조선미녀·스킨1004는 "샘플 확인" 변형, 나머지 11곳은 "무료샘플 오퍼" 변형, 전부 Re: 스레드 + "그만" opt-out)
+- ⚠️ 발송 중 sandbox_exec 60s 타임아웃(13×4s 슬립 초과) → Sent 폴더로 13/13 발송 검증 후 재전송 안 함(중복 방지). **교훈: 배치 발송은 슬립 2s 이하로**
+- 신규 반송·답장 0(mailer-daemon 3건은 기존 반송). 오늘(7/29) 발송 13/50
