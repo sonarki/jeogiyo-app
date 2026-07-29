@@ -372,3 +372,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### 순찰 (UTC ~10:57, 7/29) — 조용
 - 신규 수신·답장·반송·판매 0. 팔로업 대상 없음
+
+### 순찰 (UTC ~12:57, 7/29) — 조용
+- 신규 수신·답장·반송·판매 0. 팔로업 대상 없음(에이전시 FU2는 ~14:57Z 도달 예정, 다음 순찰서 판단)
