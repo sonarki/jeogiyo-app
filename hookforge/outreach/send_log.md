@@ -360,3 +360,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 - K-뷰티 신규 first-contact 13곳 24h+ 무응답 → **FU1 발송 완료** (조선미녀·스킨1004는 "샘플 확인" 변형, 나머지 11곳은 "무료샘플 오퍼" 변형, 전부 Re: 스레드 + "그만" opt-out)
 - ⚠️ 발송 중 sandbox_exec 60s 타임아웃(13×4s 슬립 초과) → Sent 폴더로 13/13 발송 검증 후 재전송 안 함(중복 방지). **교훈: 배치 발송은 슬립 2s 이하로**
 - 신규 반송·답장 0(mailer-daemon 3건은 기존 반송). 오늘(7/29) 발송 13/50
+
+### 순찰 (UTC ~04:57, 7/29) — 조용
+- 신규 수신 0 (Gumroad 정산 메일 기보고). K-뷰티 FU1(13통) 반송·답장 0. 팔로업 대상 없음
