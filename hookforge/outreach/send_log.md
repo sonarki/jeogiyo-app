@@ -390,3 +390,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 
 ### 순찰 (UTC ~22:56, 7/29) — 조용
 - newer_than:3h 신규 수신 0. 답장·반송·판매 0. 팔로업 대상 없음. 캡틴 방향 결정 대기
+
+### 순찰 (UTC ~00:56, 7/30) — 조용, 날짜 롤오버
+- newer_than:3h 신규 수신 0. 답장·반송·판매 0. 7/30 발송 0/35. 팔로업 대상 없음. 캡틴 방향 결정 대기
