@@ -436,3 +436,6 @@ hello@commonthreadco.com / partnerships@pilothouse.co / growth@rightsideup.co / 
 ### 순찰 (UTC ~04:56, 7/31) — Gumroad 정산 리마인드 재수신 (판매 아님)
 - 신규 수신 1건: Gumroad(03:38Z) "We need more information from you" — 본문 확인 결과 **정산정보 미완성 리마인드 재발송**(7/29 건과 동일 이슈). 판매 알림 아님. 여전히 판매 0 → 지급할 금액 없음. 조치=캡틴 수동(gumroad.com/settings/payments 은행/세금정보), 기보고 이슈라 재핑 안 함
 - 답장·반송·판매 0. 팔로업 대상 없음. 캡틴 방향 결정 대기
+
+### 순찰 (UTC ~06:56, 7/31) — 조용
+- newer_than:3h 신규 수신 0, UNSEEN 0. 답장·반송·판매 0. 팔로업 대상 없음. 캡틴 방향 결정 대기
