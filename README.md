@@ -1,4 +1,4 @@
-# ⚡ AIPriceIndex — 자동화 수익 시스템 (스켈레톤 v1)
+# ⚡ AI Price Table (aipricetable.com) — 자동화 수익 시스템
 
 **하나의 데이터 → 두 개의 수도꼭지.** AI 모델 가격/스펙 DB 하나를 매일 자동 갱신해서:
 
@@ -32,8 +32,8 @@ npm run serve    # 로컬 미리보기
 
 | # | 뭐 | 어디서 | 비용 |
 |---|---|---|---|
-| 1 | 도메인 구입 → `data/tools.json`의 `meta.domain` 교체 | Namecheap/Cloudflare | ~$12/년 |
-| 2 | 배포 연결 (이 레포 → 자동 배포) | Vercel 무료 티어 (public/ 서빙 + api/ 함수) | $0 |
+| 1 | ~~도메인 구입~~ → 완료: aipricetable.com | — | ✅ |
+| 2 | **VPS 자동배포 연결**: 레포 Secrets에 `VPS_HOST`/`VPS_USER`/`VPS_SSH_KEY` 등록 → push마다 `.github/workflows/deploy.yml`이 VPS의 `/opt/aipricetable`에 독립 컨테이너(`aipricetable`, 포트 8080)로 배포. **기존 서비스(자비서 등)와 완전 분리** | 니 VPS + Cloudflare 무료(DNS/SSL/캐싱, Origin Rule로 8080 포워딩) | $0 |
 | 3 | **Gumroad 구독 상품 등록** ("API Pro" $19/mo, "Generate license keys" 켜기) → 상품 URL을 `api-docs` 페이지의 `GUMROAD_PRODUCT_URL`에, product ID를 배포 env `GUMROAD_PRODUCT_ID`에 | gumroad.com (계정 연결 완료) | $0 (수수료 ~10%) |
 | 4 | 제휴 프로그램 가입 (각 AI 벤더/툴) → `tools.json`의 `affiliate_url` 채우기 | 각 벤더 affiliate 페이지 | $0 |
 

@@ -1,8 +1,8 @@
 {
   "meta": {
-    "site_name": "AIPriceIndex",
-    "tagline": "The live price & spec index for every AI model",
-    "domain": "REPLACE_WITH_YOUR_DOMAIN.com",
+    "site_name": "AI Price Table",
+    "tagline": "The live price & spec table for every AI model",
+    "domain": "aipricetable.com",
     "updated": "2026-08-06",
     "note": "This is SEED data. The daily updater (scripts/update.mjs) is where you wire real pricing sources. Numbers below are structural placeholders and MUST be verified before going live."
   },

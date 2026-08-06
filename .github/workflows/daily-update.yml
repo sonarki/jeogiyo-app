@@ -1,16 +1,12 @@
-name: Daily update & deploy
-
-# The automation backbone. Runs every day, refreshes data, rebuilds the whole
-# site, commits, and (via Pages/Vercel) redeploys. $0 on GitHub free tier.
-
+# Daily data refresh: validate + restamp data, rebuild, commit.
+# The commit to main then triggers deploy.yml -> VPS picks up the new build.
+name: Daily data update
 on:
   schedule:
-    - cron: "0 6 * * *"   # 06:00 UTC daily
-  workflow_dispatch: {}    # manual "Run" button
-
+    - cron: "0 6 * * *"   # 06:00 UTC daily (15:00 KST)
+  workflow_dispatch: {}
 permissions:
   contents: write
-
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -18,15 +14,16 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-      - name: Refresh data
-        run: node scripts/update.mjs
-      - name: Rebuild site
-        run: node scripts/build.mjs
+          node-version: 22
+      - name: Update data and rebuild site
+        run: |
+          node scripts/update.mjs
+          node scripts/build.mjs
       - name: Commit if changed
         run: |
-          git config user.name "aipriceindex-bot"
-          git config user.email "bot@users.noreply.github.com"
+          git config user.name "aipricetable-bot"
+          git config user.email "actions@users.noreply.github.com"
           git add -A
-          git diff --staged --quiet || git commit -m "chore: daily data refresh $(date -u +%F)"
+          git diff --cached --quiet && echo "No changes." && exit 0
+          git commit -m "Daily data refresh $(date -u +%F)"
           git push

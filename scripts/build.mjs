@@ -47,7 +47,7 @@ function page({ title, description, rel, body, depth }) {
 </head>
 <body>
 <header class="site"><div class="in">
-  <a class="brand" href="${p}index.html">AI<b>PriceIndex</b></a>
+  <a class="brand" href="${p}index.html">AI Price <b>Table</b></a>
   <nav>
     <a href="${p}index.html">Models</a>
     <a href="${p}compare/index.html">Compare</a>

@@ -1,9 +1,9 @@
 {
   "meta": {
-    "source": "AIPriceIndex",
+    "source": "AI Price Table",
     "updated": "2026-08-06",
     "license": "Free tier — attribution required",
-    "docs": "https://REPLACE_WITH_YOUR_DOMAIN.com/api-docs.html"
+    "docs": "https://aipricetable.com/api-docs.html"
   },
   "count": 12,
   "tools": [

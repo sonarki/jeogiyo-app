@@ -1,0 +1,15 @@
+# AI Price Table — self-contained stack. Run from the repo root:
+#   docker compose -f deploy/docker-compose.yml up -d --build
+# Deliberately independent: own container name, own port, no shared networks,
+# no volumes into any other project. Never touches other services on this VPS.
+services:
+  aipricetable:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: aipricetable
+    restart: unless-stopped
+    ports:
+      - "8080:8080"   # change the left side if 8080 is taken on the VPS
+    environment:
+      - GUMROAD_PRODUCT_ID=${GUMROAD_PRODUCT_ID:-}
