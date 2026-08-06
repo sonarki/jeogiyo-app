@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/api-docs/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/pricing/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/category/llm/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/category/image/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/category/video/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/category/audio/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/anthropic-claude-opus/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/anthropic-claude-sonnet/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/openai-gpt-flagship/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/google-gemini-pro/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/meta-llama/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/mistral-large/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/deepseek/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/openai-image/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/black-forest-flux/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/google-veo/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/kling-video/</loc></url>
+<url><loc>https://REPLACE_WITH_YOUR_DOMAIN.com/tool/elevenlabs-tts/</loc></url>
+</urlset>

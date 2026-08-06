@@ -1,0 +1,13 @@
+{
+  "name": "aipriceindex",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Live price & spec index for AI models — programmatic site + JSON API.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "update": "node scripts/update.mjs",
+    "all": "node scripts/update.mjs && node scripts/build.mjs",
+    "serve": "node --watch-path=./data scripts/build.mjs & npx --yes serve public"
+  }
+}

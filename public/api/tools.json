@@ -1,33 +1,6 @@
 {
-  "meta": {
-    "site_name": "AIPriceIndex",
-    "tagline": "The live price & spec index for every AI model",
-    "domain": "REPLACE_WITH_YOUR_DOMAIN.com",
-    "updated": "2026-08-06",
-    "note": "This is SEED data. The daily updater (scripts/update.mjs) is where you wire real pricing sources. Numbers below are structural placeholders and MUST be verified before going live."
-  },
-  "categories": [
-    {
-      "slug": "llm",
-      "name": "LLM / Text",
-      "blurb": "Large language models for chat, reasoning, coding and agents."
-    },
-    {
-      "slug": "image",
-      "name": "Image Generation",
-      "blurb": "Text-to-image and image editing models."
-    },
-    {
-      "slug": "video",
-      "name": "Video Generation",
-      "blurb": "Text/image-to-video and motion models."
-    },
-    {
-      "slug": "audio",
-      "name": "Audio / Voice",
-      "blurb": "Text-to-speech, music and voice cloning."
-    }
-  ],
+  "updated": "2026-08-06",
+  "count": 12,
   "tools": [
     {
       "slug": "anthropic-claude-opus",
