@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "site_name": "AIPriceIndex",
+    "tagline": "The live price & spec index for every AI model",
+    "domain": "REPLACE_WITH_YOUR_DOMAIN.com",
+    "updated": "2026-08-06",
+    "note": "This is SEED data. The daily updater (scripts/update.mjs) is where you wire real pricing sources. Numbers below are structural placeholders and MUST be verified before going live."
+  },
+  "categories": [
+    { "slug": "llm", "name": "LLM / Text", "blurb": "Large language models for chat, reasoning, coding and agents." },
+    { "slug": "image", "name": "Image Generation", "blurb": "Text-to-image and image editing models." },
+    { "slug": "video", "name": "Video Generation", "blurb": "Text/image-to-video and motion models." },
+    { "slug": "audio", "name": "Audio / Voice", "blurb": "Text-to-speech, music and voice cloning." }
+  ],
+  "tools": [
+    {
+      "slug": "anthropic-claude-opus",
+      "name": "Claude Opus (latest)",
+      "vendor": "Anthropic",
+      "category": "llm",
+      "pricing": { "unit": "per 1M tokens", "input": 15.0, "output": 75.0, "currency": "USD", "free_tier": true },
+      "specs": { "context_window": "200K+", "modalities": ["text", "image"], "best_for": "Hard reasoning, long agentic coding" },
+      "website": "https://www.anthropic.com",
+      "affiliate_url": "",
+      "source": "vendor-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "anthropic-claude-sonnet",
+      "name": "Claude Sonnet (latest)",
+      "vendor": "Anthropic",
+      "category": "llm",
+      "pricing": { "unit": "per 1M tokens", "input": 3.0, "output": 15.0, "currency": "USD", "free_tier": true },
+      "specs": { "context_window": "200K+", "modalities": ["text", "image"], "best_for": "Best price/performance for production" },
+      "website": "https://www.anthropic.com",
+      "affiliate_url": "",
+      "source": "vendor-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "openai-gpt-flagship",
+      "name": "GPT (flagship)",
+      "vendor": "OpenAI",
+      "category": "llm",
+      "pricing": { "unit": "per 1M tokens", "input": 5.0, "output": 15.0, "currency": "USD", "free_tier": true },
+      "specs": { "context_window": "128K+", "modalities": ["text", "image", "audio"], "best_for": "General purpose, tooling ecosystem" },
+      "website": "https://openai.com",
+      "affiliate_url": "",
+      "source": "vendor-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "google-gemini-pro",
+      "name": "Gemini Pro (latest)",
+      "vendor": "Google",
+      "category": "llm",
+      "pricing": { "unit": "per 1M tokens", "input": 1.25, "output": 5.0, "currency": "USD", "free_tier": true },
+      "specs": { "context_window": "1M+", "modalities": ["text", "image", "audio", "video"], "best_for": "Huge context, multimodal" },
+      "website": "https://deepmind.google",
+      "affiliate_url": "",
+      "source": "vendor-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "meta-llama",
+      "name": "Llama (latest, hosted)",
+      "vendor": "Meta / hosts",
+      "category": "llm",
+      "pricing": { "unit": "per 1M tokens", "input": 0.2, "output": 0.2, "currency": "USD", "free_tier": false },
+      "specs": { "context_window": "128K", "modalities": ["text"], "best_for": "Open weights, cheapest self-host" },
+      "website": "https://llama.com",
+      "affiliate_url": "",
+      "source": "host-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "mistral-large",
+      "name": "Mistral Large",
+      "vendor": "Mistral",
+      "category": "llm",
+      "pricing": { "unit": "per 1M tokens", "input": 2.0, "output": 6.0, "currency": "USD", "free_tier": false },
+      "specs": { "context_window": "128K", "modalities": ["text"], "best_for": "EU-hosted, strong multilingual" },
+      "website": "https://mistral.ai",
+      "affiliate_url": "",
+      "source": "vendor-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "deepseek",
+      "name": "DeepSeek (latest)",
+      "vendor": "DeepSeek",
+      "category": "llm",
+      "pricing": { "unit": "per 1M tokens", "input": 0.27, "output": 1.1, "currency": "USD", "free_tier": false },
+      "specs": { "context_window": "128K", "modalities": ["text"], "best_for": "Very cheap reasoning" },
+      "website": "https://www.deepseek.com",
+      "affiliate_url": "",
+      "source": "vendor-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "openai-image",
+      "name": "GPT Image",
+      "vendor": "OpenAI",
+      "category": "image",
+      "pricing": { "unit": "per image", "input": 0.04, "output": 0.04, "currency": "USD", "free_tier": false },
+      "specs": { "context_window": "n/a", "modalities": ["image"], "best_for": "Prompt adherence, text in images" },
+      "website": "https://openai.com",
+      "affiliate_url": "",
+      "source": "vendor-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "black-forest-flux",
+      "name": "FLUX (latest)",
+      "vendor": "Black Forest Labs",
+      "category": "image",
+      "pricing": { "unit": "per image", "input": 0.025, "output": 0.025, "currency": "USD", "free_tier": false },
+      "specs": { "context_window": "n/a", "modalities": ["image"], "best_for": "Photoreal, open ecosystem" },
+      "website": "https://blackforestlabs.ai",
+      "affiliate_url": "",
+      "source": "host-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "google-veo",
+      "name": "Veo (latest)",
+      "vendor": "Google",
+      "category": "video",
+      "pricing": { "unit": "per second", "input": 0.5, "output": 0.5, "currency": "USD", "free_tier": false },
+      "specs": { "context_window": "n/a", "modalities": ["video"], "best_for": "High-fidelity text-to-video" },
+      "website": "https://deepmind.google",
+      "affiliate_url": "",
+      "source": "vendor-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "kling-video",
+      "name": "Kling (latest)",
+      "vendor": "Kuaishou",
+      "category": "video",
+      "pricing": { "unit": "per 5s clip", "input": 0.35, "output": 0.35, "currency": "USD", "free_tier": true },
+      "specs": { "context_window": "n/a", "modalities": ["video"], "best_for": "Cost-effective short clips" },
+      "website": "https://klingai.com",
+      "affiliate_url": "",
+      "source": "vendor-pricing-page",
+      "updated": "2026-08-06"
+    },
+    {
+      "slug": "elevenlabs-tts",
+      "name": "ElevenLabs TTS",
+      "vendor": "ElevenLabs",
+      "category": "audio",
+      "pricing": { "unit": "per 1K chars", "input": 0.3, "output": 0.3, "currency": "USD", "free_tier": true },
+      "specs": { "context_window": "n/a", "modalities": ["audio"], "best_for": "Best-in-class voice cloning" },
+      "website": "https://elevenlabs.io",
+      "affiliate_url": "",
+      "source": "vendor-pricing-page",
+      "updated": "2026-08-06"
+    }
+  ]
+}
