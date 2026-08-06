@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mortgage Calculator — Estimate Monthly Home Payments | FinCalc Hub</title>
+  <meta name="description" content="Free mortgage calculator with taxes, insurance and PMI. Enter home price, down payment, rate and term to estimate your total monthly mortgage payment instantly." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOURDOMAIN.com/mortgage-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mortgage Calculator — Estimate Monthly Home Payments" />
+  <meta property="og:description" content="Estimate your monthly mortgage payment including taxes, insurance and PMI." />
+  <meta property="og:url" content="https://YOURDOMAIN.com/mortgage-calculator.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is included in a monthly mortgage payment?","acceptedAnswer":{"@type":"Answer","text":"A typical mortgage payment (often called PITI) includes Principal, Interest, property Taxes and homeowners Insurance. If your down payment is under 20%, private mortgage insurance (PMI) is usually added too."}},
+      {"@type":"Question","name":"How much down payment do I need?","acceptedAnswer":{"@type":"Answer","text":"Many conventional loans allow as little as 3–5% down, but putting 20% down lets you avoid PMI and lowers your monthly payment. A larger down payment also reduces total interest."}},
+      {"@type":"Question","name":"What is PMI?","acceptedAnswer":{"@type":"Answer","text":"Private mortgage insurance protects the lender if you stop paying. It's typically required when your down payment is below 20% and can be removed once you build enough equity."}}
+    ]
+  }
+  </script>
+</head>
+<body data-base="">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Mortgage Calculator</p>
+    <h1>Mortgage Calculator</h1>
+    <p class="lede">Estimate your full monthly home payment — principal, interest, property taxes, insurance and PMI — before you make an offer.</p>
+
+    <div class="card">
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="price">Home price ($)</label>
+            <input id="price" type="number" inputmode="decimal" value="400000" min="0" step="1000" />
+          </div>
+          <div class="field">
+            <label for="down">Down payment ($)</label>
+            <input id="down" type="number" inputmode="decimal" value="80000" min="0" step="1000" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="rate">Interest rate (%)</label>
+            <input id="rate" type="number" inputmode="decimal" value="6.5" min="0" step="0.01" />
+          </div>
+          <div class="field">
+            <label for="years">Term (years)</label>
+            <input id="years" type="number" inputmode="numeric" value="30" min="1" step="1" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="tax">Property tax / year ($) <small>optional</small></label>
+            <input id="tax" type="number" inputmode="decimal" value="4800" min="0" step="100" />
+          </div>
+          <div class="field">
+            <label for="ins">Home insurance / year ($) <small>optional</small></label>
+            <input id="ins" type="number" inputmode="decimal" value="1500" min="0" step="100" />
+          </div>
+        </div>
+        <button class="btn" id="calcBtn">Calculate</button>
+      </div>
+
+      <div class="result" style="margin-top:18px">
+        <p class="big" id="monthly">—</p>
+        <div class="result-grid">
+          <div class="cell"><span>Principal &amp; interest</span><strong id="pi">—</strong></div>
+          <div class="cell"><span>Taxes &amp; insurance</span><strong id="ti">—</strong></div>
+          <div class="cell"><span>PMI</span><strong id="pmi">—</strong></div>
+          <div class="cell"><span>Loan amount</span><strong id="loan">—</strong></div>
+          <div class="cell"><span>Down payment</span><strong id="downpct">—</strong></div>
+          <div class="cell"><span>Total interest</span><strong id="totint">—</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true">Advertisement</div>
+
+    <section class="prose">
+      <h2>Understanding your mortgage payment</h2>
+      <p>
+        Lenders describe a monthly payment as <strong>PITI</strong> — Principal, Interest, Taxes and
+        Insurance. The principal-and-interest portion is fixed for the life of a fixed-rate loan,
+        while taxes and insurance can change over time. If your down payment is under 20% of the home
+        price, most lenders add <strong>PMI</strong> (private mortgage insurance), estimated here at
+        roughly 0.5% of the loan per year.
+      </p>
+      <h3>Ways to lower your payment</h3>
+      <ul>
+        <li>Increase your <strong>down payment</strong> to 20% to remove PMI.</li>
+        <li>Compare lenders for a lower <strong>interest rate</strong>.</li>
+        <li>Consider whether a 15-year term fits your budget — higher payment, far less total interest.</li>
+      </ul>
+
+      <div class="faq">
+        <h2>Frequently asked questions</h2>
+        <details><summary>What's included in the monthly payment?</summary>
+          <p>Principal, interest, property taxes, homeowners insurance, and PMI if your down payment is below 20%.</p></details>
+        <details><summary>How much should I put down?</summary>
+          <p>Some loans allow 3–5% down, but 20% avoids PMI and lowers both your monthly payment and total interest.</p></details>
+        <details><summary>Can PMI be removed later?</summary>
+          <p>Yes — once you've built roughly 20% equity, you can usually request that PMI be dropped.</p></details>
+      </div>
+
+      <p style="margin-top:20px"><a href="loan-calculator.html">Need a general loan? Use the loan calculator →</a></p>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+  (function () {
+    var $ = function (id) { return document.getElementById(id); };
+
+    function calc() {
+      var price = parseFloat($("price").value) || 0;
+      var down = parseFloat($("down").value) || 0;
+      var apr = parseFloat($("rate").value) || 0;
+      var years = parseFloat($("years").value) || 0;
+      var taxYr = parseFloat($("tax").value) || 0;
+      var insYr = parseFloat($("ins").value) || 0;
+
+      var loan = Math.max(0, price - down);
+      var months = Math.round(years * 12);
+      var pi = FC.payment(loan, apr, months);
+      if (!isFinite(pi) || months <= 0) pi = 0;
+
+      var downRatio = price > 0 ? down / price : 0;
+      var pmiMonthly = downRatio < 0.20 ? (loan * 0.005) / 12 : 0;
+      var tiMonthly = (taxYr + insYr) / 12;
+      var totalMonthly = pi + tiMonthly + pmiMonthly;
+      var totalInterest = pi > 0 ? (pi * months - loan) : 0;
+
+      $("monthly").innerHTML = FC.money(totalMonthly) + ' <small>/ month</small>';
+      $("pi").textContent = FC.money(pi);
+      $("ti").textContent = FC.money(tiMonthly);
+      $("pmi").textContent = pmiMonthly > 0 ? FC.money(pmiMonthly) : "None";
+      $("loan").textContent = FC.money(loan);
+      $("downpct").textContent = (downRatio * 100).toFixed(1) + "%";
+      $("totint").textContent = FC.money(totalInterest);
+    }
+
+    $("calcBtn").addEventListener("click", calc);
+    ["price","down","rate","years","tax","ins"].forEach(function (id) {
+      $(id).addEventListener("input", calc);
+    });
+    calc();
+  })();
+  </script>
+</body>
+</html>

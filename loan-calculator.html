@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loan Calculator — Monthly Payment &amp; Total Interest | FinCalc Hub</title>
+  <meta name="description" content="Free loan calculator. Enter amount, interest rate and term to instantly see your monthly payment, total interest and a full amortization schedule. No sign-up." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOURDOMAIN.com/loan-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Loan Calculator — Monthly Payment & Total Interest" />
+  <meta property="og:description" content="Instantly calculate your monthly loan payment, total interest and amortization schedule." />
+  <meta property="og:url" content="https://YOURDOMAIN.com/loan-calculator.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AE%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How is a monthly loan payment calculated?","acceptedAnswer":{"@type":"Answer","text":"Loan payments use the amortization formula M = P·r / (1 − (1+r)^−n), where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12) and n is the number of months. Each payment covers that month's interest first, and the rest reduces the balance."}},
+      {"@type":"Question","name":"What is total interest on a loan?","acceptedAnswer":{"@type":"Answer","text":"Total interest is the sum of every interest portion across all payments — the difference between what you repay in total and the amount you originally borrowed."}},
+      {"@type":"Question","name":"Does paying extra each month save money?","acceptedAnswer":{"@type":"Answer","text":"Yes. Extra payments go straight to principal, which lowers the balance interest is charged on, shortening the term and reducing total interest paid."}}
+    ]
+  }
+  </script>
+</head>
+<body data-base="">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Loan Calculator</p>
+    <h1>Loan Calculator</h1>
+    <p class="lede">Enter your loan amount, interest rate and term to see your monthly payment, total interest and a full month-by-month breakdown.</p>
+
+    <div class="card">
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="amount">Loan amount ($)</label>
+            <input id="amount" type="number" inputmode="decimal" value="25000" min="0" step="100" />
+          </div>
+          <div class="field">
+            <label for="rate">Annual interest rate (%)</label>
+            <input id="rate" type="number" inputmode="decimal" value="7.5" min="0" step="0.01" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="years">Term (years)</label>
+            <input id="years" type="number" inputmode="numeric" value="5" min="0" step="1" />
+          </div>
+          <div class="field">
+            <label for="extra">Extra monthly payment ($) <small>optional</small></label>
+            <input id="extra" type="number" inputmode="decimal" value="0" min="0" step="10" />
+          </div>
+        </div>
+        <button class="btn" id="calcBtn">Calculate</button>
+      </div>
+
+      <div class="result" id="result" style="margin-top:18px">
+        <p class="big" id="monthly">—</p>
+        <div class="result-grid">
+          <div class="cell"><span>Total principal</span><strong id="principal">—</strong></div>
+          <div class="cell"><span>Total interest</span><strong id="interest">—</strong></div>
+          <div class="cell"><span>Total paid</span><strong id="total">—</strong></div>
+          <div class="cell"><span>Payoff time</span><strong id="payoff">—</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true">Advertisement</div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Amortization schedule</h2>
+      <p style="color:var(--muted);margin-top:0">See how each payment splits between interest and principal.</p>
+      <div style="overflow-x:auto">
+        <table id="schedule">
+          <thead><tr><th>#</th><th>Payment</th><th>Interest</th><th>Principal</th><th>Balance</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true">Advertisement</div>
+
+    <section class="prose">
+      <h2>How the loan calculator works</h2>
+      <p>
+        This tool uses the standard amortization formula that lenders and spreadsheets use:
+        <strong>M = P · r / (1 − (1 + r)<sup>−n</sup>)</strong>. Here <em>P</em> is the loan amount,
+        <em>r</em> is the monthly interest rate (your annual rate divided by 12) and <em>n</em> is the
+        total number of monthly payments (years × 12). Early on, most of each payment goes to interest;
+        as the balance falls, more goes to principal.
+      </p>
+      <h3>Tips to pay less interest</h3>
+      <ul>
+        <li>Add even a small <strong>extra monthly payment</strong> — it goes entirely to principal.</li>
+        <li>Choose a <strong>shorter term</strong> if you can afford the higher payment.</li>
+        <li>Shop around: a lower <strong>APR</strong> can save thousands over the life of the loan.</li>
+      </ul>
+
+      <div class="faq">
+        <h2>Frequently asked questions</h2>
+        <details><summary>How is a monthly loan payment calculated?</summary>
+          <p>Payments use the amortization formula above. Each month, interest is charged on the remaining balance first, and whatever is left of your payment reduces the principal.</p></details>
+        <details><summary>What is total interest?</summary>
+          <p>It's the sum of the interest portion of every payment — the difference between the total you repay and the amount you borrowed.</p></details>
+        <details><summary>Does an extra payment really help?</summary>
+          <p>Yes. Extra payments reduce principal directly, so less interest accrues afterwards. This shortens your payoff time and lowers total interest.</p></details>
+      </div>
+
+      <p style="margin-top:20px"><a href="mortgage-calculator.html">Buying a home? Try the mortgage calculator →</a></p>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+  (function () {
+    var $ = function (id) { return document.getElementById(id); };
+
+    function calc() {
+      var P = parseFloat($("amount").value) || 0;
+      var apr = parseFloat($("rate").value) || 0;
+      var months = Math.round((parseFloat($("years").value) || 0) * 12);
+      var extra = parseFloat($("extra").value) || 0;
+
+      var basePayment = FC.payment(P, apr, months);
+      if (!isFinite(basePayment) || months <= 0 || P <= 0) {
+        $("monthly").textContent = "—";
+        return;
+      }
+
+      var r = (apr / 100) / 12;
+      var balance = P, totalInterest = 0, n = 0, rows = [];
+      var pay = basePayment + extra;
+      var guard = months + 1200; // safety cap
+
+      while (balance > 0.005 && n < guard) {
+        var interest = balance * r;
+        var principalPart = pay - interest;
+        if (principalPart <= 0) { n = 0; break; } // payment can't cover interest
+        if (principalPart > balance) principalPart = balance;
+        balance -= principalPart;
+        totalInterest += interest;
+        n++;
+        if (rows.length < 360) {
+          rows.push([n, interest + principalPart, interest, principalPart, balance]);
+        }
+      }
+
+      var totalPaid = P + totalInterest;
+      $("monthly").innerHTML = FC.money(basePayment) + ' <small>/ month' + (extra > 0 ? " + " + FC.money(extra) + " extra" : "") + '</small>';
+      $("principal").textContent = FC.money(P);
+      $("interest").textContent = FC.money(totalInterest);
+      $("total").textContent = FC.money(totalPaid);
+      var yrs = Math.floor(n / 12), mos = n % 12;
+      $("payoff").textContent = (yrs ? yrs + "y " : "") + mos + "m";
+
+      var tbody = $("schedule").querySelector("tbody");
+      tbody.innerHTML = rows.map(function (row) {
+        return "<tr><td>" + row[0] + "</td><td>" + FC.money(row[1]) + "</td><td>" +
+          FC.money(row[2]) + "</td><td>" + FC.money(row[3]) + "</td><td>" + FC.money(row[4]) + "</td></tr>";
+      }).join("");
+    }
+
+    $("calcBtn").addEventListener("click", calc);
+    ["amount","rate","years","extra"].forEach(function (id) {
+      $(id).addEventListener("input", calc);
+    });
+    calc();
+  })();
+  </script>
+</body>
+</html>

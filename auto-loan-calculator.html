@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto Loan Calculator — Car Payment Estimator | FinCalc Hub</title>
+  <meta name="description" content="Free auto loan calculator. Include down payment, trade-in and sales tax to estimate your monthly car payment, total interest and total cost. Instant results, no sign-up." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOURDOMAIN.com/auto-loan-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Auto Loan Calculator — Car Payment Estimator" />
+  <meta property="og:description" content="Estimate your monthly car payment with down payment, trade-in and sales tax." />
+  <meta property="og:url" content="https://YOURDOMAIN.com/auto-loan-calculator.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%97%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How is a car loan payment calculated?","acceptedAnswer":{"@type":"Answer","text":"The amount financed equals the vehicle price plus sales tax, minus your down payment and trade-in value. That amount is then amortized over the loan term at your interest rate to produce a fixed monthly payment."}},
+      {"@type":"Question","name":"Is a longer car loan cheaper?","acceptedAnswer":{"@type":"Answer","text":"A longer term lowers the monthly payment but increases total interest, so you pay more overall. Shorter terms cost more per month but less in total."}},
+      {"@type":"Question","name":"Does a trade-in reduce my loan?","acceptedAnswer":{"@type":"Answer","text":"Yes. A trade-in acts like extra down payment: its value is subtracted from the amount you need to finance, lowering both your payment and total interest."}}
+    ]
+  }
+  </script>
+</head>
+<body data-base="">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Auto Loan Calculator</p>
+    <h1>Auto Loan Calculator</h1>
+    <p class="lede">Estimate your monthly car payment after down payment, trade-in and sales tax — so you can negotiate with confidence.</p>
+
+    <div class="card">
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="price">Vehicle price ($)</label>
+            <input id="price" type="number" inputmode="decimal" value="32000" min="0" step="500" />
+          </div>
+          <div class="field">
+            <label for="rate">Interest rate / APR (%)</label>
+            <input id="rate" type="number" inputmode="decimal" value="6.9" min="0" step="0.01" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="months">Term (months)</label>
+            <input id="months" type="number" inputmode="numeric" value="60" min="1" step="1" />
+          </div>
+          <div class="field">
+            <label for="tax">Sales tax (%)</label>
+            <input id="tax" type="number" inputmode="decimal" value="7" min="0" step="0.1" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="down">Down payment ($)</label>
+            <input id="down" type="number" inputmode="decimal" value="4000" min="0" step="500" />
+          </div>
+          <div class="field">
+            <label for="trade">Trade-in value ($) <small>optional</small></label>
+            <input id="trade" type="number" inputmode="decimal" value="0" min="0" step="500" />
+          </div>
+        </div>
+        <button class="btn" id="calcBtn">Calculate</button>
+      </div>
+
+      <div class="result" style="margin-top:18px">
+        <p class="big" id="monthly">—</p>
+        <div class="result-grid">
+          <div class="cell"><span>Amount financed</span><strong id="financed">—</strong></div>
+          <div class="cell"><span>Sales tax</span><strong id="taxamt">—</strong></div>
+          <div class="cell"><span>Total interest</span><strong id="interest">—</strong></div>
+          <div class="cell"><span>Total cost</span><strong id="total">—</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true">Advertisement</div>
+
+    <section class="prose">
+      <h2>How your car payment is calculated</h2>
+      <p>
+        We start with the vehicle price and add <strong>sales tax</strong>, then subtract your
+        <strong>down payment</strong> and <strong>trade-in</strong> to get the amount financed. That
+        balance is amortized over your chosen term at the APR you enter, giving a fixed monthly payment.
+        A bigger down payment or trade-in lowers both the payment and the total interest you pay.
+      </p>
+      <h3>Smart buying tips</h3>
+      <ul>
+        <li>Get <strong>pre-approved</strong> financing so you can compare it to the dealer's offer.</li>
+        <li>Negotiate the <strong>out-the-door price</strong>, not just the monthly payment.</li>
+        <li>Keep the term as short as your budget allows to minimize interest.</li>
+      </ul>
+
+      <div class="faq">
+        <h2>Frequently asked questions</h2>
+        <details><summary>How is a car loan payment calculated?</summary>
+          <p>Price plus sales tax, minus down payment and trade-in, amortized over the term at your APR.</p></details>
+        <details><summary>Is a longer loan cheaper?</summary>
+          <p>Lower monthly payment, but more total interest — so it costs more overall.</p></details>
+        <details><summary>Does a trade-in lower my loan?</summary>
+          <p>Yes, it reduces the amount financed just like a larger down payment.</p></details>
+      </div>
+
+      <p style="margin-top:20px"><a href="loan-calculator.html">Compare with a standard loan →</a></p>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+  (function () {
+    var $ = function (id) { return document.getElementById(id); };
+
+    function calc() {
+      var price = parseFloat($("price").value) || 0;
+      var apr = parseFloat($("rate").value) || 0;
+      var months = Math.round(parseFloat($("months").value) || 0);
+      var taxPct = parseFloat($("tax").value) || 0;
+      var down = parseFloat($("down").value) || 0;
+      var trade = parseFloat($("trade").value) || 0;
+
+      var taxAmt = price * (taxPct / 100);
+      var financed = Math.max(0, price + taxAmt - down - trade);
+      var payment = FC.payment(financed, apr, months);
+      if (!isFinite(payment) || months <= 0) payment = 0;
+
+      var totalInterest = payment > 0 ? (payment * months - financed) : 0;
+      var totalCost = down + trade + payment * months;
+
+      $("monthly").innerHTML = FC.money(payment) + ' <small>/ month</small>';
+      $("financed").textContent = FC.money(financed);
+      $("taxamt").textContent = FC.money(taxAmt);
+      $("interest").textContent = FC.money(totalInterest);
+      $("total").textContent = FC.money(totalCost);
+    }
+
+    $("calcBtn").addEventListener("click", calc);
+    ["price","rate","months","tax","down","trade"].forEach(function (id) {
+      $(id).addEventListener("input", calc);
+    });
+    calc();
+  })();
+  </script>
+</body>
+</html>

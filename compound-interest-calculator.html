@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compound Interest Calculator — Grow Your Savings | FinCalc Hub</title>
+  <meta name="description" content="Free compound interest calculator. See how savings and investments grow over time with regular contributions and compounding. Instant results and a year-by-year breakdown." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://YOURDOMAIN.com/compound-interest-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Compound Interest Calculator — Grow Your Savings" />
+  <meta property="og:description" content="See how your savings grow with compound interest and regular contributions." />
+  <meta property="og:url" content="https://YOURDOMAIN.com/compound-interest-calculator.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%88%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What is compound interest?","acceptedAnswer":{"@type":"Answer","text":"Compound interest is interest earned on both your original money and the interest already added. Over time this snowball effect makes savings grow faster than simple interest."}},
+      {"@type":"Question","name":"How often should interest compound?","acceptedAnswer":{"@type":"Answer","text":"The more frequently interest compounds — yearly, monthly or daily — the more you earn, though the difference between monthly and daily is usually small. This calculator lets you choose the frequency."}},
+      {"@type":"Question","name":"Do regular contributions matter?","acceptedAnswer":{"@type":"Answer","text":"Enormously. Adding a fixed amount each month gives compounding more principal to work on, and it's often the biggest driver of long-term growth."}}
+    ]
+  }
+  </script>
+</head>
+<body data-base="">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Compound Interest Calculator</p>
+    <h1>Compound Interest Calculator</h1>
+    <p class="lede">See how an initial deposit plus regular contributions can grow over time thanks to compounding.</p>
+
+    <div class="card">
+      <div class="calc">
+        <div class="row">
+          <div class="field">
+            <label for="principal">Starting amount ($)</label>
+            <input id="principal" type="number" inputmode="decimal" value="10000" min="0" step="100" />
+          </div>
+          <div class="field">
+            <label for="contrib">Monthly contribution ($)</label>
+            <input id="contrib" type="number" inputmode="decimal" value="300" min="0" step="50" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="rate">Annual interest rate (%)</label>
+            <input id="rate" type="number" inputmode="decimal" value="7" min="0" step="0.01" />
+          </div>
+          <div class="field">
+            <label for="years">Years</label>
+            <input id="years" type="number" inputmode="numeric" value="20" min="1" step="1" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="freq">Compounding frequency</label>
+          <select id="freq">
+            <option value="12" selected>Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Annually</option>
+            <option value="365">Daily</option>
+          </select>
+        </div>
+        <button class="btn" id="calcBtn">Calculate</button>
+      </div>
+
+      <div class="result" style="margin-top:18px">
+        <p class="big" id="future">—</p>
+        <div class="result-grid">
+          <div class="cell"><span>Total contributions</span><strong id="contribs">—</strong></div>
+          <div class="cell"><span>Interest earned</span><strong id="earned">—</strong></div>
+          <div class="cell"><span>Starting amount</span><strong id="start">—</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true">Advertisement</div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Year-by-year growth</h2>
+      <div style="overflow-x:auto">
+        <table id="schedule">
+          <thead><tr><th>Year</th><th>Contributions</th><th>Interest</th><th>Balance</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <section class="prose">
+      <h2>The power of compounding</h2>
+      <p>
+        Compound interest means you earn interest on your interest. Each period, your balance grows,
+        and the next period's interest is calculated on that larger balance. Combine this with steady
+        <strong>monthly contributions</strong> and time becomes your biggest advantage — which is why
+        starting early matters so much.
+      </p>
+      <h3>How to make it work for you</h3>
+      <ul>
+        <li>Start as <strong>early</strong> as possible — years matter more than amount.</li>
+        <li>Automate a <strong>fixed monthly contribution</strong>.</li>
+        <li>Reinvest returns so compounding stays uninterrupted.</li>
+      </ul>
+
+      <div class="faq">
+        <h2>Frequently asked questions</h2>
+        <details><summary>What is compound interest?</summary>
+          <p>Interest earned on both your original money and previously earned interest, so growth accelerates over time.</p></details>
+        <details><summary>How often should it compound?</summary>
+          <p>More frequent compounding earns slightly more, but consistent contributions and time matter far more.</p></details>
+        <details><summary>Do contributions really help that much?</summary>
+          <p>Yes — regular contributions give compounding more principal to grow, often the biggest driver of the final total.</p></details>
+      </div>
+
+      <p style="margin-top:20px"><a href="loan-calculator.html">Paying off debt instead? Try the loan calculator →</a></p>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+  (function () {
+    var $ = function (id) { return document.getElementById(id); };
+
+    function calc() {
+      var P = parseFloat($("principal").value) || 0;
+      var monthly = parseFloat($("contrib").value) || 0;
+      var apr = (parseFloat($("rate").value) || 0) / 100;
+      var years = Math.round(parseFloat($("years").value) || 0);
+      var m = parseInt($("freq").value, 10) || 12; // compounds per year
+
+      // Simulate monthly so contributions and any compounding frequency work together.
+      var balance = P, totalContrib = 0, rows = [];
+      var monthlyRate = Math.pow(1 + apr / m, m / 12) - 1; // effective monthly growth
+      var startBalYear = P, contribYear = 0, interestYear = 0;
+
+      for (var month = 1; month <= years * 12; month++) {
+        var interest = balance * monthlyRate;
+        balance += interest;
+        balance += monthly;
+        totalContrib += monthly;
+        interestYear += interest;
+        contribYear += monthly;
+        if (month % 12 === 0) {
+          rows.push([month / 12, contribYear, interestYear, balance]);
+          contribYear = 0; interestYear = 0;
+        }
+      }
+
+      var earned = balance - P - totalContrib;
+      $("future").innerHTML = FC.money(balance) + ' <small>after ' + years + ' years</small>';
+      $("contribs").textContent = FC.money(totalContrib);
+      $("earned").textContent = FC.money(earned);
+      $("start").textContent = FC.money(P);
+
+      var tbody = $("schedule").querySelector("tbody");
+      tbody.innerHTML = rows.map(function (r) {
+        return "<tr><td>" + r[0] + "</td><td>" + FC.money(r[1]) + "</td><td>" +
+          FC.money(r[2]) + "</td><td>" + FC.money(r[3]) + "</td></tr>";
+      }).join("");
+    }
+
+    $("calcBtn").addEventListener("click", calc);
+    ["principal","contrib","rate","years","freq"].forEach(function (id) {
+      $(id).addEventListener("input", calc);
+      $(id).addEventListener("change", calc);
+    });
+    calc();
+  })();
+  </script>
+</body>
+</html>

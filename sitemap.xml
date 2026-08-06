@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace https://YOURDOMAIN.com with your real domain, then submit this file
+     in Google Search Console (https://search.google.com/search-console). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOURDOMAIN.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://YOURDOMAIN.com/loan-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://YOURDOMAIN.com/mortgage-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://YOURDOMAIN.com/auto-loan-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://YOURDOMAIN.com/compound-interest-calculator.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://YOURDOMAIN.com/percentage-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://YOURDOMAIN.com/about.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://YOURDOMAIN.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://YOURDOMAIN.com/contact.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

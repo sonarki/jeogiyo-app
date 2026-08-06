@@ -1,0 +1,5 @@
+# Google AdSense — Authorized Digital Sellers (ads.txt)
+# After AdSense approval, replace pub-XXXXXXXXXXXXXXXX with your real publisher ID
+# (the digits from ca-pub-XXXXXXXXXXXXXXXX). This file must be reachable at
+# https://YOURDOMAIN.com/ads.txt so Google can verify your account.
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
