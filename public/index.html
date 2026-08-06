@@ -3,105 +3,152 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AIPriceIndex — Live AI Model Prices &amp; Specs</title>
-<meta name="description" content="Compare pricing and specs for 12+ AI models across LLM, image, video and audio. Updated 2026-08-06."/>
+<title>AIPriceIndex — Compare Every AI Model's Price (2026-08-06)</title>
+<meta name="description" content="Live, daily-verified pricing for 12+ AI models across LLM, image, video and audio. Input/output cost, context window and free tiers in one honest table."/>
 <link rel="canonical" href="https://REPLACE_WITH_YOUR_DOMAIN.com/"/>
-<meta property="og:title" content="AIPriceIndex — Live AI Model Prices &amp; Specs"/>
-<meta property="og:description" content="Compare pricing and specs for 12+ AI models across LLM, image, video and audio. Updated 2026-08-06."/>
-<link rel="stylesheet" href="/style.css"/>
+<meta property="og:title" content="AIPriceIndex — Compare Every AI Model's Price (2026-08-06)"/>
+<meta property="og:description" content="Live, daily-verified pricing for 12+ AI models across LLM, image, video and audio. Input/output cost, context window and free tiers in one honest table."/>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<header class="site">
-  <a class="brand" href="/">⚡ AIPriceIndex</a>
-  <nav><a href="/category/llm/">LLM / Text</a><a href="/category/image/">Image Generation</a><a href="/category/video/">Video Generation</a><a href="/category/audio/">Audio / Voice</a>
-    <a class="api" href="/api-docs/">API</a></nav>
-</header>
-<main><section class="hero"><h1>The live price &amp; spec index for every AI model</h1>
-  <p>Live pricing & specs for <strong>12</strong> AI models. Updated daily. Free API available.</p></section>
-  <section><h2 id="llm">LLM / Text</h2><p class="blurb">Large language models for chat, reasoning, coding and agents.</p><div class="tablewrap"><table>
-  <thead><tr><th>Model</th><th>Input</th><th>Output</th><th>Unit</th><th>Free tier</th><th></th></tr></thead>
-  <tbody><tr>
-    <td><a href="/tool/anthropic-claude-opus/"><strong>Claude Opus (latest)</strong></a><br><span class="vendor">Anthropic</span></td>
-    <td>$15</td><td>$75</td>
-    <td>per 1M tokens</td>
-    <td>✅</td>
+<header class="site"><div class="in">
+  <a class="brand" href="index.html">AI<b>PriceIndex</b></a>
+  <nav>
+    <a href="index.html">Models</a>
+    <a href="compare/index.html">Compare</a>
+    <a href="methodology.html">Methodology</a>
+    <a class="api" href="api-docs.html">API</a>
+  </nav>
+</div></header>
+<main>
+<div class="hero">
+  <span class="badge"><span class="dot"></span> Prices verified 2026-08-06</span>
+  <h1>Every AI model's price.<br>One honest table.</h1>
+  <p>The live price &amp; spec index for every AI model — checked daily against official vendor pricing pages. No hype, just numbers with dates on them.</p>
+</div>
+<div class="controls">
+  <input class="search" id="q" type="search" placeholder="Search model or vendor… (claude, gemini, flux)" aria-label="Search models"/>
+  <div class="chips" id="chips">
+    <button class="chip on" data-cat="all">All</button>
+    <button class="chip" data-cat="llm">LLM / Text</button><button class="chip" data-cat="image">Image Generation</button><button class="chip" data-cat="video">Video Generation</button><button class="chip" data-cat="audio">Audio / Voice</button>
+  </div>
+</div>
+<div class="tablewrap"><table id="master"><thead><tr><th>Model</th><th>Category</th><th>Input</th><th>Output</th><th>Unit</th><th>Context</th><th>Free tier</th><th></th></tr></thead><tbody><tr data-name="claude opus (latest) anthropic" data-cat="llm">
+    <td><a href="tool/anthropic-claude-opus.html"><strong>Claude Opus (latest)</strong></a><br><span class="vendor">Anthropic</span></td>
+    <td><span class="tag">LLM / Text</span></td>
+    <td class="num">$15</td><td class="num">$75</td>
+    <td class="num" style="color:var(--dim)">per 1M tokens</td>
+    <td class="num">200K+</td>
+    <td><span class="free">Yes</span></td>
     <td><a class="cta" rel="nofollow" href="https://www.anthropic.com">Site →</a></td>
-  </tr><tr>
-    <td><a href="/tool/anthropic-claude-sonnet/"><strong>Claude Sonnet (latest)</strong></a><br><span class="vendor">Anthropic</span></td>
-    <td>$3</td><td>$15</td>
-    <td>per 1M tokens</td>
-    <td>✅</td>
+  </tr><tr data-name="claude sonnet (latest) anthropic" data-cat="llm">
+    <td><a href="tool/anthropic-claude-sonnet.html"><strong>Claude Sonnet (latest)</strong></a><br><span class="vendor">Anthropic</span></td>
+    <td><span class="tag">LLM / Text</span></td>
+    <td class="num">$3</td><td class="num">$15</td>
+    <td class="num" style="color:var(--dim)">per 1M tokens</td>
+    <td class="num">200K+</td>
+    <td><span class="free">Yes</span></td>
     <td><a class="cta" rel="nofollow" href="https://www.anthropic.com">Site →</a></td>
-  </tr><tr>
-    <td><a href="/tool/openai-gpt-flagship/"><strong>GPT (flagship)</strong></a><br><span class="vendor">OpenAI</span></td>
-    <td>$5</td><td>$15</td>
-    <td>per 1M tokens</td>
-    <td>✅</td>
+  </tr><tr data-name="gpt (flagship) openai" data-cat="llm">
+    <td><a href="tool/openai-gpt-flagship.html"><strong>GPT (flagship)</strong></a><br><span class="vendor">OpenAI</span></td>
+    <td><span class="tag">LLM / Text</span></td>
+    <td class="num">$5</td><td class="num">$15</td>
+    <td class="num" style="color:var(--dim)">per 1M tokens</td>
+    <td class="num">128K+</td>
+    <td><span class="free">Yes</span></td>
     <td><a class="cta" rel="nofollow" href="https://openai.com">Site →</a></td>
-  </tr><tr>
-    <td><a href="/tool/google-gemini-pro/"><strong>Gemini Pro (latest)</strong></a><br><span class="vendor">Google</span></td>
-    <td>$1.25</td><td>$5</td>
-    <td>per 1M tokens</td>
-    <td>✅</td>
+  </tr><tr data-name="gemini pro (latest) google" data-cat="llm">
+    <td><a href="tool/google-gemini-pro.html"><strong>Gemini Pro (latest)</strong></a><br><span class="vendor">Google</span></td>
+    <td><span class="tag">LLM / Text</span></td>
+    <td class="num">$1.25</td><td class="num">$5</td>
+    <td class="num" style="color:var(--dim)">per 1M tokens</td>
+    <td class="num">1M+</td>
+    <td><span class="free">Yes</span></td>
     <td><a class="cta" rel="nofollow" href="https://deepmind.google">Site →</a></td>
-  </tr><tr>
-    <td><a href="/tool/meta-llama/"><strong>Llama (latest, hosted)</strong></a><br><span class="vendor">Meta / hosts</span></td>
-    <td>$0.2</td><td>$0.2</td>
-    <td>per 1M tokens</td>
-    <td>—</td>
+  </tr><tr data-name="llama (latest, hosted) meta / hosts" data-cat="llm">
+    <td><a href="tool/meta-llama.html"><strong>Llama (latest, hosted)</strong></a><br><span class="vendor">Meta / hosts</span></td>
+    <td><span class="tag">LLM / Text</span></td>
+    <td class="num">$0.2</td><td class="num">$0.2</td>
+    <td class="num" style="color:var(--dim)">per 1M tokens</td>
+    <td class="num">128K</td>
+    <td><span style="color:var(--dim)">—</span></td>
     <td><a class="cta" rel="nofollow" href="https://llama.com">Site →</a></td>
-  </tr><tr>
-    <td><a href="/tool/mistral-large/"><strong>Mistral Large</strong></a><br><span class="vendor">Mistral</span></td>
-    <td>$2</td><td>$6</td>
-    <td>per 1M tokens</td>
-    <td>—</td>
+  </tr><tr data-name="mistral large mistral" data-cat="llm">
+    <td><a href="tool/mistral-large.html"><strong>Mistral Large</strong></a><br><span class="vendor">Mistral</span></td>
+    <td><span class="tag">LLM / Text</span></td>
+    <td class="num">$2</td><td class="num">$6</td>
+    <td class="num" style="color:var(--dim)">per 1M tokens</td>
+    <td class="num">128K</td>
+    <td><span style="color:var(--dim)">—</span></td>
     <td><a class="cta" rel="nofollow" href="https://mistral.ai">Site →</a></td>
-  </tr><tr>
-    <td><a href="/tool/deepseek/"><strong>DeepSeek (latest)</strong></a><br><span class="vendor">DeepSeek</span></td>
-    <td>$0.27</td><td>$1.1</td>
-    <td>per 1M tokens</td>
-    <td>—</td>
+  </tr><tr data-name="deepseek (latest) deepseek" data-cat="llm">
+    <td><a href="tool/deepseek.html"><strong>DeepSeek (latest)</strong></a><br><span class="vendor">DeepSeek</span></td>
+    <td><span class="tag">LLM / Text</span></td>
+    <td class="num">$0.27</td><td class="num">$1.1</td>
+    <td class="num" style="color:var(--dim)">per 1M tokens</td>
+    <td class="num">128K</td>
+    <td><span style="color:var(--dim)">—</span></td>
     <td><a class="cta" rel="nofollow" href="https://www.deepseek.com">Site →</a></td>
-  </tr></tbody></table></div></section><section><h2 id="image">Image Generation</h2><p class="blurb">Text-to-image and image editing models.</p><div class="tablewrap"><table>
-  <thead><tr><th>Model</th><th>Input</th><th>Output</th><th>Unit</th><th>Free tier</th><th></th></tr></thead>
-  <tbody><tr>
-    <td><a href="/tool/openai-image/"><strong>GPT Image</strong></a><br><span class="vendor">OpenAI</span></td>
-    <td>$0.04</td><td>$0.04</td>
-    <td>per image</td>
-    <td>—</td>
+  </tr><tr data-name="gpt image openai" data-cat="image">
+    <td><a href="tool/openai-image.html"><strong>GPT Image</strong></a><br><span class="vendor">OpenAI</span></td>
+    <td><span class="tag">Image Generation</span></td>
+    <td class="num">$0.04</td><td class="num">$0.04</td>
+    <td class="num" style="color:var(--dim)">per image</td>
+    <td class="num">n/a</td>
+    <td><span style="color:var(--dim)">—</span></td>
     <td><a class="cta" rel="nofollow" href="https://openai.com">Site →</a></td>
-  </tr><tr>
-    <td><a href="/tool/black-forest-flux/"><strong>FLUX (latest)</strong></a><br><span class="vendor">Black Forest Labs</span></td>
-    <td>$0.025</td><td>$0.025</td>
-    <td>per image</td>
-    <td>—</td>
+  </tr><tr data-name="flux (latest) black forest labs" data-cat="image">
+    <td><a href="tool/black-forest-flux.html"><strong>FLUX (latest)</strong></a><br><span class="vendor">Black Forest Labs</span></td>
+    <td><span class="tag">Image Generation</span></td>
+    <td class="num">$0.025</td><td class="num">$0.025</td>
+    <td class="num" style="color:var(--dim)">per image</td>
+    <td class="num">n/a</td>
+    <td><span style="color:var(--dim)">—</span></td>
     <td><a class="cta" rel="nofollow" href="https://blackforestlabs.ai">Site →</a></td>
-  </tr></tbody></table></div></section><section><h2 id="video">Video Generation</h2><p class="blurb">Text/image-to-video and motion models.</p><div class="tablewrap"><table>
-  <thead><tr><th>Model</th><th>Input</th><th>Output</th><th>Unit</th><th>Free tier</th><th></th></tr></thead>
-  <tbody><tr>
-    <td><a href="/tool/google-veo/"><strong>Veo (latest)</strong></a><br><span class="vendor">Google</span></td>
-    <td>$0.5</td><td>$0.5</td>
-    <td>per second</td>
-    <td>—</td>
+  </tr><tr data-name="veo (latest) google" data-cat="video">
+    <td><a href="tool/google-veo.html"><strong>Veo (latest)</strong></a><br><span class="vendor">Google</span></td>
+    <td><span class="tag">Video Generation</span></td>
+    <td class="num">$0.5</td><td class="num">$0.5</td>
+    <td class="num" style="color:var(--dim)">per second</td>
+    <td class="num">n/a</td>
+    <td><span style="color:var(--dim)">—</span></td>
     <td><a class="cta" rel="nofollow" href="https://deepmind.google">Site →</a></td>
-  </tr><tr>
-    <td><a href="/tool/kling-video/"><strong>Kling (latest)</strong></a><br><span class="vendor">Kuaishou</span></td>
-    <td>$0.35</td><td>$0.35</td>
-    <td>per 5s clip</td>
-    <td>✅</td>
+  </tr><tr data-name="kling (latest) kuaishou" data-cat="video">
+    <td><a href="tool/kling-video.html"><strong>Kling (latest)</strong></a><br><span class="vendor">Kuaishou</span></td>
+    <td><span class="tag">Video Generation</span></td>
+    <td class="num">$0.35</td><td class="num">$0.35</td>
+    <td class="num" style="color:var(--dim)">per 5s clip</td>
+    <td class="num">n/a</td>
+    <td><span class="free">Yes</span></td>
     <td><a class="cta" rel="nofollow" href="https://klingai.com">Site →</a></td>
-  </tr></tbody></table></div></section><section><h2 id="audio">Audio / Voice</h2><p class="blurb">Text-to-speech, music and voice cloning.</p><div class="tablewrap"><table>
-  <thead><tr><th>Model</th><th>Input</th><th>Output</th><th>Unit</th><th>Free tier</th><th></th></tr></thead>
-  <tbody><tr>
-    <td><a href="/tool/elevenlabs-tts/"><strong>ElevenLabs TTS</strong></a><br><span class="vendor">ElevenLabs</span></td>
-    <td>$0.3</td><td>$0.3</td>
-    <td>per 1K chars</td>
-    <td>✅</td>
+  </tr><tr data-name="elevenlabs tts elevenlabs" data-cat="audio">
+    <td><a href="tool/elevenlabs-tts.html"><strong>ElevenLabs TTS</strong></a><br><span class="vendor">ElevenLabs</span></td>
+    <td><span class="tag">Audio / Voice</span></td>
+    <td class="num">$0.3</td><td class="num">$0.3</td>
+    <td class="num" style="color:var(--dim)">per 1K chars</td>
+    <td class="num">n/a</td>
+    <td><span class="free">Yes</span></td>
     <td><a class="cta" rel="nofollow" href="https://elevenlabs.io">Site →</a></td>
-  </tr></tbody></table></div></section></main>
-<footer class="site">
-  <p>AIPriceIndex — The live price &amp; spec index for every AI model. Prices last synced 2026-08-06.</p>
-  <p class="disclaimer">Pricing is auto-collected and may lag vendor changes. Verify on the vendor site before purchase. Some links are affiliate links.</p>
-</footer>
+  </tr></tbody></table></div>
+<h2>Popular head-to-head comparisons</h2>
+<div class="linkgrid">
+  <a href="compare/anthropic-claude-opus-vs-anthropic-claude-sonnet.html">Claude Opus (latest) vs Claude Sonnet (latest)</a><a href="compare/anthropic-claude-opus-vs-deepseek.html">Claude Opus (latest) vs DeepSeek (latest)</a><a href="compare/anthropic-claude-opus-vs-google-gemini-pro.html">Claude Opus (latest) vs Gemini Pro (latest)</a><a href="compare/anthropic-claude-opus-vs-meta-llama.html">Claude Opus (latest) vs Llama (latest, hosted)</a><a href="compare/anthropic-claude-opus-vs-mistral-large.html">Claude Opus (latest) vs Mistral Large</a><a href="compare/anthropic-claude-opus-vs-openai-gpt-flagship.html">Claude Opus (latest) vs GPT (flagship)</a><a href="compare/anthropic-claude-sonnet-vs-deepseek.html">Claude Sonnet (latest) vs DeepSeek (latest)</a><a href="compare/anthropic-claude-sonnet-vs-google-gemini-pro.html">Claude Sonnet (latest) vs Gemini Pro (latest)</a><a href="compare/anthropic-claude-sonnet-vs-meta-llama.html">Claude Sonnet (latest) vs Llama (latest, hosted)</a><a href="compare/anthropic-claude-sonnet-vs-mistral-large.html">Claude Sonnet (latest) vs Mistral Large</a><a href="compare/anthropic-claude-sonnet-vs-openai-gpt-flagship.html">Claude Sonnet (latest) vs GPT (flagship)</a><a href="compare/deepseek-vs-google-gemini-pro.html">DeepSeek (latest) vs Gemini Pro (latest)</a>
+</div>
+<p style="margin-top:10px;font-size:14px"><a href="compare/index.html">All 23 comparisons →</a></p>
+<div class="note" style="margin-top:26px">Need this data inside your app or agent? The daily JSON snapshot is free — <a href="api-docs.html">see the Pricing API</a>.</div>
+<script>
+const q=document.getElementById('q'),chips=document.getElementById('chips'),
+rows=[...document.querySelectorAll('#master tbody tr')];let cat='all';
+function apply(){const s=q.value.trim().toLowerCase();
+rows.forEach(r=>{r.style.display=((!s||r.dataset.name.includes(s))&&(cat==='all'||r.dataset.cat===cat))?'':'none';});}
+q.addEventListener('input',apply);
+chips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;
+chips.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+b.classList.add('on');cat=b.dataset.cat;apply();});
+</script></main>
+<footer class="site"><div class="in">
+  <p><strong>AIPriceIndex</strong> — The live price &amp; spec index for every AI model. Prices last verified 2026-08-06.</p>
+  <p class="disclaimer">Every price is checked against the vendor's official pricing page and dated per row. Pricing may lag vendor changes — verify before purchase. Some outbound links are referral links; they never affect the data. Not affiliated with any vendor.</p>
+</div></footer>
 </body>
 </html>

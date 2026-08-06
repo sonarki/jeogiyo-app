@@ -3,7 +3,7 @@
 **하나의 데이터 → 두 개의 수도꼭지.** AI 모델 가격/스펙 DB 하나를 매일 자동 갱신해서:
 
 1. **프로그래매틱 웹** — 구글 검색 유입 → 광고/제휴 수익 (디자인은 템플릿 1개로 영구 해결)
-2. **JSON API** — 개발자 대상 월 구독 (Stripe = 은행계좌 연결 지점)
+2. **JSON API** — 개발자 대상 월 구독 (Gumroad = 결제/정산, 이미 계정 연결 완료)
 
 런타임 AI 비용 **거의 0** — 사이트/API는 미리 만들어진 정적 데이터만 서빙. AI는 하루 1번 수집에만 (최저가 모델 or 무-AI 파싱).
 
@@ -34,15 +34,15 @@ npm run serve    # 로컬 미리보기
 |---|---|---|---|
 | 1 | 도메인 구입 → `data/tools.json`의 `meta.domain` 교체 | Namecheap/Cloudflare | ~$12/년 |
 | 2 | 배포 연결 (이 레포 → 자동 배포) | Vercel 무료 티어 (public/ 서빙 + api/ 함수) | $0 |
-| 3 | **Stripe Payment Link 생성** → `pricing` 페이지의 `STRIPE_PAYMENT_LINK` 교체. Stripe에 **은행계좌 등록** → 결제되면 자동 입금 | dashboard.stripe.com | $0 (수수료만) |
+| 3 | **Gumroad 구독 상품 등록** ("API Pro" $19/mo, "Generate license keys" 켜기) → 상품 URL을 `api-docs` 페이지의 `GUMROAD_PRODUCT_URL`에, product ID를 배포 env `GUMROAD_PRODUCT_ID`에 | gumroad.com (계정 연결 완료) | $0 (수수료 ~10%) |
 | 4 | 제휴 프로그램 가입 (각 AI 벤더/툴) → `tools.json`의 `affiliate_url` 채우기 | 각 벤더 affiliate 페이지 | $0 |
 
 ## 다음 개발 단계 (우선순위순)
 
 1. `scripts/update.mjs`에 실제 수집기 구현 (벤더 가격페이지 fetch+parse, AI 불필요한 것부터)
 2. 모델 100개+로 확장 → 페이지 수 = SEO 표면적 자동 확장
-3. "X vs Y" 비교 페이지 자동 생성 (검색량 최고 키워드: "claude vs gpt pricing" 류)
-4. Stripe webhook → API 키 자동 발급 (구독하면 키 이메일 발송)
+3. ~~"X vs Y" 비교 페이지 자동 생성~~ → 완료 (`build.mjs`가 카테고리 내 전 조합 생성)
+4. ~~API 키 자동 발급~~ → 완료: Gumroad가 구독 시 라이선스 키 자동 발급, `api/tools.js`가 검증
 5. 가격 변동 히스토리 축적 → Business 티어 상품화
 
 ## 솔직한 기대치

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Pricing Data API — JSON for Your App | AIPriceIndex</title>
+<meta name="description" content="Machine-readable AI model pricing. Free daily JSON snapshot, or Pro subscription with license key via Gumroad."/>
+<link rel="canonical" href="https://REPLACE_WITH_YOUR_DOMAIN.com/api-docs.html"/>
+<meta property="og:title" content="AI Pricing Data API — JSON for Your App | AIPriceIndex"/>
+<meta property="og:description" content="Machine-readable AI model pricing. Free daily JSON snapshot, or Pro subscription with license key via Gumroad."/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header class="site"><div class="in">
+  <a class="brand" href="index.html">AI<b>PriceIndex</b></a>
+  <nav>
+    <a href="index.html">Models</a>
+    <a href="compare/index.html">Compare</a>
+    <a href="methodology.html">Methodology</a>
+    <a class="api" href="api-docs.html">API</a>
+  </nav>
+</div></header>
+<main><div class="hero"><h1>Pricing API</h1>
+<p>The same daily-verified data, as clean JSON for your app, dashboard or agent.</p></div>
+<div class="plans">
+  <div class="plan"><h3>Free</h3><p class="price">$0<span> forever</span></p>
+    <ul><li>Full current snapshot, all models</li><li>Updated daily</li><li>No key required — just attribution</li></ul>
+    <pre>curl https://REPLACE_WITH_YOUR_DOMAIN.com/api/tools.json</pre></div>
+  <div class="plan featured"><h3>Pro</h3><p class="price">$19<span>/mo</span></p>
+    <ul><li>Metered live endpoint + filters</li><li>Price history &amp; change alerts</li><li>Commercial license</li></ul>
+    <a class="cta big" href="GUMROAD_PRODUCT_URL">Subscribe via Gumroad →</a>
+    <p class="disclaimer">License key delivered instantly by Gumroad. Cancel anytime.</p></div>
+</div>
+<h2>Using your key</h2>
+<pre>GET /api/tools            # all models
+GET /api/tools?cat=llm    # filter by category
+Header: x-api-key: YOUR_GUMROAD_LICENSE_KEY</pre>
+<div class="note">Building something with this data? Attribution appreciated: “Pricing data by AIPriceIndex”.</div></main>
+<footer class="site"><div class="in">
+  <p><strong>AIPriceIndex</strong> — The live price &amp; spec index for every AI model. Prices last verified 2026-08-06.</p>
+  <p class="disclaimer">Every price is checked against the vendor's official pricing page and dated per row. Pricing may lag vendor changes — verify before purchase. Some outbound links are referral links; they never affect the data. Not affiliated with any vendor.</p>
+</div></footer>
+</body>
+</html>
