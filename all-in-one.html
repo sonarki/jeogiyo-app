@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Loan & Finance Calculator — All-in-One</title>
+<meta name="description" content="Free all-in-one loan, mortgage and auto calculator with amortization schedule, charts, extra payments, bi-weekly savings, compound interest and percentage tools." />
+<!--
+  ============================================================================
+  FEATURE-COMPLETE ENGINE — design is intentionally NEUTRAL/minimal so you can
+  restyle freely. All logic/functions live here; swap the :root tokens and
+  component styles for your own brand. Nothing depends on external libraries,
+  fonts or network — works offline and inside any host.
+  ============================================================================
+-->
+<style>
+  :root{
+    --bg:#ffffff; --panel:#f7f8fa; --ink:#15181e; --muted:#5c6672; --line:#e5e8ee;
+    --brand:#2563eb; --brand2:#0ea5e9; --accent:#0f9d58; --warn:#e0a800;
+    --chart-a:#2563eb; --chart-b:#f59e0b; --radius:12px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#0e1116; --panel:#161b22; --ink:#e8edf5; --muted:#9aa6b6; --line:#232a35;
+      --brand:#5b8bff; --brand2:#38bdf8; --accent:#34d399; --warn:#f5c451;
+      --chart-a:#5b8bff; --chart-b:#f5b942; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans KR",sans-serif;
+    line-height:1.55;font-variant-numeric:tabular-nums}
+  .wrap{max-width:1080px;margin:0 auto;padding:18px}
+  header.top{padding:8px 0 4px}
+  header.top h1{font-size:1.5rem;margin:0 0 2px}
+  header.top p{color:var(--muted);margin:0;font-size:.95rem}
+
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin:14px 0}
+  h2{font-size:1.12rem;margin:0 0 10px}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+  .tabs button{border:1px solid var(--line);background:var(--bg);color:var(--muted);border-radius:999px;
+    padding:7px 14px;font:inherit;font-weight:600;cursor:pointer}
+  .tabs button.active{background:var(--brand);border-color:var(--brand);color:#fff}
+
+  .controls{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fld{display:grid;gap:5px}
+  .fld label{font-size:.85rem;font-weight:600}
+  .fld .hint{color:var(--muted);font-weight:400}
+  .fld input,.fld select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:9px;
+    background:var(--bg);color:var(--ink);font:inherit}
+  .fld input[type=range]{padding:0}
+  .fld .with-slider{display:grid;gap:6px}
+  .inline{display:flex;gap:10px}
+  .inline > *{flex:1}
+  .mortgage-only{display:none}
+  body.is-mortgage .mortgage-only{display:grid}
+
+  .summary{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;align-items:start}
+  .headline{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+  .headline .big{font-size:2.1rem;font-weight:800;color:var(--accent);margin:2px 0}
+  .headline .big small{font-size:.95rem;color:var(--muted);font-weight:600}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:9px 11px}
+  .stat span{display:block;color:var(--muted);font-size:.76rem}
+  .stat strong{font-size:1.02rem}
+  .savings{margin-top:12px;padding:11px 13px;border-radius:9px;border:1px solid var(--accent);
+    background:color-mix(in srgb,var(--accent) 12%,transparent);font-size:.92rem}
+  .savings.hidden{display:none}
+
+  .charts{display:grid;grid-template-columns:200px 1fr;gap:16px;align-items:center}
+  canvas{max-width:100%}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin-top:8px}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .actions button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;
+    padding:8px 13px;font:inherit;font-weight:600;cursor:pointer}
+  .actions button:hover{border-color:var(--brand);color:var(--brand)}
+
+  .tablewrap{overflow-x:auto;max-height:440px;overflow-y:auto;border:1px solid var(--line);border-radius:9px}
+  table{width:100%;border-collapse:collapse;font-size:.86rem}
+  th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  thead th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-weight:600}
+  tr.year-row{background:color-mix(in srgb,var(--brand) 7%,transparent);font-weight:700}
+
+  .mini{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .mini .out{font-size:1.5rem;font-weight:800;color:var(--accent)}
+  .foot{color:var(--muted);font-size:.8rem;margin:18px 0 40px}
+  @media (max-width:760px){
+    .controls,.summary,.charts,.mini{grid-template-columns:1fr}
+    .charts canvas.donut{justify-self:center}
+  }
+</style>
+</head>
+<body class="is-mortgage">
+<div class="wrap">
+  <header class="top">
+    <h1 id="pageTitle">Loan &amp; Mortgage Calculator</h1>
+    <p>Amortization, charts, extra payments, bi-weekly savings — all in one page. <span style="color:var(--warn)">(neutral placeholder design — restyle freely)</span></p>
+  </header>
+
+  <div class="tabs" id="typeTabs">
+    <button data-type="mortgage" class="active">🏠 Mortgage</button>
+    <button data-type="personal">💵 Personal Loan</button>
+    <button data-type="auto">🚗 Auto Loan</button>
+    <button data-type="student">🎓 Student Loan</button>
+  </div>
+
+  <!-- ============ MAIN LOAN CALCULATOR ============ -->
+  <div class="panel">
+    <div class="controls">
+      <div class="fld mortgage-only">
+        <label>Home price <span class="hint" id="priceHint">($)</span></label>
+        <div class="with-slider">
+          <input id="price" type="number" value="400000" step="1000" />
+          <input id="priceR" type="range" min="50000" max="1500000" step="5000" value="400000" />
+        </div>
+      </div>
+      <div class="fld mortgage-only">
+        <label>Down payment <span class="hint">($ &amp; %)</span></label>
+        <div class="inline">
+          <input id="down" type="number" value="80000" step="1000" />
+          <input id="downPct" type="number" value="20" step="1" title="down %" />
+        </div>
+      </div>
+
+      <div class="fld" id="amountFld">
+        <label>Loan amount <span class="hint">($)</span></label>
+        <div class="with-slider">
+          <input id="amount" type="number" value="320000" step="1000" />
+          <input id="amountR" type="range" min="1000" max="1000000" step="1000" value="320000" />
+        </div>
+      </div>
+
+      <div class="fld">
+        <label>Interest rate / APR <span class="hint">(%)</span></label>
+        <div class="with-slider">
+          <input id="rate" type="number" value="6.5" step="0.01" />
+          <input id="rateR" type="range" min="0" max="20" step="0.05" value="6.5" />
+        </div>
+      </div>
+
+      <div class="fld">
+        <label>Term <span class="hint">(years)</span></label>
+        <div class="with-slider">
+          <input id="years" type="number" value="30" step="1" />
+          <input id="yearsR" type="range" min="1" max="40" step="1" value="30" />
+        </div>
+      </div>
+
+      <div class="fld">
+        <label>Start date</label>
+        <input id="start" type="month" />
+      </div>
+
+      <div class="fld">
+        <label>Payment frequency</label>
+        <select id="freq">
+          <option value="monthly" selected>Monthly (12/yr)</option>
+          <option value="biweekly">Bi-weekly accelerated (26/yr)</option>
+        </select>
+      </div>
+
+      <div class="fld">
+        <label>Extra payment each period <span class="hint">($)</span></label>
+        <input id="extra" type="number" value="0" step="25" />
+      </div>
+
+      <div class="fld">
+        <label>One-time extra payment <span class="hint">($)</span></label>
+        <input id="oneTime" type="number" value="0" step="500" />
+      </div>
+      <div class="fld">
+        <label>…applied at month #</label>
+        <input id="oneTimeAt" type="number" value="12" step="1" min="1" />
+      </div>
+
+      <!-- Mortgage-only extras -->
+      <div class="fld mortgage-only"><label>Property tax / year ($)</label><input id="tax" type="number" value="4800" step="100" /></div>
+      <div class="fld mortgage-only"><label>Home insurance / year ($)</label><input id="ins" type="number" value="1500" step="100" /></div>
+      <div class="fld mortgage-only"><label>HOA / month ($)</label><input id="hoa" type="number" value="0" step="10" /></div>
+      <div class="fld mortgage-only"><label>PMI rate / year (% of loan)</label><input id="pmi" type="number" value="0.5" step="0.1" /></div>
+    </div>
+  </div>
+
+  <!-- ============ RESULTS ============ -->
+  <div class="panel">
+    <div class="summary">
+      <div class="headline">
+        <div>Estimated payment</div>
+        <p class="big" id="payBig">—</p>
+        <div class="stats">
+          <div class="stat"><span>Principal &amp; interest</span><strong id="sPI">—</strong></div>
+          <div class="stat mortgage-only" style="display:grid"><span>Taxes / ins / HOA / PMI</span><strong id="sEscrow">—</strong></div>
+          <div class="stat"><span>Loan amount</span><strong id="sLoan">—</strong></div>
+          <div class="stat"><span>Total interest</span><strong id="sInterest">—</strong></div>
+          <div class="stat"><span>Total of payments</span><strong id="sTotal">—</strong></div>
+          <div class="stat"><span>Payoff date</span><strong id="sPayoff">—</strong></div>
+        </div>
+        <div class="savings hidden" id="savingsBox"></div>
+      </div>
+
+      <div>
+        <div class="charts">
+          <div>
+            <canvas class="donut" id="donut" width="200" height="200" aria-label="Principal vs interest"></canvas>
+            <div class="legend">
+              <span><i style="background:var(--chart-a)"></i>Principal</span>
+              <span><i style="background:var(--chart-b)"></i>Interest</span>
+            </div>
+          </div>
+          <div>
+            <canvas id="line" width="520" height="220" aria-label="Balance over time"></canvas>
+            <div class="legend">
+              <span><i style="background:var(--muted)"></i>Standard</span>
+              <span><i style="background:var(--chart-a)"></i>Your plan</span>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="btnShare">🔗 Copy share link</button>
+          <button id="btnCopy">📋 Copy summary</button>
+          <button id="btnCsv">⬇️ Download CSV</button>
+          <button id="btnPrint">🖨️ Print</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ AMORTIZATION ============ -->
+  <div class="panel">
+    <h2 style="display:flex;justify-content:space-between;align-items:center">
+      Amortization schedule
+      <span class="tabs" style="margin:0">
+        <button id="viewYear" class="active">Yearly</button>
+        <button id="viewMonth">Per payment</button>
+      </span>
+    </h2>
+    <div class="tablewrap">
+      <table id="amTable">
+        <thead><tr><th>Period</th><th>Date</th><th>Payment</th><th>Interest</th><th>Principal</th><th>Extra</th><th>Balance</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============ EXTRA TOOLS (all on one page) ============ -->
+  <div class="panel">
+    <h2>📈 Compound Interest</h2>
+    <div class="mini">
+      <div class="fld"><label>Starting amount ($)</label><input id="ci-p" type="number" value="10000" step="100" /></div>
+      <div class="fld"><label>Monthly contribution ($)</label><input id="ci-c" type="number" value="300" step="50" /></div>
+      <div class="fld"><label>Annual rate (%)</label><input id="ci-r" type="number" value="7" step="0.01" /></div>
+      <div class="fld"><label>Years</label><input id="ci-y" type="number" value="20" step="1" /></div>
+    </div>
+    <div class="stats" style="margin-top:12px;grid-template-columns:repeat(3,1fr)">
+      <div class="stat"><span>Future value</span><strong class="out" id="ci-fv">—</strong></div>
+      <div class="stat"><span>You contributed</span><strong id="ci-contrib">—</strong></div>
+      <div class="stat"><span>Interest earned</span><strong id="ci-earn">—</strong></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>➗ Percentage</h2>
+    <div class="mini">
+      <div>
+        <div class="fld"><label>What is X% of Y?</label></div>
+        <div class="inline"><input id="pc-p" type="number" value="20" step="any" /><input id="pc-n" type="number" value="150" step="any" /></div>
+        <div class="out" id="pc-r1" style="margin-top:6px">—</div>
+      </div>
+      <div>
+        <div class="fld"><label>X is what % of Y?</label></div>
+        <div class="inline"><input id="pc-a" type="number" value="30" step="any" /><input id="pc-b" type="number" value="150" step="any" /></div>
+        <div class="out" id="pc-r2" style="margin-top:6px">—</div>
+      </div>
+      <div>
+        <div class="fld"><label>% change (old → new)</label></div>
+        <div class="inline"><input id="pc-o" type="number" value="200" step="any" /><input id="pc-w" type="number" value="250" step="any" /></div>
+        <div class="out" id="pc-r3" style="margin-top:6px">—</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">Estimates for general information only — not financial advice. Verify final figures with your lender. All calculations run privately in your browser.</p>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id);};
+var money=function(n,dp){ if(!isFinite(n))return"—"; return "$"+Number(n).toLocaleString("en-US",{minimumFractionDigits:dp==null?0:dp,maximumFractionDigits:dp==null?0:dp}); };
+var money2=function(n){return money(n,2);};
+var pct=function(n){return (isFinite(n)?n.toFixed(2):"—")+"%";};
+
+var DEFAULTS={
+  mortgage:{price:400000,down:80000,rate:6.5,years:30,tax:4800,ins:1500,hoa:0,pmi:0.5},
+  personal:{amount:25000,rate:11,years:5},
+  auto:{amount:32000,rate:6.9,years:5},
+  student:{amount:30000,rate:6,years:10}
+};
+var state={type:"mortgage",amView:"year"};
+
+// ---- default start = current month ----
+(function(){ var d=new Date(); var m=("0"+(d.getMonth()+1)).slice(-2); $("start").value=d.getFullYear()+"-"+m; })();
+
+// ---------- core simulation ----------
+function amortize(P,apr,nPer){ var r=(apr/100)/12; if(nPer<=0)return NaN; if(r===0)return P/nPer; return P*r/(1-Math.pow(1+r,-nPer)); }
+
+// Generic simulator across any periods-per-year.
+function simulate(principal, apr, payPerPeriod, perYear, extraPerPeriod, oneTime, oneTimeAt){
+  var rate=(apr/100)/perYear, bal=principal, totalInt=0, rows=[], n=0, guard=perYear*80+10;
+  while(bal>0.005 && n<guard){
+    n++;
+    var interest=bal*rate;
+    var extra=extraPerPeriod||0;
+    if(oneTime>0 && n===oneTimeAt) extra+=oneTime;
+    var principalPart=payPerPeriod-interest;
+    if(principalPart<=0 && extra<=0){ return {impossible:true}; }
+    var totalPrincipal=principalPart+extra;
+    if(totalPrincipal>bal) { totalPrincipal=bal; }
+    var basePrincipal=Math.min(principalPart,totalPrincipal);
+    var extraUsed=totalPrincipal-basePrincipal;
+    bal-=totalPrincipal;
+    totalInt+=interest;
+    rows.push({n:n, interest:interest, principal:basePrincipal, extra:extraUsed, payment:interest+basePrincipal, balance:bal<0?0:bal});
+  }
+  return {rows:rows, totalInterest:totalInt, periods:n, perYear:perYear};
+}
+
+function addPeriods(startYM, index, perYear){
+  // returns Date for the index-th payment (1-based) given start year-month
+  var parts=startYM.split("-"); var y=parseInt(parts[0],10), m=parseInt(parts[1],10)-1;
+  var d=new Date(y, m, 1);
+  if(perYear===12){ d.setMonth(d.getMonth()+ (index-1)); }
+  else { d.setDate(d.getDate() + Math.round((index-1)*(365/perYear))); }
+  return d;
+}
+function fmtDate(d){ return d.toLocaleDateString("en-US",{year:"numeric",month:"short"}); }
+
+// ---------- read inputs & compute ----------
+function loanAmount(){
+  if(state.type==="mortgage"){ return Math.max(0,(parseFloat($("price").value)||0)-(parseFloat($("down").value)||0)); }
+  return parseFloat($("amount").value)||0;
+}
+function compute(){
+  var apr=parseFloat($("rate").value)||0;
+  var years=parseFloat($("years").value)||0;
+  var months=Math.round(years*12);
+  var P=loanAmount();
+  var freq=$("freq").value;
+  var extra=parseFloat($("extra").value)||0;
+  var oneTime=parseFloat($("oneTime").value)||0;
+  var oneTimeAt=Math.max(1,Math.round(parseFloat($("oneTimeAt").value)||1));
+  var startYM=$("start").value || "2026-01";
+
+  var monthlyPI=amortize(P,apr,months);
+  if(!isFinite(monthlyPI)||months<=0||P<=0){ $("payBig").textContent="—"; return; }
+
+  // baseline: standard monthly, no extras
+  var baseline=simulate(P,apr,monthlyPI,12,0,0,0);
+
+  // plan: chosen frequency + extras
+  var perYear = freq==="biweekly"?26:12;
+  var payPerPeriod = freq==="biweekly"? monthlyPI/2 : monthlyPI;
+  var plan=simulate(P,apr,payPerPeriod,perYear,extra,oneTime,oneTimeAt);
+  if(plan.impossible){ $("payBig").innerHTML='Payment too low to cover interest'; return; }
+
+  // mortgage escrow
+  var escrow=0, pmiMonthly=0, downRatio=1;
+  if(state.type==="mortgage"){
+    var price=parseFloat($("price").value)||0, down=parseFloat($("down").value)||0;
+    downRatio=price>0?down/price:0;
+    var tax=(parseFloat($("tax").value)||0)/12, ins=(parseFloat($("ins").value)||0)/12, hoa=parseFloat($("hoa").value)||0;
+    pmiMonthly = downRatio<0.20 ? (P*(parseFloat($("pmi").value)||0)/100)/12 : 0;
+    escrow=tax+ins+hoa+pmiMonthly;
+  }
+
+  var totalMonthly = monthlyPI + escrow;
+  var perLabel = freq==="biweekly" ? " / 2 weeks" : " / month";
+  var shownPI = freq==="biweekly" ? monthlyPI/2 : monthlyPI;
+
+  $("payBig").innerHTML = money2(shownPI+ (freq==="biweekly"?0:escrow)) + ' <small>'+perLabel+(state.type==="mortgage"&&freq!=="biweekly"?" (with taxes)":"")+'</small>';
+  $("sPI").textContent = money2(shownPI)+ (freq==="biweekly"?" ×26/yr":"");
+  $("sEscrow").textContent = money2(escrow)+"/mo"+(pmiMonthly>0?" · PMI incl.":downRatio>=0.2&&state.type==="mortgage"?" · no PMI":"");
+  $("sLoan").textContent = money(P);
+  $("sInterest").textContent = money(plan.totalInterest);
+  $("sTotal").textContent = money(P+plan.totalInterest);
+  var payoffDate=addPeriods(startYM, plan.periods, perYear);
+  $("sPayoff").textContent = fmtDate(payoffDate);
+
+  // savings vs baseline
+  var intSaved=baseline.totalInterest-plan.totalInterest;
+  var baseEndMonths=baseline.periods; // in months
+  var planEndMonths = perYear===26 ? plan.periods*(12/26) : plan.periods;
+  var monthsSaved=Math.round(baseEndMonths-planEndMonths);
+  var box=$("savingsBox");
+  if(intSaved>1 || monthsSaved>0){
+    box.classList.remove("hidden");
+    var y=Math.floor(monthsSaved/12), mo=monthsSaved%12;
+    box.innerHTML="✅ vs a standard monthly loan you save <strong>"+money(intSaved)+"</strong> in interest"+
+      (monthsSaved>0?" and pay it off <strong>"+(y?y+"y ":"")+mo+"m</strong> sooner":"")+".";
+  } else box.classList.add("hidden");
+
+  // charts
+  drawDonut(P, plan.totalInterest);
+  drawLine(baseline, plan, perYear);
+
+  // amortization table
+  state._plan=plan; state._startYM=startYM; state._perYear=perYear;
+  renderTable();
+
+  // share state
+  state._share={t:state.type,P:state.type==="mortgage"?undefined:P,
+    price:$("price").value,down:$("down").value,r:apr,y:years,f:freq,e:extra,ot:oneTime,ota:oneTimeAt,
+    tax:$("tax").value,ins:$("ins").value,hoa:$("hoa").value,pmi:$("pmi").value};
+}
+
+// ---------- table ----------
+function renderTable(){
+  var plan=state._plan; if(!plan) return;
+  var tb=$("amTable").querySelector("tbody"); var perYear=state._perYear, startYM=state._startYM;
+  var rows=plan.rows, html="";
+  if(state.amView==="month"){
+    var maxRows=Math.min(rows.length,600);
+    for(var i=0;i<maxRows;i++){ var r=rows[i]; var d=addPeriods(startYM,r.n,perYear);
+      html+="<tr><td>"+r.n+"</td><td>"+fmtDate(d)+"</td><td>"+money2(r.payment+r.extra)+"</td><td>"+money2(r.interest)+"</td><td>"+money2(r.principal)+"</td><td>"+(r.extra>0?money2(r.extra):"—")+"</td><td>"+money2(r.balance)+"</td></tr>";
+    }
+    if(rows.length>maxRows) html+="<tr><td colspan='7' style='text-align:center;color:var(--muted)'>… "+(rows.length-maxRows)+" more payments</td></tr>";
+  } else {
+    // aggregate by calendar year
+    var groups={}, order=[];
+    rows.forEach(function(r){ var d=addPeriods(startYM,r.n,perYear); var y=d.getFullYear();
+      if(!groups[y]){ groups[y]={pay:0,int:0,prin:0,extra:0,bal:r.balance,last:d}; order.push(y); }
+      var g=groups[y]; g.pay+=r.payment+r.extra; g.int+=r.interest; g.prin+=r.principal; g.extra+=r.extra; g.bal=r.balance; g.last=d;
+    });
+    order.forEach(function(y){ var g=groups[y];
+      html+="<tr class='year-row'><td>"+y+"</td><td>"+g.last.toLocaleDateString("en-US",{month:"short"})+"</td><td>"+money(g.pay)+"</td><td>"+money(g.int)+"</td><td>"+money(g.prin)+"</td><td>"+(g.extra>0?money(g.extra):"—")+"</td><td>"+money(g.bal)+"</td></tr>";
+    });
+  }
+  tb.innerHTML=html;
+}
+
+// ---------- charts (canvas, no libs) ----------
+function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+function hidpi(cv){ var dpr=window.devicePixelRatio||1; var r=cv.getBoundingClientRect();
+  var w=cv.width, h=cv.height; cv.width=w*dpr; cv.height=h*dpr; var ctx=cv.getContext("2d"); ctx.scale(dpr,dpr);
+  cv._w=w; cv._h=h; return ctx; }
+function drawDonut(principal, interest){
+  var cv=$("donut"); cv.width=200;cv.height=200; var ctx=hidpi(cv); var w=cv._w,h=cv._h;
+  var total=principal+interest; if(total<=0)return;
+  var cx=w/2, cy=h/2, R=Math.min(w,h)/2-6, r=R*0.62;
+  var a=css("--chart-a")||"#2563eb", b=css("--chart-b")||"#f59e0b";
+  var segs=[[principal,a],[interest,b]], start=-Math.PI/2;
+  segs.forEach(function(s){ var ang=(s[0]/total)*Math.PI*2; ctx.beginPath(); ctx.moveTo(cx,cy);
+    ctx.arc(cx,cy,R,start,start+ang); ctx.closePath(); ctx.fillStyle=s[1]; ctx.fill(); start+=ang; });
+  ctx.globalCompositeOperation="destination-out"; ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fill();
+  ctx.globalCompositeOperation="source-over";
+  ctx.fillStyle=css("--ink")||"#111"; ctx.textAlign="center"; ctx.font="700 14px sans-serif";
+  ctx.fillText(Math.round(interest/total*100)+"%", cx, cy-2);
+  ctx.font="400 10px sans-serif"; ctx.fillStyle=css("--muted")||"#666"; ctx.fillText("interest", cx, cy+12);
+}
+function balancesByMonth(sim, perYear){
+  // return array of {m, bal} sampled monthly
+  var out=[{m:0,bal:sim.rows.length?sim.rows[0].balance+sim.rows[0].principal+sim.rows[0].extra:0}];
+  // simpler: reconstruct monthly balance by stepping
+  var arr=[]; var monthsPer=12/perYear;
+  sim.rows.forEach(function(r){ arr.push({m:(r.n)*monthsPer, bal:r.balance}); });
+  return arr;
+}
+function drawLine(baseline, plan, perYear){
+  var cv=$("line"); cv.width=520;cv.height=220; var ctx=hidpi(cv); var w=cv._w,h=cv._h;
+  var pad=30; var b1=balancesByMonth(baseline,12), b2=balancesByMonth(plan,perYear);
+  var maxM=Math.max(b1[b1.length-1]?b1[b1.length-1].m:1, b2[b2.length-1]?b2[b2.length-1].m:1);
+  var maxB=Math.max(b1[0]?b1[0].bal:1, b2[0]?b2[0].bal:1, 1);
+  function X(m){ return pad + (m/maxM)*(w-pad-8); }
+  function Y(b){ return (h-pad) - (b/maxB)*(h-pad-8); }
+  // grid
+  ctx.strokeStyle=css("--line")||"#e5e8ee"; ctx.lineWidth=1; ctx.beginPath();
+  ctx.moveTo(pad,8); ctx.lineTo(pad,h-pad); ctx.lineTo(w-4,h-pad); ctx.stroke();
+  ctx.fillStyle=css("--muted")||"#666"; ctx.font="10px sans-serif"; ctx.textAlign="right";
+  ctx.fillText(money(maxB), pad-4, 12); ctx.textAlign="center";
+  ctx.fillText(Math.round(maxM/12)+"y", w-14, h-pad+14);
+  function plot(data,color,wid){ ctx.strokeStyle=color; ctx.lineWidth=wid; ctx.beginPath();
+    ctx.moveTo(X(0),Y(maxB)); data.forEach(function(p,i){ ctx.lineTo(X(p.m),Y(p.bal)); }); ctx.stroke(); }
+  plot(b1, css("--muted")||"#9aa6b6", 1.5);
+  plot(b2, css("--chart-a")||"#2563eb", 2.5);
+}
+
+// ---------- extra tools ----------
+function compound(){
+  var P=parseFloat($("ci-p").value)||0, c=parseFloat($("ci-c").value)||0, r=(parseFloat($("ci-r").value)||0)/100, y=Math.round(parseFloat($("ci-y").value)||0);
+  var bal=P, contrib=0, mr=Math.pow(1+r/12,1)-1;
+  for(var m=0;m<y*12;m++){ bal+=bal*(r/12); bal+=c; contrib+=c; }
+  $("ci-fv").textContent=money(bal); $("ci-contrib").textContent=money(P+contrib); $("ci-earn").textContent=money(bal-P-contrib);
+}
+function percent(){
+  var f=function(id){var v=parseFloat($(id).value);return isFinite(v)?v:NaN;};
+  var p=f("pc-p"),n=f("pc-n"); $("pc-r1").textContent=(isFinite(p)&&isFinite(n))?(n*p/100).toLocaleString("en-US",{maximumFractionDigits:2}):"—";
+  var a=f("pc-a"),b=f("pc-b"); $("pc-r2").textContent=(isFinite(a)&&isFinite(b)&&b!==0)?(a/b*100).toFixed(2)+"%":"—";
+  var o=f("pc-o"),w=f("pc-w"); if(isFinite(o)&&isFinite(w)&&o!==0){var ch=(w-o)/o*100;$("pc-r3").textContent=(ch>=0?"+":"")+ch.toFixed(2)+"%";}else $("pc-r3").textContent="—";
+}
+
+// ---------- loan-type switching ----------
+function setType(t){
+  state.type=t;
+  document.body.classList.toggle("is-mortgage", t==="mortgage");
+  $("amountFld").style.display = t==="mortgage" ? "none" : "grid";
+  var titles={mortgage:"Loan & Mortgage Calculator",personal:"Personal Loan Calculator",auto:"Auto Loan Calculator",student:"Student Loan Calculator"};
+  $("pageTitle").textContent=titles[t]; $("typeTabs").querySelectorAll("button").forEach(function(b){b.classList.toggle("active",b.dataset.type===t);});
+  var d=DEFAULTS[t];
+  if(t==="mortgage"){ $("price").value=d.price;$("priceR").value=d.price;$("down").value=d.down;$("downPct").value=(d.down/d.price*100).toFixed(0);
+    $("rate").value=d.rate;$("rateR").value=d.rate;$("years").value=d.years;$("yearsR").value=d.years;
+    $("tax").value=d.tax;$("ins").value=d.ins;$("hoa").value=d.hoa;$("pmi").value=d.pmi; syncAmount(); }
+  else { $("amount").value=d.amount;$("amountR").value=d.amount;$("rate").value=d.rate;$("rateR").value=d.rate;$("years").value=d.years;$("yearsR").value=d.years; }
+  compute();
+}
+function syncAmount(){ // mortgage: keep amount = price - down; keep down%/down in sync
+  var price=parseFloat($("price").value)||0, down=parseFloat($("down").value)||0;
+  $("amount").value=Math.max(0,price-down);
+}
+
+// ---------- wire up ----------
+function bindSlider(numId,rangeId){ var num=$(numId),rng=$(rangeId);
+  if(rng){ rng.addEventListener("input",function(){num.value=rng.value; onInput();});
+    num.addEventListener("input",function(){ if(+num.value>=+rng.min&&+num.value<=+rng.max) rng.value=num.value; onInput();}); }
+}
+function onInput(){ if(state.type==="mortgage") syncAmount(); compute(); }
+
+$("typeTabs").addEventListener("click",function(e){ var b=e.target.closest("button"); if(b) setType(b.dataset.type); });
+bindSlider("price","priceR"); bindSlider("amount","amountR"); bindSlider("rate","rateR"); bindSlider("years","yearsR");
+["down","freq","extra","oneTime","oneTimeAt","tax","ins","hoa","pmi","start"].forEach(function(id){ $(id).addEventListener("input",onInput); $(id).addEventListener("change",onInput); });
+$("downPct").addEventListener("input",function(){ var price=parseFloat($("price").value)||0; $("down").value=Math.round(price*(parseFloat($("downPct").value)||0)/100); onInput(); });
+$("down").addEventListener("input",function(){ var price=parseFloat($("price").value)||0; if(price>0)$("downPct").value=((parseFloat($("down").value)||0)/price*100).toFixed(1); });
+
+$("viewYear").addEventListener("click",function(){ state.amView="year"; $("viewYear").classList.add("active");$("viewMonth").classList.remove("active"); renderTable(); });
+$("viewMonth").addEventListener("click",function(){ state.amView="month"; $("viewMonth").classList.add("active");$("viewYear").classList.remove("active"); renderTable(); });
+
+["ci-p","ci-c","ci-r","ci-y"].forEach(function(id){$(id).addEventListener("input",compound);});
+["pc-p","pc-n","pc-a","pc-b","pc-o","pc-w"].forEach(function(id){$(id).addEventListener("input",percent);});
+
+// actions
+$("btnShare").addEventListener("click",function(){ try{
+  var s=state._share; var q=Object.keys(s).filter(function(k){return s[k]!==undefined&&s[k]!==""}).map(function(k){return k+"="+encodeURIComponent(s[k]);}).join("&");
+  var url=location.origin+location.pathname+"?"+q; navigator.clipboard.writeText(url);
+  this.textContent="✅ Link copied"; var self=this; setTimeout(function(){self.textContent="🔗 Copy share link";},1500);
+}catch(e){ this.textContent="Copy manually: "+location.href; } });
+$("btnCopy").addEventListener("click",function(){ try{
+  var txt=$("pageTitle").textContent+"\nPayment: "+$("payBig").textContent.replace(/\s+/g," ")+"\nLoan: "+$("sLoan").textContent+
+    "\nTotal interest: "+$("sInterest").textContent+"\nTotal paid: "+$("sTotal").textContent+"\nPayoff: "+$("sPayoff").textContent;
+  navigator.clipboard.writeText(txt); this.textContent="✅ Copied"; var self=this; setTimeout(function(){self.textContent="📋 Copy summary";},1500);
+}catch(e){} });
+$("btnCsv").addEventListener("click",function(){ var plan=state._plan; if(!plan)return;
+  var lines=["Period,Date,Payment,Interest,Principal,Extra,Balance"];
+  plan.rows.forEach(function(r){ var d=addPeriods(state._startYM,r.n,state._perYear);
+    lines.push([r.n,fmtDate(d),(r.payment+r.extra).toFixed(2),r.interest.toFixed(2),r.principal.toFixed(2),r.extra.toFixed(2),r.balance.toFixed(2)].join(",")); });
+  try{ var blob=new Blob([lines.join("\n")],{type:"text/csv"}); var a=document.createElement("a");
+    a.href=URL.createObjectURL(blob); a.download="amortization.csv"; a.click(); }catch(e){} });
+$("btnPrint").addEventListener("click",function(){ try{window.print();}catch(e){} });
+
+// load from share URL
+(function(){ var q=new URLSearchParams(location.search); if(!q.has("t"))return; var t=q.get("t"); if(DEFAULTS[t]){ setType(t);
+  if(q.get("price"))$("price").value=q.get("price"); if(q.get("down"))$("down").value=q.get("down");
+  if(q.get("r"))$("rate").value=q.get("r"); if(q.get("y"))$("years").value=q.get("y"); if(q.get("f"))$("freq").value=q.get("f");
+  if(q.get("e"))$("extra").value=q.get("e"); if(q.get("ot"))$("oneTime").value=q.get("ot"); if(q.get("ota"))$("oneTimeAt").value=q.get("ota");
+  if(q.get("P"))$("amount").value=q.get("P");
+  ["tax","ins","hoa","pmi"].forEach(function(k){ if(q.get(k))$(k).value=q.get(k); });
+} })();
+
+// init
+setType("mortgage"); compound(); percent();
+window.addEventListener("resize",function(){ if(state._plan){ drawDonut(loanAmount(), state._plan.totalInterest); } });
+})();
+</script>
+</body>
+</html>
